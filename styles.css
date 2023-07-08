@@ -1,0 +1,704 @@
+/* --------------------------------------------------- BASE --------------------------------------------------- */
+
+@font-face {
+    font-family: 'Kyiv';
+    src: url('./fonts/Kyiv/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Bold2.otf') format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Eugusto';
+    src: url('./fonts/Eugusto\ Free\ Font.otf');
+}
+
+:root {
+    /* COLORS */
+    --color-yellow: #EFF339;
+    --color-white: #FFFFFF;
+    --color-light-gray: #CCCCCC;
+    --color-gray: #989898;
+    --color-dark-gray: #6D6D6D;
+    --color-darker-gray: #373737;
+    --color-dark: #0A0A0A;
+    --color-black: #000000;
+    /* FONTS */
+    --font-principal: 'Syne', sans-serif;
+    --font-secondary: 'Kyiv', sans-serif;
+    --font-tertiary: 'Eugusto', sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: var(--font-principal);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    /* cursor: none; */
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* DEFINICIÓN DE ESTILOS GENERALES */
+
+.cursor {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1000;
+    transition: all 0.1s ease;
+    transition-property: background-color, transform, width, height;
+}
+
+.cursor-default {
+    width: 1.14vw;
+    height: 1.14vw;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    mix-blend-mode: difference;
+}
+
+.cursor-images {
+    width: 4.38vw;
+    height: 4.38vw;
+    background-color: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(0.34vw);
+    border-radius: 50%;
+    border: 0.08vw solid var(--color-white);
+    mix-blend-mode: normal;
+}
+
+.cursor-images::after {
+    content: 'see';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1vw;
+    line-height: 84%;
+    color: var(--color-white);
+}
+
+.cursor-links {
+    width: 4.38vw;
+    height: 4.38vw;
+    border: 0.08vw solid var(--color-white);
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+
+.backgroundDark {
+    background-color: var(--color-dark);
+}
+
+.backgroundLight {
+    background-color: var(--color-white);
+}
+
+
+.blackVersion {
+    color: var(--color-black);
+}
+
+.whiteVersion {
+    color: var(--color-white);
+}
+
+.breadcrumb {
+    color: var(--color-gray);
+    font-size: 1.25vw;
+}
+
+
+.blur-effect {
+    filter: blur(0.14vw);
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 14vh;
+    padding: 0 6.25vw 0 6.25vw;
+    z-index: 1000;
+}
+
+.navbar__list {
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navbar__item a {
+    text-decoration: none;
+    font-size: 1.94vw;
+    letter-spacing: 0.56px;
+    font-weight: 600;
+
+    transition: width 0.3s ease-in-out;
+}
+
+.underlineLink--black,
+.underlineLink--white {
+    position: relative;
+    text-decoration: none;
+}
+
+
+.underlineLink--black::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 0.2vw;
+    background-color: var(--color-black);
+    transition: width 0.3s ease-in-out;
+}
+
+.underlineLink--white::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 0.2vw;
+    background-color: var(--color-white);
+    transition: width 0.3s ease-in-out;
+}
+
+.underlineLink--black:hover::after,
+.underlineLink--white:hover::after {
+    width: 100%;
+}
+
+.hovered .img {
+    transform: scale(1.1);
+}
+
+.button__initialPoint {
+    position: absolute;
+    z-index: 999;
+    bottom: 6.43vh;
+    right: 6.25vw;
+    /*márgen que estoy usando*/
+    padding: 3.14vh 1.8vw;
+    display: none;
+    /* se cambia a flex desde js */
+
+    /* display: flex; */
+    background-color: var(--color-black);
+    border-radius: 4.8rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.button__initialPoint__arrow {
+    width: 3.02vw;
+    height: auto;
+}
+
+.button__initialPoint:hover {
+    border: 0.08vw solid var(--color-white);
+    mix-blend-mode: difference;
+    background-color: transparent;
+}
+
+
+/* .centered{
+    top: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+
+.footer {
+    position: absolute;
+    top: 0;
+    left: 100vw;
+    padding: 0 6.25vw;
+    background-color: var(--color-dark);
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
+
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+}
+
+.footer__lgit {
+    display: flex;
+    align-items: center;
+    padding-top: 10vh;
+}
+
+
+.footer__text {
+    position: relative;
+    z-index: 999;
+    transform: translate(0,0); /* esto crea un nuevo contexto de apilamiento */ 
+
+    font-family: var(--font-secondary);
+    font-size: 14.93vw;
+    text-transform: lowercase;
+    color: var(--color-white);
+    white-space: nowrap;
+}
+
+
+.footer__assetAgs {
+    position: absolute;
+    bottom: 0vw;
+    left: 28vw;
+    width: 5.16vw;
+    transform: rotate(-17.125deg);
+}
+
+.footer__assetPhotographer {
+    position: absolute;
+    z-index: -1; /* esto coloca el círculo por debajo del texto */
+    top: -2vh;
+    left: 75vw;
+    transform: rotate(7.109deg);
+    background: var(--color-yellow);
+
+    display: flex;
+    padding: 4.17vw 2.5vw;
+    align-items: center;
+    width: 13.54vw;
+    height: 13.54vw;
+    border-radius: 50%;
+}
+
+.footer__assetPhotographer__text {
+    color: var(--color-dark);
+    font-size: 1.32vw;
+    line-height: 84%;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+    font-family: var(--font-principal);
+
+    flex-grow: 2;
+    flex-shrink: 0;
+}
+
+.footer__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45vw;
+    margin-left: 15vw;
+    /* height: 14.29vh; */
+    gap: 4vh;
+}
+
+.footer__contact__row{
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer__item__row1 {
+    text-decoration: none;
+    font-size: 2.78vw;
+    letter-spacing: 0.56px;
+    font-weight: 700;
+    color: var(--color-dark-gray);
+}
+
+.footer__item--active::before{
+    content: '*';
+}
+
+.footer__item__row2{
+    text-decoration: none;
+    color: var(--color-darker-gray);
+    font-weight: 500;
+    font-size: 1.25vw;
+}
+
+
+
+
+/* --------------------------------------------------- GALLERY --------------------------------------------------- */
+
+
+.header {
+    display: grid;
+    place-content: center;
+    margin-top: -12vh;
+
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+}
+
+
+.header__tittle {
+    font-size: 22.78vw;
+    text-transform: lowercase;
+    letter-spacing: 0.56px;
+    font-weight: 600;
+
+    /* creamos una especie de máscara */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 1000;
+
+    pointer-events: none;
+
+}
+
+
+.galleryContent {
+    height: 100vh;
+    overflow: hidden;
+    
+}
+
+
+.galleryContent__container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.galleryContent__imgGallery {
+    position: absolute;
+    overflow: hidden;
+
+    will-change: filter, transform;
+    /* indicar el cambio de filtro supuestamente mejoraría el rendimiento */
+    transition: transform, filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top left;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.imgGallery01 {
+    width: 24.31vw;
+    top: 100vh;
+    left: -3.33vw;
+}
+
+.imgGallery02 {
+    width: 32.36vw;
+    top: 100vh;
+    left: 51.74vw;
+}
+
+.imgGallery03 {
+    width: 12.78vw;
+    top: 100vh;
+    right: 7.36vw;
+    z-index: 999;
+}
+
+.imgGallery04 {
+    width: 42vw;
+    top: 50vh;
+    left: 110vw;
+    transform: translateY(-50%);
+}
+
+.galleryContent__img3Text {
+    position: absolute;
+    top: 50vh;
+    left: 42vw;
+    transform: translate(-50%, -40%);
+    z-index: 999;
+    /* opacity: 0; */
+    display: none;
+
+    font-family: var(--font-tertiary);
+    color: var(--color-dark);
+    font-size: 10vw;
+    line-height: 68%;
+
+}
+
+.galleryContent__ellipse {
+
+    position: absolute;
+    top: 70.71%;
+    left: 79.51%;
+    background: var(--color-yellow);
+
+    display: none;
+    /* se cambia a flex desde js */
+    padding: 4.17vw 1.94vw;
+    align-items: center;
+    width: 11.11vw;
+    height: 11.11vw;
+    border-radius: 50%;
+}
+
+
+.galleryContent__ellipse__text {
+    color: var(--color-dark);
+    font-size: 1.11vw;
+    /* Calculado: 16px / 1440px * 100% */
+    line-height: 84%;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+
+    flex-grow: 2;
+    flex-shrink: 0;
+}
+
+.galleryContent__ellipse__arrow {
+    flex: auto;
+    position: relative;
+    top: 140%;
+    left: -14%;
+    width: 3.333vw;
+
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+
+/* --------------------------------------------------- CONTENIDO MENU --------------------------------------------------- */
+
+/* Padding agregado al contenedor de todo el contenido para que se mantengan siempre
+los mismos márgenes */
+
+.menuContent {
+    padding: 0 6.25vw 0 6.25vw;
+}
+
+/* --------------------- MENU/HOVER ZONE --------------------- */
+
+.menuHoverZone {
+    margin-top: 16vh;
+    height: 56vh;
+    padding-top: 5.43vh;
+
+    position: absolute;
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menuHoverZone__container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.menuHoverZone__container:hover {
+    cursor: pointer;
+}
+
+.menuHoverZone__smallContainer {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.menuHoverZone__tittle {
+    font-size: 5.833vw;
+    margin-left: 0.83vw;
+}
+
+.menuHoverZone__number {
+    font-size: 1.944vw;
+    align-self: top;
+}
+
+.menuSelected {
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.menuSelected .menuHoverZone__tittle {
+    order: 1;
+    margin-right: 0.83vw;
+}
+
+.menuSelected .menuHoverZone__number {
+    order: 2;
+}
+
+.menuNoSelected {
+    font-weight: 600;
+    color: var(--color-darker-gray);
+}
+
+
+
+/* --------------------- MENU/CONTACT --------------------- */
+
+.menuContact {
+    position: absolute;
+    bottom: 10vh;
+    z-index: 1000;
+    /* tuve que poenrle este z-index porque el containerGallery lo está tapando,
+    el ancho lo está definiendo el ancho del primer hijo imgGallery01*/
+}
+
+.menuContact__list {
+    display: flex;
+    list-style-type: none;
+
+}
+
+.menuContact__item a {
+    text-decoration: none;
+    margin-left: 1vw;
+    color: var(--color-gray);
+    font-size: 1.25vw;
+}
+
+
+
+/* --------------------- MENU/HOVER IN GALLERY --------------------- */
+
+.menuImagesGallery {
+    position: absolute;
+    height: 100vh;
+    width: 60vw;
+    left: 40vw;
+}
+
+
+.menuImagesGallery__img02Container {
+    position: relative;
+    left: 6vw;
+    top: 22.57vh;
+    width: 16.18vw;
+    height: auto;
+    z-index: 999;
+}
+
+.menuImagesGallery__img02 {
+    width: 16.18vw;
+    height: auto;
+    z-index: 999;
+}
+
+
+.menuImagesGallery__assetPhotographer {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%, -70%) rotate(-20.37deg);
+    width: 8vw;
+    z-index: 1000;
+}
+
+.menuImagesGallery__img01 {
+    position: absolute;
+    left: 16vw;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32.8vw;
+    height: auto;
+    z-index: 998;
+}
+
+
+.menuImagesGallery__img03 {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(20%);
+    right: 6vw;
+    width: 19.86vw;
+    height: auto;
+    z-index: 998;
+}
+
+
+/* --------------------------------------------------- CONTENIDO ABOUT ME --------------------------------------------------- */
+
+/* Padding agregado al contenedor de todo el contenido para que se mantengan siempre
+los mismos márgenes */
+.aboutMeMainContent {
+    padding: 0 6.25vw 0 6.25vw;
+}
+
+.aboutMeMainContent__tittle {
+    position: relative;
+    top: 20.57vh;
+    left: 2.89vw;
+    font-size: 7.92vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 63%;
+    color: var(--color-dark);
+    z-index: 1000;
+}
+
+.aboutMeMainContent__text01 {
+    position: relative;
+    z-index: 999;
+    /* top: -80vh;*/
+    left: 2.89vw;
+    bottom: -36vh;
+
+    width: 22.85vw;
+    font-size: 1.11vw;
+    color: var(--color-dark);
+}
+
+
+.aboutMeMainContent__img01 {
+    position: absolute;
+    /* top: -15vh; */
+    left: 23vw;
+    width: 37.57vw;
+    height: auto;
+    z-index: 998;
+    top: 34%;
+    transform: translateY(-40%);
+}
+
+.aboutMeMainContent__img02 {
+    position: absolute;
+    bottom: -18vh;
+    right: 0;
+    width: 34.72vw;
+    height: auto;
+    z-index: 997;
+}
+
+.aboutMeMainContent__assetPhotographer {
+    position: absolute;
+    bottom: 14vh;
+    left: 54vw;
+    transform: rotate(-20.37deg);
+    width: 16vw;
+    z-index: 999;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="../styles.css">
+
+</head>
+
+<body class="backgroundDark">
+
+    <div class="cursor cursor-default"></div>
+
+    <nav class="navbar">
+        <ul class="navbar__list">
+            <li class="navbar__item"><a class="whiteVersion" href="#">ags<span class="breadcrumb"> / menu</span></a>
+            </li>
+            <li class="navbar__item"><a class="whiteVersion underlineLink--white" href="../index.html">close</a></li>
+        </ul>
+    </nav>
+
+
+    <main class="menuContent">
+
+        <div class="menuHoverZone">
+
+            <a><div class="menuHoverZone__container menuGallery menuSelected" id="gallery"
+                onmouseenter="toggleSelected(this)">
+                <div class="menuHoverZone__smallContainer">
+                    <p class="menuHoverZone__number">01</p>
+                    <p class="menuHoverZone__tittle">gallery</p>
+                </div>
+            </div></a>
+
+            <a><div class="menuHoverZone__container menuProjects menuNoSelected" id="projects"
+                onmouseenter="toggleSelected(this)">
+                <div class="menuHoverZone__smallContainer">
+                    <p class="menuHoverZone__number">02</p>
+                    <p class="menuHoverZone__tittle">projects</p>
+                </div>
+            </div></a>
+
+            <a><div class="menuHoverZone__container menuAboutMe menuNoSelected" id="aboutMe"
+                onmouseenter="toggleSelected(this)">
+                <div class="menuHoverZone__smallContainer">
+                    <p class="menuHoverZone__number">03</p>
+                    <p class="menuHoverZone__tittle">about me</p>
+                </div>
+            </div></a>
+
+        </div>
+
+
+        <div class="menuContact">
+            <ul class="menuContact__list">
+                <li class="menuContact__item"><a href="#">agustina.lara.cs@gmail.com</a></li>
+                <li class="menuContact__item"><a href="https://www.instagram.com/a.g.u.s.ti.na/"
+                        target="_blank">instagram</a></li>
+            </ul>
+        </div>
+
+
+        <section class="menuImagesGallery menuVisible">
+
+            <div class="menuImagesGallery__img02Container">
+                <img class="menuImagesGallery__img02" src="../imgs/gallery02.jpg" alt="">
+                <img class="menuImagesGallery__assetPhotographer" src="../graphicelements/asset-photographer.svg" alt="">
+            </div>
+
+            <img class="menuImagesGallery__img01" src="../imgs/gallery01.jpg" alt="">
+            <img class="menuImagesGallery__img03" src="../imgs/gallery03.jpg" alt="">
+
+        </section>
+
+
+    </main>
+
+
+    <script src="../cursor.js"></script>
+    <script src="../menu.js"></script>
+
+</body>
+
+</html>

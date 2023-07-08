@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- BOOTSTRAP -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body class="backgroundLight">
+
+
+    <div class="cursor cursor-default"></div>
+
+    <header class="header">
+        <h1 class="header__tittle">ags</h1>
+    </header>
+
+    <nav class="navbar">
+        <ul class="navbar__list">
+            <li class="navbar__item"><a class="blackVersion" href="#">ags<span class="breadcrumb"> /
+                        gallery</span></a></li>
+            <li class="navbar__item"><a class="blackVersion underlineLink--black" href="./pages/menu.html">menu</a></li>
+        </ul>
+    </nav>
+
+
+    <main class="galleryContent">
+
+        <section class="galleryContent__container">
+
+            <div class="galleryContent__imgGallery imgGallery01">
+                <img class="img" src="./imgs/gallery01.jpg" alt="">
+            </div>
+
+            <div class="galleryContent__imgGallery imgGallery02">
+                <img class="img" src="./imgs/gallery02.jpg" alt="">
+            </div>
+
+            <div class="galleryContent__imgGallery imgGallery03">
+                <img class="img" src="./imgs/gallery03.jpg" alt="">
+            </div>
+
+            <div class="galleryContent__imgGallery imgGallery04">
+                <img class="img" src="./imgs/gallery04.jpg" alt="">
+            </div>
+
+            <p class="galleryContent__img3Text">yellow<br>kinghu<br>mbert</p>
+
+        </section>
+
+        <footer class="footer">
+
+            <div class="footer__lgit">
+                <h2 class="footer__text">Let's get in touch
+                    <img class="footer__assetAgs" src="./graphicelements/asset-ags.svg" alt="">
+                    <div class="footer__assetPhotographer">
+                        <p class="footer__assetPhotographer__text">/// <br> photo- <br> grapher</p>
+                    </div>
+                </h2>
+            </div>
+
+            <div class="footer__contact">
+                <div class="footer__contact__row">
+                    <a href="#" class="footer__item__row1 footer__item--active">gallery</a>
+                    <a href="./pages/projects.html" class="footer__item__row1">projects</a>
+                    <a href="./pages/aboutme.html" class="footer__item__row1">about me</a>
+                </div>
+                <div class="footer__contact__row">
+                    <a href="" class="footer__item__row2">agustina.lara.cs@gmail.com</a>
+                    <a href="tel:+5492214373872" class="footer__item__row2">+5492214373872</a>
+                    <p class="footer__item__row2">La Plata, Argentina</p>
+                </div>
+            </div>
+
+        </footer>
+
+
+        <div class="galleryContent__ellipse">
+            <p class="galleryContent__ellipse__text">scroll / drag <br> para <br> navegar</p>
+            <img class="galleryContent__ellipse__arrow" src="./icons/arrow-left.svg" alt="">
+        </div>
+
+
+        <div class="button__initialPoint">
+            <img class="button__initialPoint__arrow" src="./icons/arrow-right.svg" alt="">
+        </div>
+
+
+    </main>
+
+
+
+
+    <!-- GSAP y ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+    <!-- librería split-type -->
+    <script src="https://unpkg.com/split-type"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <script src="../cursor.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
