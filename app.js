@@ -17,7 +17,8 @@ const buttonInitialPoint = document.querySelector('.button__initialPoint');
 const galleryContentContainer = document.querySelector('.galleryContent__container');
 const contenedor = document.querySelector('.galleryContent');
 const footer = document.querySelector('.footer');
-const footerItems = document.querySelectorAll('.navbar__item a')
+const footerItems = document.querySelectorAll('.navbar__item a');
+const footerMenu = document.querySelector('.menu a');
 
 const timeline = gsap.timeline();
 let timelineScroll;
@@ -109,8 +110,10 @@ function enableScrollTrigger() {
 
 
     buttonInitialPoint.addEventListener('click', function () {
-        ScrollTrigger.getById("scrollTrigger").scroll(0);
-        timelineScroll.reverse(0);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 
 
@@ -146,19 +149,31 @@ function checkFooterVisibility() {
         let itemRect = item.getBoundingClientRect();
 
         if (itemRect.right >= footerRect.left && itemRect.left <= footerRect.right) {
+
             footerInView = true;
             item.classList.remove('blackVersion');
-            item.classList.remove('underlineLink--black');
             item.classList.add('whiteVersion');
-            item.classList.add('underlineLink--white');
+
+            if (item.classList.contains('underlineLink--black')) {
+                item.classList.remove('underlineLink--black');
+                item.classList.add('underlineLink--white');
+            }
+
         } else {
+
+            footerInView = false;
             item.classList.remove('whiteVersion');
-            item.classList.remove('underlineLink--white');
             item.classList.add('blackVersion');
-            item.classList.add('underlineLink--black');
+
+            if (item.classList.contains('underlineLink--white')) {
+                item.classList.remove('underlineLink--white');
+                item.classList.add('underlineLink--black');
+            }
+
         }
 
     })
+
 
 }
 
