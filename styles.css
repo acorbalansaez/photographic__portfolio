@@ -57,7 +57,7 @@ a {
     color: inherit;
   }
 
-/* DEFINICIÓN DE ESTILOS GENERALES */
+/* --------------------------------------------------- ESTILOS GENERALES --------------------------------------------------- */
 
 .cursor {
     position: absolute;
@@ -155,6 +155,8 @@ a {
     filter: blur(0.14vw);
 }
 
+/* --------------------------------------------------- NAVBAR --------------------------------------------------- */
+
 .navbar {
     position: absolute;
     top: 0;
@@ -219,9 +221,21 @@ a {
     width: 100%;
 }
 
+/* --------------------------------------------------- CLASE IMG --------------------------------------------------- */
+
 .hovered .img {
     transform: scale(1.1);
 }
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top left;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------- BUTTON INITIAL POINT --------------------------------------------------- */
 
 .button__initialPoint {
     position: absolute;
@@ -257,6 +271,8 @@ a {
 } */
 
 
+/* --------------------------------------------------- FOOTER --------------------------------------------------- */
+
 .footer {
     position: absolute;
     top: 0;
@@ -283,6 +299,7 @@ a {
     z-index: 999;
     transform: translate(0, 0);
     /* esto crea un nuevo contexto de apilamiento */
+    
 
     font-family: var(--font-secondary);
     font-size: 14.93vw;
@@ -378,9 +395,7 @@ a {
 
 
 
-
-/* --------------------------------------------------- GALLERY --------------------------------------------------- */
-
+/* --------------------------------------------------- CONTENIDO GALLERY --------------------------------------------------- */
 
 .header {
     display: grid;
@@ -436,14 +451,6 @@ a {
     will-change: filter, transform;
     /* indicar el cambio de filtro supuestamente mejoraría el rendimiento */
     transition: transform, filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: top left;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .imgGallery01 {

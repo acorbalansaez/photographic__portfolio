@@ -112,9 +112,9 @@ function enableScrollTrigger() {
         .to(".imgGallery04", { left: '66vw', ease: 'power2', duration: 1.6 }, 1)
         .to(galleryContentContainer, { left: "-100%", duration: 1.8 }, ">") //la animación se inserta al final de la anterior
         .to(footer, { left: 0, duration: 1.8 }, "<") //la animación se inserta al principio de la anterior
-        .to(footerPhotographer, {rotation:30, duration: 0.2},">")
-        .to(footerPhotographer, {rotation:-10, duration: 0.2},">")
-        .to(footerPhotographer, {rotation:0, duration: 0.1},">")
+        .to(footerPhotographer, {transform: 'rotate(-27.109deg)', duration: 0.2},">")
+        .to(footerPhotographer, {transform: 'rotate(27.109deg)', duration: 0.2},">")
+        .to(footerPhotographer, {transform: 'rotate(7.109deg)', duration: 0.1},">")
 
 
 
@@ -156,8 +156,8 @@ footerText.addEventListener('mouseover', function (event) {
     let windowWidth = window.innerWidth;
 
     if (footerRect.left >= 0 && footerRect.right <= windowWidth) {
-        footerInView = true;
-        footerTextContent.style.left = '-30vw';
+        footerInView = true; 
+        footerTextContent.style.left = '-32.5%';
         footerAgs.style.transform = 'rotate(45deg)';
     }
 
