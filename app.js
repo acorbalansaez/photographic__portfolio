@@ -17,8 +17,14 @@ const buttonInitialPoint = document.querySelector('.button__initialPoint');
 const galleryContentContainer = document.querySelector('.galleryContent__container');
 const contenedor = document.querySelector('.galleryContent');
 const footer = document.querySelector('.footer');
+const footerText = document.querySelector('.footer__text');
+const footerTextContent = document.querySelector('.footer__textContent');
+const footerAgs = document.querySelector('.footer__assetAgs');
+const footerPhotographer = document.querySelector('.footer__assetPhotographer');
 const footerItems = document.querySelectorAll('.navbar__item a');
 const footerMenu = document.querySelector('.menu a');
+
+
 
 const timeline = gsap.timeline();
 let timelineScroll;
@@ -101,11 +107,14 @@ function enableScrollTrigger() {
             autoAlpha: 1, ease: 'power2', duration: 0.4, onStart: () => {
                 textImg03.style.display = 'block';
             }
-        }, 1.1)
+        }, 1.8)
 
         .to(".imgGallery04", { left: '66vw', ease: 'power2', duration: 1.6 }, 1)
         .to(galleryContentContainer, { left: "-100%", duration: 1.8 }, ">") //la animación se inserta al final de la anterior
         .to(footer, { left: 0, duration: 1.8 }, "<") //la animación se inserta al principio de la anterior
+        .to(footerPhotographer, {rotation:30, duration: 0.2},">")
+        .to(footerPhotographer, {rotation:-10, duration: 0.2},">")
+        .to(footerPhotographer, {rotation:0, duration: 0.1},">")
 
 
 
@@ -119,10 +128,16 @@ function enableScrollTrigger() {
 
 }
 
+
+function printScrollPosition() {
+    console.log("Posición del scroll:", window.scrollY);
+}
+
+
 window.addEventListener('scroll', printScrollPosition);
 
 
-// cuando el mouse esta arriba de la elipse la flecha se desplaza
+// hover elipse -> la flecha se desplaza
 ellipse.addEventListener('mouseleave', () => {
     gsap.to(ellipseArrow, { left: '-14%', ease: 'power2', duration: 0.2 })
 });
@@ -132,25 +147,41 @@ ellipse.addEventListener('mouseover', () => {
 });
 
 
-function printScrollPosition() {
-    console.log("Posición del scroll:", window.scrollY);
-}
+
+// hover texto de footer -> se desplaza
+footerText.addEventListener('mouseover', function (event) {
+
+    let footerInView = false;
+    let footerRect = footer.getBoundingClientRect();
+    let windowWidth = window.innerWidth;
+
+    if (footerRect.left >= 0 && footerRect.right <= windowWidth) {
+        footerInView = true;
+        footerTextContent.style.left = '-30vw';
+        footerAgs.style.transform = 'rotate(45deg)';
+    }
+
+})
+
+footerText.addEventListener('mouseleave', function (event) {
+    footerTextContent.style.left = '0';
+    footerAgs.style.transform = 'rotate(-17.125deg)';
+
+});
 
 
 
 // cambiar navbar a blanco cuando aparece el footer
 function checkFooterVisibility() {
 
-    let footerRect = footer.getBoundingClientRect();
-    let footerInView = false;
 
     footerItems.forEach(function (item) {
 
+        let footerRect = footer.getBoundingClientRect();
         let itemRect = item.getBoundingClientRect();
 
         if (itemRect.right >= footerRect.left && itemRect.left <= footerRect.right) {
 
-            footerInView = true;
             item.classList.remove('blackVersion');
             item.classList.add('whiteVersion');
 
@@ -161,7 +192,6 @@ function checkFooterVisibility() {
 
         } else {
 
-            footerInView = false;
             item.classList.remove('whiteVersion');
             item.classList.add('blackVersion');
 

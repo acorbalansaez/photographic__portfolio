@@ -45,12 +45,17 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    /* cursor: none; */
+    cursor: none;
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+  }
 
 /* DEFINICIÓN DE ESTILOS GENERALES */
 
@@ -99,6 +104,27 @@ body {
     mix-blend-mode: difference;
     border-radius: 50%;
     background-color: transparent;
+}
+
+.cursor-footer {
+    width: 4.38vw;
+    height: 4.38vw;
+    border-radius: 50%;
+    border: 0 solid;
+    background-color: var(--color-yellow);
+    mix-blend-mode: normal;
+}
+
+.cursor-footer::after {
+    content: "";
+    background-image: url('./icons/arrow-up.svg');
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
 }
 
 
@@ -255,13 +281,22 @@ body {
 .footer__text {
     position: relative;
     z-index: 999;
-    transform: translate(0,0); /* esto crea un nuevo contexto de apilamiento */ 
+    transform: translate(0, 0);
+    /* esto crea un nuevo contexto de apilamiento */
 
     font-family: var(--font-secondary);
     font-size: 14.93vw;
     text-transform: lowercase;
     color: var(--color-white);
     white-space: nowrap;
+   
+}
+
+.footer__textContent{
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: left 0.9s ease;
 }
 
 
@@ -271,11 +306,13 @@ body {
     left: 28vw;
     width: 5.16vw;
     transform: rotate(-17.125deg);
+    transition: transform 0.9s ease;
 }
 
 .footer__assetPhotographer {
     position: absolute;
-    z-index: -1; /* esto coloca el círculo por debajo del texto */
+    z-index: -1;
+    /* esto coloca el círculo por debajo del texto */
     top: -2vh;
     left: 75vw;
     transform: rotate(7.109deg);
@@ -311,7 +348,7 @@ body {
     gap: 4vh;
 }
 
-.footer__contact__row{
+.footer__contact__row {
     display: flex;
     justify-content: space-around;
 }
@@ -324,11 +361,15 @@ body {
     color: var(--color-dark-gray);
 }
 
-.footer__item--active::before{
+.footer__item__row1:hover, .footer__item__row2:hover {
+    color: var(--color-white);
+}
+
+.footer__item--active::before {
     content: '*';
 }
 
-.footer__item__row2{
+.footer__item__row2 {
     text-decoration: none;
     color: var(--color-darker-gray);
     font-weight: 500;
@@ -374,7 +415,7 @@ body {
 .galleryContent {
     height: 100vh;
     overflow: hidden;
-    
+
 }
 
 

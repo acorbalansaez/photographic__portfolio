@@ -1,9 +1,10 @@
 //CURSOR - CÓDIGO COMPARTIDO 
 
-let mouseCursor = document.querySelector(".cursor");
-let imagesGallery = document.querySelectorAll(".galleryContent__imgGallery");
-let links = document.getElementsByTagName('a');
-let linksArray = Array.from(links);
+const mouseCursor = document.querySelector(".cursor");
+const imagesGallery = document.querySelectorAll(".galleryContent__imgGallery");
+const links = document.getElementsByTagName('a');
+const linksArray = Array.from(links);
+const footerHover = document.querySelector('.footer__text');
 
 document.addEventListener('mousemove', cursor);
 
@@ -32,6 +33,18 @@ linksArray.forEach(linkOnHover => {
 });
 
 
+// cuando el mouse esta arriba del footer cambiar el cursor
+footerHover.addEventListener('mouseleave', () => {
+  mouseCursor.classList.remove('cursor-footer');
+  mouseCursor.classList.add('cursor-default');
+})
+
+footerHover.addEventListener('mouseover', () => {
+  mouseCursor.classList.remove('cursor-default');
+  mouseCursor.classList.add('cursor-footer');
+})
+
+
 // cuando el mouse esta arriba de una imagen cambiar el cursor
 // blur en otras fotos y agrandar foto seleccionada
 imagesGallery.forEach(imgOnHover => {
@@ -42,24 +55,24 @@ imagesGallery.forEach(imgOnHover => {
 
     imagesGallery.forEach(img => img.classList.remove('hovered'));
 
-      mouseCursor.classList.remove('cursor-images');
-      mouseCursor.classList.add('cursor-default');
-      imagesGallery.forEach(img => img.classList.remove('blur-effect'));
+    mouseCursor.classList.remove('cursor-images');
+    mouseCursor.classList.add('cursor-default');
+    imagesGallery.forEach(img => img.classList.remove('blur-effect'));
   });
 
 
   imgOnHover.addEventListener('mouseover', () => {
 
-      imgOnHover.classList.add('hovered');
+    imgOnHover.classList.add('hovered');
 
-      mouseCursor.classList.remove('cursor-default');
-      mouseCursor.classList.add('cursor-images');
+    mouseCursor.classList.remove('cursor-default');
+    mouseCursor.classList.add('cursor-images');
 
-      imagesGallery.forEach(img => {
-          if (img !== imgOnHover) {
-              img.classList.add('blur-effect');
-          }
-      });
+    imagesGallery.forEach(img => {
+      if (img !== imgOnHover) {
+        img.classList.add('blur-effect');
+      }
+    });
 
   });
 
