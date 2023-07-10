@@ -90,7 +90,7 @@ function animateSection(section) {
     const timelineProjects = gsap.timeline();
     timelineProjects.fromTo(".menuImagesProjects__img01", { transform: 'translate(50%, -200%) rotate(10deg)' }, { transform: 'translate(30%, -50%) rotate(0deg)', ease: 'power2', duration: 0.6 }, 0)
     .fromTo(".menuImagesProjects__gradient", {transform:'translate(100%, -75%)', autoAlpha: 0, scale: 0 }, {transform:'translate(10%, -75%)', autoAlpha: 1, scale: 1, ease: 'power2', duration: 0.6 }, "<")
-    .fromTo(".menuImagesProjects__img02", { scale: 0.5, transform: 'translate(105%, -200%) rotate(30deg)' }, { scale: 1, transform: 'translate(105%, -70%) rotate(0deg)', ease: 'power2', duration: 0.6 }, 0.1)
+    .fromTo(".menuImagesProjects__img02", { scale: 0.5, transform: 'translate(105%, -160%) rotate(30deg)' }, { scale: 1, transform: 'translate(105%, -70%) rotate(0deg)', ease: 'power2', duration: 0.6 }, 0.1)
     .fromTo(".menuImagesProjects__img03", { transform: 'translate(5%, 100%) rotate(-10deg)' }, { transform: 'translate(10%, 0%) rotate(0deg)', ease: 'power2', duration: 0.7 }, 0)
     .fromTo(".menuImagesProjects__img04", { transform: 'translate(70%, -60%) rotate(10deg)' }, { transform: 'translate(10%, -60%) rotate(0deg)', ease: 'power2', duration: 0.6 }, 0)
     .fromTo(".menuImagesGallery__nameProject", { autoAlpha: 0}, { autoAlpha: 1, ease: 'power2', duration: 0.6 }, 0)
@@ -102,10 +102,10 @@ function animateSection(section) {
     darkMode(section);
 
     const timelineAboutMe = gsap.timeline();
-    timelineAboutMe.fromTo(".menuImagesAboutMe__img02", { scale: 0.8, transform: 'translate(50%, -200%) rotate(35deg)' }, { scale: 1, transform: 'translate(30%, -50%) rotate(0deg)', ease: 'power2', duration: 0.6 }, 0)
-    .fromTo(".menuImagesAboutMe__img01", { transform: 'translateY(180%) rotate(-40deg)'}, { transform: 'translateY(-0%) rotate(0deg)', ease: 'power2', duration: 0.6 }, "<")
-    .fromTo(".menuImagesAboutMe__img03", { autoAlpha: 0.5, scale: 0.6, transform: 'translate(40%, -60%) rotate(0deg)' }, { autoAlpha: 1, scale: 1, transform: ' translate(10%, -60%) rotate(0deg)', ease: 'power2', duration: 0.6 }, "<")
-    .fromTo(".menuImagesAboutMe__assetAgs", { scale: 0.5, transform: 'translate(-50%, 155%) rotate(80deg)' }, { scale: 1, transform: 'translate(-50%, 155%) rotate(-17.125deg)', ease: 'power2', duration: 1 }, "<")
+    timelineAboutMe.fromTo(".menuImagesAboutMe__img02", { scale: 0.8, transform: 'translate(50%, -160%) rotate(35deg)' }, { scale: 1, transform: 'translate(30%, -50%) rotate(0deg)', ease: 'power2', duration: 0.6 }, 0)
+    .fromTo(".menuImagesAboutMe__img01", { transform: 'translateY(180%) rotate(-30deg)'}, { transform: 'translateY(-0%) rotate(0deg)', ease: 'power2', duration: 0.6 }, "<")
+    .fromTo(".menuImagesAboutMe__img03", { autoAlpha: 0.3, scale: 0.6, transform: 'translate(40%, -60%) rotate(0deg)' }, { autoAlpha: 1, scale: 1, transform: ' translate(10%, -60%) rotate(0deg)', ease: 'power2', duration: 0.6 }, "<")
+    .fromTo(".menuImagesAboutMe__assetAgs", { scale: 0.5, transform: 'translate(-50%, 155%) rotate(190deg)' }, { scale: 1, transform: 'translate(-50%, 155%) rotate(-17.125deg)', ease: 'power2', duration: 1.2 }, "<")
   }
 
 
@@ -162,3 +162,4 @@ function darkMode(section) {
 document.addEventListener('DOMContentLoaded', function() {
   animateSection(galleryContent);
 });
+
