@@ -55,7 +55,7 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-  }
+}
 
 /* --------------------------------------------------- ESTILOS GENERALES --------------------------------------------------- */
 
@@ -299,17 +299,17 @@ a {
     z-index: 999;
     transform: translate(0, 0);
     /* esto crea un nuevo contexto de apilamiento */
-    
+
 
     font-family: var(--font-secondary);
     font-size: 14.93vw;
     text-transform: lowercase;
     color: var(--color-white);
     white-space: nowrap;
-   
+
 }
 
-.footer__textContent{
+.footer__textContent {
     position: relative;
     top: 0;
     left: 0;
@@ -378,7 +378,8 @@ a {
     color: var(--color-dark-gray);
 }
 
-.footer__item__row1:hover, .footer__item__row2:hover {
+.footer__item__row1:hover,
+.footer__item__row2:hover {
     color: var(--color-white);
 }
 
@@ -543,13 +544,16 @@ los mismos márgenes */
 
 .menuContent {
     padding: 0 6.25vw 0 6.25vw;
+    width: 100vw;
+    height: 100vh;
 }
 
 /* --------------------- MENU/HOVER ZONE --------------------- */
 
 .menuHoverZone {
     margin-top: 16vh;
-    height: 56vh;
+    height: 64vh;
+    width: 100%;
     padding-top: 5.43vh;
 
     position: absolute;
@@ -557,7 +561,6 @@ los mismos márgenes */
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .menuHoverZone__container {
@@ -590,6 +593,7 @@ los mismos márgenes */
     font-weight: 700;
     color: var(--color-white);
 }
+
 
 .menuSelected .menuHoverZone__tittle {
     order: 1;
@@ -630,15 +634,28 @@ los mismos márgenes */
     font-size: 1.25vw;
 }
 
+.menuContact__item a:hover {
+    color: var(--color-white);
+}
+
 
 
 /* --------------------- MENU/HOVER IN GALLERY --------------------- */
 
-.menuImagesGallery {
+.menuVisible {
+    display: block;
+}
+
+.menuInvisible {
+    display: none;
+}
+
+.menuImages {
     position: absolute;
     height: 100vh;
     width: 60vw;
     left: 40vw;
+    z-index: 998;
 }
 
 
@@ -672,8 +689,8 @@ los mismos márgenes */
     left: 16vw;
     top: 50%;
     transform: translateY(-50%);
-    width: 32.8vw;
-    height: auto;
+    width: auto;
+    height: 100vh;
     z-index: 998;
 }
 
@@ -686,6 +703,141 @@ los mismos márgenes */
     width: 19.86vw;
     height: auto;
     z-index: 998;
+}
+
+.menuImagesProjects__gradient {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(10%, -75%);
+    z-index: 996;
+
+    width: 20.83vw;
+    height: 20.83vw;
+    border-radius: 300px;
+    background: #E16C01;
+    filter: blur(90px);
+}
+
+.menuImagesProjects__img01 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(30%, -50%);
+    width: 18.6vw;
+    height: auto;
+    z-index: 997;
+}
+
+
+.menuImagesProjects__img02 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(105%, -70%);
+    width: 18.6vw;
+    height: auto;
+    z-index: 996;
+}
+
+.menuImagesProjects__img03Container {
+    left: 0;
+    top: 50%;
+    transform: translate(170%, -30%);
+    width: 18.6vw;
+    height: auto;
+    z-index: 997;
+
+    position: relative;
+}
+
+.menuImagesProjects__img03 {
+    width: 18.6vw;
+    height: auto;
+    z-index: 997;
+}
+
+.menuImagesProjects__asterisk {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-75%, -35%) rotate(42.29deg);
+    transform-origin: center center;
+
+    color: #E16C01;
+    font-size: 12.5vw;
+    font-weight: 400;
+    z-index: 998;
+}
+
+.menuImagesGallery__nameProject {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-285%, -295%);
+    
+    color: var(--color-black);
+    font-size: 0.9vw;
+    font-weight: 400;
+    z-index: 998;
+}
+
+
+.menuImagesProjects__img04 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(10%, -60%);
+    width: 18.6vw;
+    height: auto;
+    z-index: 996;
+}
+
+
+.menuImagesAboutMe__img02{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(30%, -50%);
+    width: 17.6vw;
+    height: auto;
+    z-index: 997;
+}
+
+.menuImagesAboutMe__img01Container {
+    left: 0;
+    top: 50%;
+    transform: translate(100%, -15%);
+    width: 18.6vw;
+    height: auto;
+    z-index: 997;
+
+    position: relative;
+}
+
+.menuImagesAboutMe__img01 {
+    width: 19.5vw;
+    height: auto;
+    z-index: 997;
+}
+
+.menuImagesAboutMe__assetAgs{
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, 155%) rotate(-17.125deg);
+    z-index: 998;
+    width: 5.25vw;
+}
+
+.menuImagesAboutMe__img03{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(10%, -60%);
+    width: auto;
+    height: 100vh;
+    z-index: 996;
 }
 
 

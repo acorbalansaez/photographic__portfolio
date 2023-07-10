@@ -45,7 +45,7 @@ footerHover.addEventListener('mouseover', () => {
 })
 
 
-// cuando el mouse esta arriba de una imagen cambiar el cursor
+// cuando el mouse esta arriba de una imagen (de gallery) cambiar el cursor
 // blur en otras fotos y agrandar foto seleccionada
 imagesGallery.forEach(imgOnHover => {
 

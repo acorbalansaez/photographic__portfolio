@@ -34,47 +34,46 @@
 
         <div class="menuHoverZone">
 
-            <a><div class="menuHoverZone__container menuGallery menuSelected" id="gallery"
-                onmouseenter="toggleSelected(this)">
+            <a class="menuHoverZone__container menuGallery menuSelected" id="gallery">
                 <div class="menuHoverZone__smallContainer">
                     <p class="menuHoverZone__number">01</p>
                     <p class="menuHoverZone__tittle">gallery</p>
                 </div>
-            </div></a>
+            </a>
 
-            <a><div class="menuHoverZone__container menuProjects menuNoSelected" id="projects"
-                onmouseenter="toggleSelected(this)">
+            <a class="menuHoverZone__container menuProjects menuNoSelected" id="projects">
                 <div class="menuHoverZone__smallContainer">
                     <p class="menuHoverZone__number">02</p>
                     <p class="menuHoverZone__tittle">projects</p>
                 </div>
-            </div></a>
+            </a>
 
-            <a><div class="menuHoverZone__container menuAboutMe menuNoSelected" id="aboutMe"
-                onmouseenter="toggleSelected(this)">
+            <a class="menuHoverZone__container menuAboutMe menuNoSelected" id="aboutMe">
                 <div class="menuHoverZone__smallContainer">
                     <p class="menuHoverZone__number">03</p>
                     <p class="menuHoverZone__tittle">about me</p>
                 </div>
-            </div></a>
+            </a>
 
         </div>
 
 
         <div class="menuContact">
             <ul class="menuContact__list">
-                <li class="menuContact__item"><a href="mailto:agustina.lara.cs@gmail.com">agustina.lara.cs@gmail.com</a></li>
+                <li class="menuContact__item"><a href="mailto:agustina.lara.cs@gmail.com">agustina.lara.cs@gmail.com</a>
+                </li>
                 <li class="menuContact__item"><a href="https://www.instagram.com/a.g.u.s.ti.na/"
                         target="_blank">instagram</a></li>
             </ul>
         </div>
 
 
-        <section class="menuImagesGallery menuVisible">
+        <section class="menuImages menuImagesGallery menuVisible">
 
             <div class="menuImagesGallery__img02Container">
                 <img class="menuImagesGallery__img02" src="../imgs/gallery02.jpg" alt="">
-                <img class="menuImagesGallery__assetPhotographer" src="../graphicelements/asset-photographer.svg" alt="">
+                <img class="menuImagesGallery__assetPhotographer" src="../graphicelements/asset-photographer.svg"
+                    alt="">
             </div>
 
             <img class="menuImagesGallery__img01" src="../imgs/gallery01.jpg" alt="">
@@ -82,10 +81,47 @@
 
         </section>
 
+        <section class="menuImages menuImagesProjects menuInvisible">
+
+            <div class="menuImagesProjects__gradient"></div>
+            <img class="menuImagesProjects__img01" src="../imgs/projects01.jpg" alt="">
+            <img class="menuImagesProjects__img02" src="../imgs/projects02.jpg" alt="">
+
+            <div class="menuImagesProjects__img03Container">
+                <img class="menuImagesProjects__img03" src="../imgs/projects03.jpg" alt="">
+                <p class="menuImagesProjects__asterisk">*</p>
+                <p class="menuImagesGallery__nameProject">/camila</p>
+            </div>
+
+            <img class="menuImagesProjects__img04" src="../imgs/projects04.jpg" alt="">
+
+            
+
+
+        </section>
+
+
+        <section class="menuImages menuImagesAboutMe menuInvisible">
+
+            <img class="menuImagesAboutMe__img02" src="../imgs/aboutme02.jpg" alt="">
+
+            <div class="menuImagesAboutMe__img01Container">
+                <img class="menuImagesAboutMe__img01" src="../imgs/aboutme01.jpg" alt="">
+                <img class="menuImagesAboutMe__assetAgs" src="../graphicelements/asset-ags.svg"
+                    alt="">
+            </div>
+
+            <img class="menuImagesAboutMe__img03" src="../imgs/aboutme03.jpg" alt="">
+
+        </section>
+
 
     </main>
 
 
+    <!-- GSAP y ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
     <script src="../cursor.js"></script>
     <script src="../menu.js"></script>
 
