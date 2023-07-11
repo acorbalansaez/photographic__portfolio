@@ -874,17 +874,18 @@ los mismos márgenes */
 los mismos márgenes */
 
 .aboutMeMainContent {
-    padding: 0 6.25vw 0 6.25vw;
+    /* padding: 0 6.25vw 0 6.25vw; */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    /* width: auto; */
-    width: 240vw;
+    width: auto;   
     height: 100vh;
     overflow: visible;
-    /* justify-content: space-between; */
+    /* gap: 6.25vw;  */
+    min-width: 120vw;
 }
 
+/* --------------------------------------------------- SECCIÓN 1 --------------------------------------------------- */
 .aboutMeSection1 {
     position: relative;
     top: 0;
@@ -894,6 +895,7 @@ los mismos márgenes */
     flex-shrink: 0;
     margin-right: 16vw;
 }
+/* --------------------------------------------------- SECCIÓN 1 --------------------------------------------------- */
 
 
 .aboutMeMainContent__title {
@@ -947,7 +949,7 @@ los mismos márgenes */
     z-index: 999;
 }
 
-
+/* --------------------------------------------------- SECCIÓN 2 --------------------------------------------------- */
 .aboutMeSection2 {
     display: flex;
     flex-direction: column;
@@ -958,7 +960,7 @@ los mismos márgenes */
     align-self: center;
     margin-right: 16vw;
 }
-
+/* --------------------------------------------------- SECCIÓN 2 --------------------------------------------------- */
 
 .aboutMeMainContent__h2 {
     color: var(--color-dark);
@@ -990,6 +992,7 @@ los mismos márgenes */
     border: 1.2px solid var(--color-dark);
 }
 
+/* --------------------------------------------------- SECCIÓN 3 --------------------------------------------------- */
 .aboutMeSection3{
     display: flex;
     flex-direction: row;
@@ -997,6 +1000,7 @@ los mismos márgenes */
     flex-shrink: 0;
     width: auto;
 }
+/* --------------------------------------------------- SECCIÓN 3 --------------------------------------------------- */
 
 .aboutMeSection3__img01Container{
     position: relative;
@@ -1039,6 +1043,7 @@ los mismos márgenes */
 }
 
 
+/* --------------------------------------------------- SECCIÓN 4 --------------------------------------------------- */
 /* Le saqué la posición absoluta para poder hacerlo parte del contenedor flex */
 .footerAboutMe{
     padding: 0 6.25vw;
@@ -1046,7 +1051,9 @@ los mismos márgenes */
     width: 100vw;
     height: 100vh;
     z-index: 998;
+    flex-shrink: 0;
 
     display: grid;
     grid-template-rows: 3fr 1fr;
 }
+/* --------------------------------------------------- SECCIÓN 4 --------------------------------------------------- */

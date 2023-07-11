@@ -14,15 +14,26 @@ timeline.fromTo(assetPhotographer, { rotation: -60 }, { rotation: 30, ease: 'pow
     .call(enableScrollTrigger)
 
 
+// function getEndValue() {
+//     const containerWidth = bigContainer.offsetWidth;
+//     const windowWidth = window.innerWidth;
+//     const difference = containerWidth - windowWidth;
+//     const percentage = (difference / containerWidth) * 100;
+//     return `-${percentage}%`;
+// }
+
+
 function createScrollTrigger() {
 
     timelineScroll = gsap.timeline({
         scrollTrigger: {
             pin: "body",
             scrub: 2,
-            trigger: aboutMeSection1,
+            trigger: bigContainer,
             //end: 2500, // nro estimativo
-            //end: bigContainer.scrollWidth - document.documentElement.clientWidth + bigContainer.offsetWidth,
+            //end: aboutMeSection1.scrollWidth - document.documentElement.clientWidth + aboutMeSection1.offsetWidth,
+            //end: getEndValue,
+            markers: true,
         }
     })
 
@@ -32,19 +43,21 @@ function createScrollTrigger() {
 
 function enableScrollTrigger() {
 
-    let aboutMeMainContent__img02 = document.querySelector('.aboutMeMainContent__img02');
-    const viewportHeight = window.innerHeight;
-    let imgAboutMe02Width = viewportHeight * (aboutMeMainContent__img02.naturalWidth / aboutMeMainContent__img02.naturalHeight);
+    //let aboutMeMainContent__img02 = document.querySelector('.aboutMeMainContent__img02');
+    //const viewportHeight = window.innerHeight;
+    //let imgAboutMe02Width = viewportHeight * (aboutMeMainContent__img02.naturalWidth / aboutMeMainContent__img02.naturalHeight);
 
     if (!timelineScroll) {
         timelineScroll = createScrollTrigger();
     }
 
-    console.log(bigContainer.offsetWidth);
+    //const containerWidth = bigContainer.offsetWidth - window.innerWidth;
+    //timelineScroll.to(bigContainer, { x: -containerWidth, duration: 1.8 });
 
-    // se desplaza el ancho del contenedor, se supone que se debería ver hasta el final pero el footer no se ve bien
-    timelineScroll.to(bigContainer, { x: `-=${bigContainer.offsetWidth}`, duration: 1.8 }, 0)
-        .fromTo(assetPhotographer, { rotation: 30, right: '34vw' }, { rotation: -80, right: '50vw', ease: 'power2', duration: 1.5 }, 0)
+    console.log(bigContainer.offsetWidth - window.innerWidth);
+    timelineScroll.to(bigContainer, { x: () => -(bigContainer.offsetWidth - window.innerWidth), duration: 1.8 })
+    // timelineScroll.to(bigContainer, { xPercent: "-100", duration: 1.8 }, 0)
+    .fromTo(assetPhotographer, { rotation: 30, right: '34vw' }, { rotation: -80, right: '50vw', ease: 'power2', duration: 1.5 }, 0)
 
 
     let tlScroll2 = gsap.timeline({
@@ -78,24 +91,3 @@ function enableScrollTrigger() {
 // }
 
 // window.addEventListener('scroll', printScrollPosition);
-
-
-function getTotalWidthWithMargins(element) {
-    const children = element.children;
-    let totalWidth = element.offsetWidth;
-  
-    for (let i = 0; i < children.length; i++) {
-      const child = children[i];
-      const styles = window.getComputedStyle(child);
-      const marginLeft = parseFloat(styles.marginLeft);
-      const marginRight = parseFloat(styles.marginRight);
-  
-      totalWidth += child.offsetWidth + marginLeft + marginRight;
-    }
-  
-    return totalWidth;
-  }
-  
-  const totalWidth = getTotalWidthWithMargins(bigContainer);
-  console.log(totalWidth)
-  
