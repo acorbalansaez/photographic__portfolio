@@ -81,6 +81,7 @@ function animateSection(section) {
       .fromTo(".menuImagesGallery__img01", { top: "55%", autoAlpha: 0.5, scale: 0.8 }, { top: "50%", autoAlpha: 1, scale: 1, ease: 'power2', duration: 0.6 }, "<")
       .fromTo(".menuImagesGallery__assetPhotographer", { transform: 'translate(-50%, -70%) rotate(60deg)' }, { transform: 'translate(-50%, -70%) rotate(-20.37deg)', ease: 'power2', duration: 1 }, "<")
       .fromTo(".menuImagesGallery__img03", { transform: 'translateY(100%) rotate(-10deg)' }, { transform: 'translateY(20%) rotate(0deg)', ease: 'power2', duration: 0.9 }, "<")
+      .fromTo(".menuImagesGallery__stuff", { autoAlpha: 0}, { autoAlpha: 1, ease: 'power2', duration: 0.6 }, "<")
   }
 
 

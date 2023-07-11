@@ -90,7 +90,8 @@ function enableScrollTrigger() {
 
 
     timelineScroll.to(".imgGallery02", { top: '0vh', height: '100vh', width: imgGallery02Width, ease: 'power2', duration: 0.3 }, 0) // se utiliza la altura de la ventana (viewportHeight) multiplicada por la relación de aspecto de la imagen (imgGallery02.naturalWidth / imgGallery02.naturalHeight) para calcular el ancho deseado
-        .fromTo(ellipse, { autoAlpha: 1, scale: 1 }, { autoAlpha: 0, scale: 0, ease: 'power2', duration: 0.01, onStart: () => { ellipse.style.display = 'flex'; } }, 0)
+        //.fromTo(ellipse, { autoAlpha: 1, scale: 1 }, { autoAlpha: 0, scale: 0, ease: 'power2', duration: 0.01, onStart: () => { ellipse.style.display = 'flex'; } }, 0)
+        .fromTo(ellipse, { autoAlpha: 1, scale: 1 }, { autoAlpha: 0, scale: 0, ease: 'power2', duration: 0.01 }, 0)
         .fromTo(buttonInitialPoint, { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, ease: 'power2', duration: 0.01, onStart: () => { buttonInitialPoint.style.display = 'flex'; } }, 0)
         .to(".imgGallery03", { top: '-100%', ease: 'power2', duration: 0.8 }, 0)
         .to(".imgGallery02", { left: '45.74vw', ease: 'power2', duration: 0.6 }, 0.1)
