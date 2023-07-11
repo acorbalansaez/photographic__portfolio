@@ -238,6 +238,15 @@ a {
 
 /* --------------------------------------------------- BUTTON INITIAL POINT --------------------------------------------------- */
 
+.button__initialPoint--inactive{
+    display: none;
+    /* se cambia a flex desde js */
+}
+
+.button__initialPoint--active {
+    display: flex;
+}
+
 .button__initialPoint {
     position: absolute;
     z-index: 999;
@@ -245,10 +254,6 @@ a {
     right: 6.25vw;
     /*márgen que estoy usando*/
     padding: 3.14vh 1.8vw;
-    display: none;
-    /* se cambia a flex desde js */
-
-    /* display: flex; */
     background-color: var(--color-black);
     border-radius: 4.8rem;
     transition: all 0.2s ease-in-out;
@@ -274,10 +279,13 @@ a {
 
 /* --------------------------------------------------- FOOTER --------------------------------------------------- */
 
-.footer {
+.footerGallery {
     position: absolute;
     top: 0;
     left: 100vw;
+}
+
+.footer {
     padding: 0 6.25vw;
     background-color: var(--color-dark);
     width: 100vw;
@@ -1046,14 +1054,6 @@ los mismos márgenes */
 /* --------------------------------------------------- SECCIÓN 4 --------------------------------------------------- */
 /* Le saqué la posición absoluta para poder hacerlo parte del contenedor flex */
 .footerAboutMe{
-    padding: 0 6.25vw;
-    background-color: var(--color-dark);
-    width: 100vw;
-    height: 100vh;
-    z-index: 998;
     flex-shrink: 0;
-
-    display: grid;
-    grid-template-rows: 3fr 1fr;
 }
 /* --------------------------------------------------- SECCIÓN 4 --------------------------------------------------- */
