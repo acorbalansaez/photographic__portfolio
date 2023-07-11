@@ -38,7 +38,6 @@
 
 html {
     font-size: 16px;
-    font-family: var(--font-principal);
     font-weight: 500;
 }
 
@@ -47,6 +46,7 @@ body {
     height: 100vh;
     overflow: hidden;
     cursor: none;
+    font-family: var(--font-principal);
 }
 
 ::-webkit-scrollbar {
@@ -698,7 +698,7 @@ los mismos márgenes */
 
 .menuImagesGallery__stuff {
     position: absolute;
-    right: 12vw;
+    right: 11vw;
     top: 36vh;
     z-index: 998;
 
@@ -875,7 +875,12 @@ los mismos márgenes */
     padding: 0 6.25vw 0 6.25vw;
 }
 
-.aboutMeMainContent__tittle {
+.aboutMeContainer{
+    /* height: 100vh;
+    display: flex; */
+}
+
+.aboutMeMainContent__title {
     position: relative;
     top: 20.57vh;
     left: 2.89vw;
