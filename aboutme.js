@@ -1,23 +1,72 @@
 gsap.registerPlugin(ScrollTrigger);
 
+const bigContainer = document.querySelector(".aboutMeMainContent");
 const aboutMeContainer = document.querySelector(".aboutMeContainer");
+const assetPhotographer = document.querySelector(".aboutMeMainContent__assetPhotographer");
+
+const timeline = gsap.timeline();
+let timelineScroll;
+
+timeline.fromTo(assetPhotographer, { rotation: -60 }, { rotation: 30, ease: 'power2', duration: 1.5 }, 0)
+.fromTo(".aboutMeMainContent__img01", { top: '200vh' }, { top: '-16vh', ease: 'power2', duration: 1.5 }, "<")
+.fromTo(".aboutMeMainContent__img02", { top: '-100vh' }, { top: '10vh', ease: 'power2', duration: 1.5 }, "<")
+.call(enableScrollTrigger)
 
 
-const timelineScroll = gsap.timeline({
+function createScrollTrigger(){
 
-    scrollTrigger: {
-        // pin: "body",
-        scrub: 2,
-        // markers: true,
-        trigger: aboutMeContainer,
-        end: 2500, // nro estimativo a re-ver
-        //end: galleryContentContainer.scrollWidth - document.documentElement.clientWidth + galleryContentContainer.offsetWidth,
-        // yoyo: false,
-        // toggleActions: "none none none none",
+    timelineScroll = gsap.timeline({
+        scrollTrigger: {
+            pin: "body",
+            scrub: 2,
+            trigger: aboutMeContainer,
+            //end: 2500, // nro estimativo
+            end: aboutMeContainer.scrollWidth - document.documentElement.clientWidth + aboutMeContainer.offsetWidth,
+        }
+    })
+
+    return timelineScroll;
+}
+
+
+function enableScrollTrigger() {
+
+    if (!timelineScroll) {
+        timelineScroll = createScrollTrigger();
     }
-})
+
+    timelineScroll.to(bigContainer, { x: "-100%", duration: 1.8 }, 0)
+    .fromTo(assetPhotographer, { rotation: 30, right: '34vw' }, { rotation: -80, right: '50vw', ease: 'power2', duration: 1.5 }, 0)
+
+
+    let tlScroll2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".aboutMeMainContent__img02",
+            start: "right left+=900vw",
+            end: "left -80%",
+            scrub: 2,
+        }
+    })
+
+    tlScroll2.fromTo(".holahola", { top: '10vh'}, { top: '0vh', ease: 'power2', immediateRender: false}, 0)
+    // .to(".aboutMeMainContent__img01", { top: '10vh', ease: 'power2'}, "<")
+    // .fromTo(".aboutMeMainContent__text02", {autoAlpha: 0}, {autoAlpha: 1, ease: 'power2', duration: 1}, "<")
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 function printScrollPosition() {
     console.log("Posición del scroll:", window.scrollY);
 }
+
+window.addEventListener('scroll', printScrollPosition);

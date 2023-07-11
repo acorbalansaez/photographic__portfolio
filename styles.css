@@ -709,7 +709,7 @@ los mismos márgenes */
     color: var(--color-white);
 }
 
-.menuImagesGallery__stuff::after{
+.menuImagesGallery__stuff::after {
     content: "";
     display: block;
     position: absolute;
@@ -875,15 +875,29 @@ los mismos márgenes */
     padding: 0 6.25vw 0 6.25vw;
 }
 
-.aboutMeContainer{
-    /* height: 100vh;
-    display: flex; */
+.aboutMeMainContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 150vw;
+    overflow: visible;
+    justify-content: space-between;
 }
 
-.aboutMeMainContent__title {
+.aboutMeContainer {
     position: relative;
-    top: 20.57vh;
-    left: 2.89vw;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    flex-shrink: 0;
+}
+
+
+.aboutMeMainContent__title {
+    position: absolute;
+    top: 20vh;
+    left: 4vw;
     font-size: 7.92vw;
     font-style: normal;
     font-weight: 400;
@@ -893,13 +907,12 @@ los mismos márgenes */
 }
 
 .aboutMeMainContent__text01 {
-    position: relative;
+    position: absolute;
     z-index: 999;
-    /* top: -80vh;*/
-    left: 2.89vw;
-    bottom: -36vh;
+    left: 4vw;
+    top: 60vh;
 
-    width: 22.85vw;
+    width: 23vw;
     font-size: 1.11vw;
     color: var(--color-dark);
 }
@@ -907,19 +920,18 @@ los mismos márgenes */
 
 .aboutMeMainContent__img01 {
     position: absolute;
-    /* top: -15vh; */
-    left: 23vw;
-    width: 37.57vw;
+    left: 19vw;
+    top: -16vh;
+    width: 38vw;
     height: auto;
     z-index: 998;
-    top: 34%;
-    transform: translateY(-40%);
+
 }
 
 .aboutMeMainContent__img02 {
     position: absolute;
-    bottom: -18vh;
-    right: 0;
+    top: 10vh;
+    right: 5vw;
     width: 34.72vw;
     height: auto;
     z-index: 997;
@@ -927,9 +939,44 @@ los mismos márgenes */
 
 .aboutMeMainContent__assetPhotographer {
     position: absolute;
-    bottom: 14vh;
-    left: 54vw;
-    transform: rotate(-20.37deg);
+    bottom: 10vh;
+    right: 34vw;
     width: 16vw;
     z-index: 999;
+}
+
+
+.aboutMeMainContent__text02 {
+    display: flex;
+    flex-direction: column;
+    width: 25.56vw;
+    height: 52.86vh;
+    justify-content: space-around;
+    flex-shrink: 0;
+    align-self: center;
+
+}
+
+.aboutMeMainContent__h2 {
+    color: var(--color-dark);
+    font-size: 2.78vw;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.aboutMeMainContent__p {
+    color: var(--color-dark);
+    font-size: 1.11vw;
+    font-weight: 400;
+    line-height: 152.5%;
+    margin-bottom: 1rem;
+}
+
+
+.aboutMeMainContent__chip01, .aboutMeMainContent__chip02, .aboutMeMainContent__chip03 {
+    padding: 8px 22px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 44px;
+    border: 1.2px solid var(--w-b-black, #0A0A0A);
 }
