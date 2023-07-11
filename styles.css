@@ -288,6 +288,7 @@ a {
     grid-template-rows: 3fr 1fr;
 }
 
+
 .footer__lgit {
     display: flex;
     align-items: center;
@@ -871,26 +872,27 @@ los mismos márgenes */
 
 /* Padding agregado al contenedor de todo el contenido para que se mantengan siempre
 los mismos márgenes */
-.aboutMeMainContent {
-    padding: 0 6.25vw 0 6.25vw;
-}
 
 .aboutMeMainContent {
+    padding: 0 6.25vw 0 6.25vw;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: 150vw;
+    /* width: auto; */
+    width: 240vw;
+    height: 100vh;
     overflow: visible;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
-.aboutMeContainer {
+.aboutMeSection1 {
     position: relative;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
     flex-shrink: 0;
+    margin-right: 16vw;
 }
 
 
@@ -910,7 +912,7 @@ los mismos márgenes */
     position: absolute;
     z-index: 999;
     left: 4vw;
-    top: 60vh;
+    top: 58vh;
 
     width: 23vw;
     font-size: 1.11vw;
@@ -946,7 +948,7 @@ los mismos márgenes */
 }
 
 
-.aboutMeMainContent__text02 {
+.aboutMeSection2 {
     display: flex;
     flex-direction: column;
     width: 25.56vw;
@@ -954,14 +956,16 @@ los mismos márgenes */
     justify-content: space-around;
     flex-shrink: 0;
     align-self: center;
-
+    margin-right: 16vw;
 }
+
 
 .aboutMeMainContent__h2 {
     color: var(--color-dark);
     font-size: 2.78vw;
     font-weight: 700;
     line-height: normal;
+    margin-bottom: 5.4vh;
 }
 
 .aboutMeMainContent__p {
@@ -972,11 +976,77 @@ los mismos márgenes */
     margin-bottom: 1rem;
 }
 
+.aboutMeMainContent__chips{
+    display: flex;
+    gap: 0.7vw;
+    margin-top: 5.4vh;
+}
 
 .aboutMeMainContent__chip01, .aboutMeMainContent__chip02, .aboutMeMainContent__chip03 {
-    padding: 8px 22px;
+    padding: 0.5vw 1.5vw;
     justify-content: center;
     align-items: center;
-    border-radius: 44px;
-    border: 1.2px solid var(--w-b-black, #0A0A0A);
+    border-radius: 3vw;
+    border: 1.2px solid var(--color-dark);
+}
+
+.aboutMeSection3{
+    display: flex;
+    flex-direction: row;
+    /* position: relative; */
+    flex-shrink: 0;
+    width: auto;
+}
+
+.aboutMeSection3__img01Container{
+    position: relative;
+    width: auto;
+    height: 150vh;
+    flex-shrink: 0;
+}
+
+.aboutMeSection3__img01{
+    /* position: absolute; */
+    top: -12vh;
+    left: 0;
+    width: auto;
+    height: 150vh;
+}
+
+.aboutMeSection3__assetWow{
+    position: absolute;
+    top: 34vh;
+    left: -6vw;
+    width: 9.58vw;
+    transform: rotate(-20.365deg);
+}
+
+.aboutMeSection3__assetAgs{
+    position: absolute;
+    top: 48vh;
+    left: -3vw;
+    width: 7vw;
+    transform: rotate(8.295deg);
+}
+
+.aboutMeSection3__img02{
+    /* position: absolute; */
+    top: 0;
+    left: 20vw;
+    width: auto;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+
+/* Le saqué la posición absoluta para poder hacerlo parte del contenedor flex */
+.footerAboutMe{
+    padding: 0 6.25vw;
+    background-color: var(--color-dark);
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
+
+    display: grid;
+    grid-template-rows: 3fr 1fr;
 }
