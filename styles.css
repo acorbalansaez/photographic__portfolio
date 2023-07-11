@@ -878,11 +878,11 @@ los mismos márgenes */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: auto;   
+    width: fit-content;   
     height: 100vh;
     overflow: visible;
-    /* gap: 6.25vw;  */
-    min-width: 120vw;
+    /* min-width: 120vw; */
+    align-items: flex-start;
 }
 
 /* --------------------------------------------------- SECCIÓN 1 --------------------------------------------------- */
