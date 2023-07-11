@@ -42,15 +42,15 @@ function enableScrollTrigger() {
     let tlScroll2 = gsap.timeline({
         scrollTrigger: {
             trigger: ".aboutMeMainContent__img02",
-            start: "right left+=900vw",
-            end: "left -80%",
+            start: "right left+=600vw",
+            end: "left left",
             scrub: 2,
         }
     })
 
-    tlScroll2.fromTo(".holahola", { top: '10vh'}, { top: '0vh', ease: 'power2', immediateRender: false}, 0)
-    // .to(".aboutMeMainContent__img01", { top: '10vh', ease: 'power2'}, "<")
-    // .fromTo(".aboutMeMainContent__text02", {autoAlpha: 0}, {autoAlpha: 1, ease: 'power2', duration: 1}, "<")
+    tlScroll2.to(".aboutMeMainContent__img02", { top: '0vh', ease: 'power2', duration: 1.5 }, 0)
+    .to(".aboutMeMainContent__img01", { top: '10vh', ease: 'power2', duration: 1.5}, "<")
+    .fromTo(".aboutMeMainContent__text02", {autoAlpha: 0}, {autoAlpha: 1, ease: 'power2', duration: 1.5})
 
 
 }
@@ -65,8 +65,8 @@ function enableScrollTrigger() {
 
 
 
-function printScrollPosition() {
-    console.log("Posición del scroll:", window.scrollY);
-}
+// function printScrollPosition() {
+//     console.log("Posición del scroll:", window.scrollY);
+// }
 
-window.addEventListener('scroll', printScrollPosition);
+// window.addEventListener('scroll', printScrollPosition);
