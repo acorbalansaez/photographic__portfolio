@@ -61,7 +61,8 @@ a {
 /* --------------------------------------------------- ESTILOS GENERALES --------------------------------------------------- */
 
 .cursor {
-    position: fixed; /* en fixed se posiciona segun el viewport, en absolute se posiciona segun el eleento padre más cercano con posición relativa*/
+    position: fixed;
+    /* en fixed se posiciona segun el viewport, en absolute se posiciona segun el eleento padre más cercano con posición relativa*/
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 1000;
@@ -1081,6 +1082,25 @@ los mismos márgenes */
         overflow-x: hidden;
     }
 
+    .navbar{
+        position: fixed;
+    }
+
+    .navbar__list {
+        justify-content: center;
+    }
+
+    .navbar__item a {
+        font-size: 7.5vw;
+    }
+    
+
+    .underlineLink--black::after, .underlineLink--white::after {
+        height: 0.5vw;
+    }
+
+
+
     /* -------------------------------- CONTENIDO GALLERY -------------------------------- */
 
     .header {
@@ -1159,7 +1179,7 @@ los mismos márgenes */
 
     }
 
-    .button__initialPoint{
+    .button__initialPoint {
         position: fixed;
         bottom: 5.43vh;
         right: 2vw;
@@ -1167,10 +1187,10 @@ los mismos márgenes */
         transform: rotate(90deg);
     }
 
-    .button__initialPoint__arrow{
+    .button__initialPoint__arrow {
         width: 11.8vw;
     }
-    
+
 
 
     /* -------------------------------- FOOTER -------------------------------- */

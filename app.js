@@ -8,6 +8,7 @@ const agsTittle = new SplitType('.header__title');
 const chars = document.querySelectorAll('.header__title .char');
 
 const navbar = document.querySelector('.navbar');
+const navbarAgs = document.getElementById('ags');
 const ellipse = document.querySelector('.galleryContent__ellipse');
 const ellipseArrow = document.querySelector('.galleryContent__ellipse__arrow');
 const galleryContainer = document.querySelector('.galleryContent');
@@ -16,9 +17,9 @@ const buttonInitialPoint = document.querySelector('.button__initialPoint');
 const galleryContentContainer = document.querySelector('.galleryContent__container');
 const contenedor = document.querySelector('.galleryContent');
 
-// const footer = document.querySelector(".footer");
 
 let timelineScroll;
+let timelineScrollMobile;
 
 const screenWidth = document.documentElement.clientWidth;
 console.log(screenWidth);
@@ -28,12 +29,12 @@ function animationController() {
 
     if (screenWidth >= 768) {
         animateDesktop();
-        // console.log(window.innerWidth);
     } else {
         animateMobile();
         buttonInitialPoint.classList.remove("button__initialPoint--inactive");
         buttonInitialPoint.classList.add("button__initialPoint--active");
-        // console.log(window.innerWidth);
+        navbarAgs.remove();
+        console.log(navbarAgs);
     }
 
 }
@@ -45,9 +46,12 @@ function animateMobile() {
 
 function playMobileAnimation(timeline) {
     timeline.fromTo(chars, { y: '100vh' }, { y: 0, stagger: 0.1, duration: 0.5 }, 0)
-    //.fromTo(".imgGallery01", { top: "100vh", autoAlpha: 0 }, { top: "36vh", autoAlpha: 1, ease: 'power2', duration: 0.4 }, 0.9)
-    //.fromTo(".imgGallery02", { top: "100vh", autoAlpha: 0 }, { top: "24.29vh", autoAlpha: 1, ease: 'power2', duration: 1.2 }, 0.6)
-    //.fromTo(".imgGallery03", { top: "-100vh", autoAlpha: 0 }, { top: "14.29vh", autoAlpha: 1, ease: 'power2', duration: 1.2 }, 1)
+    .fromTo(".imgGallery01", { autoAlpha: 0, top: '26vh' }, { autoAlpha: 1, top: '16vh', ease: 'power2', duration: 1 }, 0.3)
+    .fromTo(".imgGallery02", { autoAlpha: 0, top: '30vh' }, { autoAlpha: 1, top: '20vh', ease: 'power2', duration: 1 }, 0.5)
+    .fromTo(".imgGallery03", { autoAlpha: 0, top: '-84vh' }, { autoAlpha: 1, top: '-74vh', ease: 'power2', duration: 1 }, 0.2)
+    .fromTo(".navbar", {autoAlpha: 0}, {autoAlpha: 1, ease: 'power2', duration: 1}, 0.5)
+    .fromTo(".button__initialPoint", {autoAlpha: 0}, {autoAlpha: 1, ease: 'power2', duration: 0.1}, 0.8)
+
 
     buttonInitialPoint.addEventListener('click', function () {
         window.scrollTo({
@@ -56,6 +60,17 @@ function playMobileAnimation(timeline) {
         });
     });
 
+
+    //A DESARROLLAR
+    timelineScrollMobile = gsap.timeline({
+        scrollTrigger: {
+            scrub: 2,
+            trigger: "imgGallery04",
+            start: "top bottom",
+        }
+    })
+
+    timelineScrollMobile.fromTo(".imgGallery04", {scale: 0.03, top:'-12vh'}, {scale: 1.4, top: '0vh', ease: 'power2', duration: 0.1}, 0)
 
 }
 
@@ -76,8 +91,6 @@ function animateDesktop() {
 
 
 }
-
-
 
 
 function playInitialAnimaton(timeline) {

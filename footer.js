@@ -38,7 +38,7 @@ footerText.addEventListener('mouseleave', function (event) {
 
 
 // cambiar navbar a blanco cuando aparece el footer
-function checkFooterVisibility() {
+function checkFooterVisibility(valor1, valor2) {
 
 
     footerItems.forEach(function (item) {
@@ -46,7 +46,7 @@ function checkFooterVisibility() {
         let footerRect = footer.getBoundingClientRect();
         let itemRect = item.getBoundingClientRect();
 
-        if (itemRect.right >= footerRect.left && itemRect.left <= footerRect.right) {
+        if (itemRect[valor1] >= footerRect[valor2] && itemRect[valor2] <= footerRect[valor1]) {
 
             item.classList.remove('blackVersion');
             item.classList.add('whiteVersion');
@@ -78,6 +78,7 @@ function checkFooterVisibility() {
 //const screenWidth = document.documentElement.clientWidth;
 
 if (screenWidth >= 768) {
-    window.addEventListener('scroll', checkFooterVisibility);
-}
+    window.addEventListener('scroll', () => checkFooterVisibility('right', 'left'));
+} else {
+    window.addEventListener('scroll', () => checkFooterVisibility('bottom', 'top'));}
 
