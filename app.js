@@ -4,8 +4,8 @@ gsap.registerPlugin(ScrollTrigger);
 // creamos una instancia de SplitType, pasando como argumento la clase que corresponde al texto que queremos splitear
 // la clase char es asignada automáticamente por la librería SplitType a cada carácter después de hacer el split del texto
 // creamos una variable que tome estos char
-const agsTittle = new SplitType('.header__tittle');
-const chars = document.querySelectorAll('.header__tittle .char');
+const agsTittle = new SplitType('.header__title');
+const chars = document.querySelectorAll('.header__title .char');
 
 
 const navbar = document.querySelector('.navbar');
@@ -18,12 +18,52 @@ const galleryContentContainer = document.querySelector('.galleryContent__contain
 const contenedor = document.querySelector('.galleryContent');
 
 
-
-
-const timeline = gsap.timeline();
 let timelineScroll;
 
-playInitialAnimaton(timeline);
+
+function animationController() {
+
+    if (window.innerWidth >= 768) {
+        animateDesktop();
+        // console.log(window.innerWidth);
+    } else {
+        animateMobile();
+        // console.log(window.innerWidth);
+    }
+
+}
+
+function animateMobile() {
+    const timeline = gsap.timeline();
+    playMobileAnimation(timeline);
+}
+
+function playMobileAnimation(timeline) {
+    timeline.fromTo(chars, { y: '100vh' }, { y: 0, stagger: 0.1, duration: 0.5 }, 0)
+        //.fromTo(".imgGallery01", { top: "100vh", autoAlpha: 0 }, { top: "36vh", autoAlpha: 1, ease: 'power2', duration: 0.4 }, 0.9)
+        //.fromTo(".imgGallery02", { top: "100vh", autoAlpha: 0 }, { top: "24.29vh", autoAlpha: 1, ease: 'power2', duration: 1.2 }, 0.6)
+        //.fromTo(".imgGallery03", { top: "-100vh", autoAlpha: 0 }, { top: "14.29vh", autoAlpha: 1, ease: 'power2', duration: 1.2 }, 1)
+}
+
+
+function animateDesktop() {
+
+    const timeline = gsap.timeline();
+    playInitialAnimaton(timeline);
+
+    // hover elipse -> la flecha se desplaza
+    ellipse.addEventListener('mouseleave', () => {
+        gsap.to(ellipseArrow, { left: '-14%', ease: 'power2', duration: 0.2 })
+    });
+
+    ellipse.addEventListener('mouseover', () => {
+        gsap.to(ellipseArrow, { left: '6%', ease: 'power2', duration: 0.2 })
+    });
+
+
+}
+
+
 
 
 function playInitialAnimaton(timeline) {
@@ -123,20 +163,13 @@ function enableScrollTrigger() {
 }
 
 
-function printScrollPosition() {
-    console.log("Posición del scroll:", window.scrollY);
-}
+// ver posición de scroll
+// function printScrollPosition() {
+//     console.log("Posición del scroll:", window.scrollY);
+// }
+// window.addEventListener('scroll', printScrollPosition);
 
 
-window.addEventListener('scroll', printScrollPosition);
-
-
-// hover elipse -> la flecha se desplaza
-ellipse.addEventListener('mouseleave', () => {
-    gsap.to(ellipseArrow, { left: '-14%', ease: 'power2', duration: 0.2 })
-});
-
-ellipse.addEventListener('mouseover', () => {
-    gsap.to(ellipseArrow, { left: '6%', ease: 'power2', duration: 0.2 })
-});
-
+// Primera función a ejecutar
+animationController();
+//document.addEventListener("DOMContentLoaded", animationController);

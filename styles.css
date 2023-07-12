@@ -238,7 +238,7 @@ a {
 
 /* --------------------------------------------------- BUTTON INITIAL POINT --------------------------------------------------- */
 
-.button__initialPoint--inactive{
+.button__initialPoint--inactive {
     display: none;
     /* se cambia a flex desde js */
 }
@@ -423,7 +423,7 @@ a {
 }
 
 
-.header__tittle {
+.header__title {
     font-size: 22.78vw;
     text-transform: lowercase;
     letter-spacing: 0.56px;
@@ -441,7 +441,6 @@ a {
 .galleryContent {
     height: 100vh;
     overflow: hidden;
-
 }
 
 
@@ -886,7 +885,7 @@ los mismos márgenes */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: fit-content;   
+    width: fit-content;
     height: 100vh;
     overflow: visible;
     /* min-width: 120vw; */
@@ -903,6 +902,7 @@ los mismos márgenes */
     flex-shrink: 0;
     margin-right: 16vw;
 }
+
 /* --------------------------------------------------- SECCIÓN 1 --------------------------------------------------- */
 
 
@@ -968,6 +968,7 @@ los mismos márgenes */
     align-self: center;
     margin-right: 16vw;
 }
+
 /* --------------------------------------------------- SECCIÓN 2 --------------------------------------------------- */
 
 .aboutMeMainContent__h2 {
@@ -986,13 +987,15 @@ los mismos márgenes */
     margin-bottom: 1rem;
 }
 
-.aboutMeMainContent__chips{
+.aboutMeMainContent__chips {
     display: flex;
     gap: 0.7vw;
     margin-top: 5.4vh;
 }
 
-.aboutMeMainContent__chip01, .aboutMeMainContent__chip02, .aboutMeMainContent__chip03 {
+.aboutMeMainContent__chip01,
+.aboutMeMainContent__chip02,
+.aboutMeMainContent__chip03 {
     padding: 0.5vw 1.5vw;
     justify-content: center;
     align-items: center;
@@ -1001,23 +1004,24 @@ los mismos márgenes */
 }
 
 /* --------------------------------------------------- SECCIÓN 3 --------------------------------------------------- */
-.aboutMeSection3{
+.aboutMeSection3 {
     display: flex;
     flex-direction: row;
     /* position: relative; */
     flex-shrink: 0;
     width: auto;
 }
+
 /* --------------------------------------------------- SECCIÓN 3 --------------------------------------------------- */
 
-.aboutMeSection3__img01Container{
+.aboutMeSection3__img01Container {
     position: relative;
     width: auto;
     height: 150vh;
     flex-shrink: 0;
 }
 
-.aboutMeSection3__img01{
+.aboutMeSection3__img01 {
     /* position: absolute; */
     top: -12vh;
     left: 0;
@@ -1025,7 +1029,7 @@ los mismos márgenes */
     height: 150vh;
 }
 
-.aboutMeSection3__assetWow{
+.aboutMeSection3__assetWow {
     position: absolute;
     top: 34vh;
     left: -6vw;
@@ -1033,7 +1037,7 @@ los mismos márgenes */
     transform: rotate(-20.365deg);
 }
 
-.aboutMeSection3__assetAgs{
+.aboutMeSection3__assetAgs {
     position: absolute;
     top: 48vh;
     left: -3vw;
@@ -1041,7 +1045,7 @@ los mismos márgenes */
     transform: rotate(8.295deg);
 }
 
-.aboutMeSection3__img02{
+.aboutMeSection3__img02 {
     /* position: absolute; */
     top: 0;
     left: 20vw;
@@ -1053,7 +1057,70 @@ los mismos márgenes */
 
 /* --------------------------------------------------- SECCIÓN 4 --------------------------------------------------- */
 /* Le saqué la posición absoluta para poder hacerlo parte del contenedor flex */
-.footerAboutMe{
+.footerAboutMe {
     flex-shrink: 0;
 }
+
 /* --------------------------------------------------- SECCIÓN 4 --------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    body {
+        height: 500vh;
+        overflow-y: visible;
+    }
+
+    /* -------------------------------- CONTENIDO GALLERY -------------------------------- */
+
+    .header {
+        margin-top: 0;
+    }
+
+    .header__title {
+        font-size: 40vw;
+    }
+
+
+    .galleryContent__ellipse{
+        display: none;
+    }
+
+    .galleryContent{
+        display: flex;
+        flex-direction: column;
+        overflow-y: visible;
+        height: auto;
+    }
+
+    .galleryContent__container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
+        overflow-y: visible;
+    }
+
+    .galleryContent__container, .imgGallery01, .imgGallery02, .imgGallery03{
+        position: static;
+        transform: translate(0, 0);
+    }
+
+    .imgGallery04{
+        position: absolute;
+        transform: translate(0, 0);
+        top: 100vh;
+        left: 0;
+    }
+
+
+}

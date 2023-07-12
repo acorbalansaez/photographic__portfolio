@@ -45,35 +45,42 @@ footerHover.addEventListener('mouseover', () => {
 })
 
 
+// SOLO EN PANTALLAS MENORES A 768)
 // cuando el mouse esta arriba de una imagen (de gallery) cambiar el cursor
 // blur en otras fotos y agrandar foto seleccionada
-imagesGallery.forEach(imgOnHover => {
+if (window.innerWidth >= 768) {
 
-  const img = imgOnHover.querySelector('.img');
+  imagesGallery.forEach(imgOnHover => {
 
-  imgOnHover.addEventListener('mouseleave', () => {
-
-    imagesGallery.forEach(img => img.classList.remove('hovered'));
-
-    mouseCursor.classList.remove('cursor-images');
-    mouseCursor.classList.add('cursor-default');
-    imagesGallery.forEach(img => img.classList.remove('blur-effect'));
-  });
-
-
-  imgOnHover.addEventListener('mouseover', () => {
-
-    imgOnHover.classList.add('hovered');
-
-    mouseCursor.classList.remove('cursor-default');
-    mouseCursor.classList.add('cursor-images');
-
-    imagesGallery.forEach(img => {
-      if (img !== imgOnHover) {
-        img.classList.add('blur-effect');
-      }
+    const img = imgOnHover.querySelector('.img');
+  
+    imgOnHover.addEventListener('mouseleave', () => {
+  
+      imagesGallery.forEach(img => img.classList.remove('hovered'));
+  
+      mouseCursor.classList.remove('cursor-images');
+      mouseCursor.classList.add('cursor-default');
+      imagesGallery.forEach(img => img.classList.remove('blur-effect'));
     });
-
+  
+  
+    imgOnHover.addEventListener('mouseover', () => {
+  
+      imgOnHover.classList.add('hovered');
+  
+      mouseCursor.classList.remove('cursor-default');
+      mouseCursor.classList.add('cursor-images');
+  
+      imagesGallery.forEach(img => {
+        if (img !== imgOnHover) {
+          img.classList.add('blur-effect');
+        }
+      });
+  
+    });
+  
   });
 
-});
+
+}
+
