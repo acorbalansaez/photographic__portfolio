@@ -1086,6 +1086,7 @@ los mismos márgenes */
         margin-top: 0;
         position: relative;
         margin-bottom: -100vh;
+        overflow: visible;
     }
 
     .header__title {
