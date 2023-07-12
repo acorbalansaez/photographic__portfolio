@@ -61,7 +61,7 @@ a {
 /* --------------------------------------------------- ESTILOS GENERALES --------------------------------------------------- */
 
 .cursor {
-    position: absolute;
+    position: fixed; /* en fixed se posiciona segun el viewport, en absolute se posiciona segun el eleento padre más cercano con posición relativa*/
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 1000;

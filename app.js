@@ -16,6 +16,8 @@ const buttonInitialPoint = document.querySelector('.button__initialPoint');
 const galleryContentContainer = document.querySelector('.galleryContent__container');
 const contenedor = document.querySelector('.galleryContent');
 
+// const footer = document.querySelector(".footer");
+
 let timelineScroll;
 
 const screenWidth = document.documentElement.clientWidth;
@@ -43,9 +45,18 @@ function animateMobile() {
 
 function playMobileAnimation(timeline) {
     timeline.fromTo(chars, { y: '100vh' }, { y: 0, stagger: 0.1, duration: 0.5 }, 0)
-        //.fromTo(".imgGallery01", { top: "100vh", autoAlpha: 0 }, { top: "36vh", autoAlpha: 1, ease: 'power2', duration: 0.4 }, 0.9)
-        //.fromTo(".imgGallery02", { top: "100vh", autoAlpha: 0 }, { top: "24.29vh", autoAlpha: 1, ease: 'power2', duration: 1.2 }, 0.6)
-        //.fromTo(".imgGallery03", { top: "-100vh", autoAlpha: 0 }, { top: "14.29vh", autoAlpha: 1, ease: 'power2', duration: 1.2 }, 1)
+    //.fromTo(".imgGallery01", { top: "100vh", autoAlpha: 0 }, { top: "36vh", autoAlpha: 1, ease: 'power2', duration: 0.4 }, 0.9)
+    //.fromTo(".imgGallery02", { top: "100vh", autoAlpha: 0 }, { top: "24.29vh", autoAlpha: 1, ease: 'power2', duration: 1.2 }, 0.6)
+    //.fromTo(".imgGallery03", { top: "-100vh", autoAlpha: 0 }, { top: "14.29vh", autoAlpha: 1, ease: 'power2', duration: 1.2 }, 1)
+
+    buttonInitialPoint.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+
 }
 
 
