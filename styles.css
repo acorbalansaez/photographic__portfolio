@@ -1084,6 +1084,8 @@ los mismos márgenes */
 
     .header {
         margin-top: 0;
+        position: relative;
+        margin-bottom: -100vh;
     }
 
     .header__title {
