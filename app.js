@@ -68,11 +68,20 @@ function playMobileAnimation(timeline) {
         scrollTrigger: {
             scrub: 2,
             trigger: "imgGallery04",
-            start: "top bottom",
+            start: "top top",
         }
     })
 
-    timelineScrollMobile.fromTo(".imgGallery04", { scale: 0.03, top: '-12vh' }, { scale: 1.4, top: '0vh', ease: 'power2', duration: 0.1 }, 0)
+    timelineScrollMobile.set(".imgGallery02",{x: 0}, 0)
+    .to(".imgGallery02", { x: -150, ease: 'power2', duration: 0.4 }, 0.1)
+    .to(".galleryContent", {y: 150, ease: 'power2', duration: 0.2 }, 0.1)
+    .set(".imgGallery01",{x: 0}, 0)
+    .to(".imgGallery01", {x: 100}, 0.1)
+    .set(".imgGallery03",{x: 0}, 0)
+    .to(".imgGallery03", {x: 100}, 0.1)
+    .fromTo(".imgGallery04", { scale: 1, top: '-12vh' }, { scale: 1.2, top: '5vh', ease: 'power2', duration: 1 }, 0.2)
+    .fromTo(".footer__assetPhotographer", {scale: 0}, {scale: 1, ease: 'power2', duration: 0.3 }, 1.7)
+    .fromTo(".footer__text", {y: 100, autoAlpha: 0}, {y: 0, autoAlpha: 1, ease: 'power2', duration: 0.3 }, 1.5)
 
 }
 
