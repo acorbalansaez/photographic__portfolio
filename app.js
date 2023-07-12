@@ -74,7 +74,7 @@ function playMobileAnimation(timeline) {
 
     timelineScrollMobile.set(".imgGallery02",{x: 0}, 0)
     .to(".imgGallery02", { x: -150, ease: 'power2', duration: 0.4 }, 0.1)
-    .to(".galleryContent", {y: 150, ease: 'power2', duration: 0.2 }, 0.1)
+    //.to(".galleryContent", {y: 150, ease: 'power2', duration: 0.2 }, 0.1)
     .set(".imgGallery01",{x: 0}, 0)
     .to(".imgGallery01", {x: 100}, 0.1)
     .set(".imgGallery03",{x: 0}, 0)
