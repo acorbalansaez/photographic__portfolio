@@ -29,6 +29,8 @@ function animationController() {
         // console.log(window.innerWidth);
     } else {
         animateMobile();
+        buttonInitialPoint.classList.remove("button__initialPoint--inactive");
+        buttonInitialPoint.classList.add("button__initialPoint--active");
         // console.log(window.innerWidth);
     }
 

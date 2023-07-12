@@ -1117,7 +1117,7 @@ los mismos márgenes */
     .galleryContent__container {
         height: auto;
         width: 100vw;
-        overflow-y: visible;
+        /* overflow-y: visible; */
         display: block;
     }
 
@@ -1126,21 +1126,21 @@ los mismos márgenes */
     .imgGallery02,
     .imgGallery03,
     .imgGallery04 {
-        position: static;
+        /* position: static; */
         transform: translate(0, 0);
     }
 
     .imgGallery01 {
         position: relative;
-        width: 50vw;
-        top: 14vh;
-        left: -8vw;
+        width: 46vw;
+        top: 16vh;
+        left: -10vw;
     }
 
     .imgGallery02 {
         position: relative;
-        width: 76vw;
-        top: 17.2vh;
+        width: 72vw;
+        top: 20vh;
         left: 41vw;
     }
 
@@ -1148,17 +1148,30 @@ los mismos márgenes */
         position: relative;
         width: 40vw;
         left: 70vw;
-        top: -76vh;
+        top: -74vh;
     }
 
     .imgGallery04 {
         position: relative;
-        top: 0vh;
+        top: 6vh;
         left: 0;
         width: 100vw;
-        height: 100%;
 
     }
+
+    .button__initialPoint{
+        position: fixed;
+        bottom: 5.43vh;
+        right: 2vw;
+        padding: 2.71vh 7vw;
+        transform: rotate(90deg);
+    }
+
+    .button__initialPoint__arrow{
+        width: 11.8vw;
+    }
+    
+
 
     /* -------------------------------- FOOTER -------------------------------- */
 

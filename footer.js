@@ -73,5 +73,9 @@ function checkFooterVisibility() {
 
 }
 
+const screenWidth = document.documentElement.clientWidth;
 
-window.addEventListener('scroll', checkFooterVisibility);
+if (screenWidth >= 768) {
+    window.addEventListener('scroll', checkFooterVisibility);
+}
+
