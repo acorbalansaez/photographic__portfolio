@@ -200,11 +200,12 @@ function enableScrollTrigger() {
 
 
 
-// Primera función que se ejecuta
-// Espera a que se termina de cargar todo el contenido,
-// borra la cover (que será un loading en un futuro) y llama a la primera función.
 window.addEventListener('load', function () {
+    // borrar cover (futuro loading)
     cover.remove();
+    // permitir scroll
+    document.body.classList.remove('no-scroll')
+    // llamada a primera función
     animationController();
 })
 
