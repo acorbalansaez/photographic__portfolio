@@ -16,6 +16,8 @@ const textImg03 = document.querySelector('.galleryContent__img3Text');
 const buttonInitialPoint = document.querySelector('.button__initialPoint');
 const galleryContentContainer = document.querySelector('.galleryContent__container');
 const contenedor = document.querySelector('.galleryContent');
+const footerContact = document.querySelector('.footer__contact');
+const footerContactRow1 = footerContact.querySelector(':first-child');
 
 
 let timelineScroll;
@@ -34,7 +36,7 @@ function animationController() {
         buttonInitialPoint.classList.remove("button__initialPoint--inactive");
         buttonInitialPoint.classList.add("button__initialPoint--active");
         navbarAgs.remove();
-        console.log(navbarAgs);
+        footerContactRow1.remove();
     }
 
 }

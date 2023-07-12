@@ -1206,10 +1206,96 @@ los mismos márgenes */
         width: 100vw;
         height: 100vh;
         z-index: 998;
-
+    
         display: grid;
         grid-template-rows: 3fr 1fr;
     }
+
+    
+    .footer__lgit {
+        display: flex;
+        align-items: center;
+        padding-top: 0vh;
+
+        max-height: 70vh;
+    }
+    
+    
+    .footer__text {
+        position: static;
+        z-index: 999;
+        transform: translate(0, 0);
+        /* esto crea un nuevo contexto de apilamiento */
+    
+        font-weight: 700;
+        font-family: var(--font-secondary);
+        font-size: 26vw;
+        text-transform: lowercase;
+        color: var(--color-white);
+        white-space: pre-wrap;
+
+        max-height: 90vh;
+    
+    }
+    
+    .footer__textContent {
+        position: static;
+    }
+    
+    
+    .footer__assetAgs {
+       display: none;
+    }
+    
+    .footer__assetPhotographer {
+        top: 36vh;
+        left: 50vw;
+        padding: 4.17vw 6.5vw;
+        width: 35.54vw;
+        height: 35.54vw;
+    }
+    
+    .footer__assetPhotographer__text {
+        font-size: 3.4vw;
+    }
+    
+    .footer__contact {
+        margin-left: 0vw;
+        width: 100%;
+        padding-bottom: 6vh;
+    }
+
+    .footer__contact__row {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    .footer__item__row1 {
+        text-decoration: none;
+        font-size: 2.78vw;
+        letter-spacing: 0.56px;
+        font-weight: 700;
+        color: var(--color-dark-gray);
+    }
+    
+    .footer__item__row1:hover,
+    .footer__item__row2:hover {
+        color: var(--color-white);
+    }
+    
+    .footer__item--active::before {
+        content: '*';
+    }
+    
+    .footer__item__row2 {
+        text-decoration: none;
+        color: var(--color-darker-gray);
+        font-weight: 500;
+        font-size: 4.6vw;
+    }
+
 
 
 }
