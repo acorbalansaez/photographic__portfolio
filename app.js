@@ -7,6 +7,8 @@ gsap.registerPlugin(ScrollTrigger);
 const agsTittle = new SplitType('.header__title');
 const chars = document.querySelectorAll('.header__title .char');
 
+// definicion de variables
+const cover = document.querySelector('.cover');
 const navbar = document.querySelector('.navbar');
 const navbarAgs = document.getElementById('ags');
 const ellipse = document.querySelector('.galleryContent__ellipse');
@@ -19,12 +21,10 @@ const contenedor = document.querySelector('.galleryContent');
 const footerContact = document.querySelector('.footer__contact');
 const footerContactRow1 = footerContact.querySelector(':first-child');
 
-
 let timelineScroll;
 let timelineScrollMobile;
 
 const screenWidth = document.documentElement.clientWidth;
-console.log(screenWidth);
 
 
 function animationController() {
@@ -48,11 +48,11 @@ function animateMobile() {
 
 function playMobileAnimation(timeline) {
     timeline.fromTo(chars, { y: '100vh' }, { y: 0, stagger: 0.1, duration: 0.5 }, 0)
-    .fromTo(".imgGallery01", { autoAlpha: 0, top: '26vh' }, { autoAlpha: 1, top: '16vh', ease: 'power2', duration: 1 }, 0.3)
-    .fromTo(".imgGallery02", { autoAlpha: 0, top: '30vh' }, { autoAlpha: 1, top: '20vh', ease: 'power2', duration: 1 }, 0.5)
-    .fromTo(".imgGallery03", { autoAlpha: 0, top: '-84vh' }, { autoAlpha: 1, top: '-74vh', ease: 'power2', duration: 1 }, 0.2)
-    .fromTo(".navbar", {autoAlpha: 0}, {autoAlpha: 1, ease: 'power2', duration: 1}, 0.5)
-    .fromTo(".button__initialPoint", {autoAlpha: 0}, {autoAlpha: 1, ease: 'power2', duration: 0.1}, 0.8)
+        .fromTo(".imgGallery01", { autoAlpha: 0, top: '26vh' }, { autoAlpha: 1, top: '16vh', ease: 'power2', duration: 1 }, 0.3)
+        .fromTo(".imgGallery02", { autoAlpha: 0, top: '30vh' }, { autoAlpha: 1, top: '20vh', ease: 'power2', duration: 1 }, 0.5)
+        .fromTo(".imgGallery03", { autoAlpha: 0, top: '-84vh' }, { autoAlpha: 1, top: '-74vh', ease: 'power2', duration: 1 }, 0.2)
+        .fromTo(".navbar", { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power2', duration: 1 }, 0.5)
+        .fromTo(".button__initialPoint", { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power2', duration: 0.1 }, 0.8)
 
 
     buttonInitialPoint.addEventListener('click', function () {
@@ -72,7 +72,7 @@ function playMobileAnimation(timeline) {
         }
     })
 
-    timelineScrollMobile.fromTo(".imgGallery04", {scale: 0.03, top:'-12vh'}, {scale: 1.4, top: '0vh', ease: 'power2', duration: 0.1}, 0)
+    timelineScrollMobile.fromTo(".imgGallery04", { scale: 0.03, top: '-12vh' }, { scale: 1.4, top: '0vh', ease: 'power2', duration: 0.1 }, 0)
 
 }
 
@@ -199,6 +199,15 @@ function enableScrollTrigger() {
 // window.addEventListener('scroll', printScrollPosition);
 
 
-// Primera función a ejecutar
-animationController();
-//document.addEventListener("DOMContentLoaded", animationController);
+
+// Primera función que se ejecuta
+// Espera a que se termina de cargar todo el contenido,
+// borra la cover (que será un loading en un futuro) y llama a la primera función.
+window.addEventListener('load', function () {
+    cover.remove();
+    animationController();
+})
+
+
+
+

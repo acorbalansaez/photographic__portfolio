@@ -8,13 +8,6 @@ const footerHover = document.querySelector('.footer__text');
 
 document.addEventListener('mousemove', cursor);
 
-
-
-
-// SOLO EN PANTALLAS MENORES A 768)
-
-if (window.innerWidth >= 768) {
-
   //obtenemos posicion del mouse
   function cursor(e) {
     let x = e.clientX;
@@ -23,6 +16,11 @@ if (window.innerWidth >= 768) {
     mouseCursor.style.left = `${x}px`;
     mouseCursor.style.top = `${y}px`;
   }
+
+
+// SOLO EN PANTALLAS MENORES A 768)
+
+if (window.innerWidth >= 768) {
 
   // cuando el mouse esta arriba de un link cambiar el cursor
   linksArray.forEach(linkOnHover => {
