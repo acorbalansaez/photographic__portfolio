@@ -7,7 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 const agsTittle = new SplitType('.header__title');
 const chars = document.querySelectorAll('.header__title .char');
 
-
 const navbar = document.querySelector('.navbar');
 const ellipse = document.querySelector('.galleryContent__ellipse');
 const ellipseArrow = document.querySelector('.galleryContent__ellipse__arrow');
@@ -17,13 +16,15 @@ const buttonInitialPoint = document.querySelector('.button__initialPoint');
 const galleryContentContainer = document.querySelector('.galleryContent__container');
 const contenedor = document.querySelector('.galleryContent');
 
-
 let timelineScroll;
+
+const screenWidth = document.documentElement.clientWidth;
+console.log(screenWidth);
 
 
 function animationController() {
 
-    if (window.innerWidth >= 768) {
+    if (screenWidth >= 768) {
         animateDesktop();
         // console.log(window.innerWidth);
     } else {
