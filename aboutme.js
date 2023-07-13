@@ -22,7 +22,7 @@ function createScrollTrigger() {
     timelineScroll = gsap.timeline({
         scrollTrigger: {
             pin: "body",
-            scrub: 2,
+            scrub: 5,
             trigger: bigContainer,
         }
     })
