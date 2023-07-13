@@ -1,9 +1,19 @@
+const zonesHover = document.querySelectorAll(".menuHoverZone__container");
+const galleryContent = document.querySelector(".menuImagesGallery");
+const projectsContent = document.querySelector(".menuImagesProjects");
+const aboutMeContent = document.querySelector(".menuImagesAboutMe");
+const body = document.body;
+const footerItems = document.querySelectorAll('.navbar__item a');
+const menuGallery = document.querySelector('.menuGallery')
+const menuProjects = document.querySelector('.menuProjects');
+const menuAboutMe = document.querySelector('.menuAboutMe');
+const navbarAgs = document.getElementById('ags');
+
 
 // Obtener los elementos "gallery", "projects" y "about me"
 const galleryElement = document.getElementById('gallery');
 const projectsElement = document.getElementById('projects');
 const aboutMeElement = document.getElementById('aboutMe');
-
 
 
 // Agregar el evento de clic a los elementos
@@ -20,54 +30,43 @@ aboutMeElement.addEventListener('click', function () {
 });
 
 
-
 // Para cambiar el contenido de la página según el hover
+function hoverController(){
 
-const zonesHover = document.querySelectorAll(".menuHoverZone__container");
-const galleryContent = document.querySelector(".menuImagesGallery");
-const projectsContent = document.querySelector(".menuImagesProjects");
-const aboutMeContent = document.querySelector(".menuImagesAboutMe");
-
-zonesHover.forEach(zone => {
-  zone.addEventListener('mouseenter', () => {
-    zonesHover.forEach(otherZone => {
-      otherZone.classList.remove('menuSelected');
-      otherZone.classList.add('menuNoSelected');
+  zonesHover.forEach(zone => {
+    zone.addEventListener('mouseenter', () => {
+      zonesHover.forEach(otherZone => {
+        otherZone.classList.remove('menuSelected');
+        otherZone.classList.add('menuNoSelected');
+      });
+  
+      zone.classList.add('menuSelected');
+      zone.classList.remove('menuNoSelected');
+  
+      galleryContent.classList.toggle('menuVisible', zone.classList.contains('menuGallery'));
+      projectsContent.classList.toggle('menuVisible', zone.classList.contains('menuProjects'));
+      aboutMeContent.classList.toggle('menuVisible', zone.classList.contains('menuAboutMe'));
+  
+      galleryContent.classList.toggle('menuInvisible', !zone.classList.contains('menuGallery'));
+      projectsContent.classList.toggle('menuInvisible', !zone.classList.contains('menuProjects'));
+      aboutMeContent.classList.toggle('menuInvisible', !zone.classList.contains('menuAboutMe'));
+  
+      let section = null;
+  
+      if (galleryContent.classList.contains('menuVisible')) {
+        section = galleryContent;
+      } else if (projectsContent.classList.contains('menuVisible')) {
+        section = projectsContent;
+      } else if (aboutMeContent.classList.contains('menuVisible')) {
+        section = aboutMeContent;
+      }
+  
+      animateSection(section);
+  
     });
-
-    zone.classList.add('menuSelected');
-    zone.classList.remove('menuNoSelected');
-
-    galleryContent.classList.toggle('menuVisible', zone.classList.contains('menuGallery'));
-    projectsContent.classList.toggle('menuVisible', zone.classList.contains('menuProjects'));
-    aboutMeContent.classList.toggle('menuVisible', zone.classList.contains('menuAboutMe'));
-
-    galleryContent.classList.toggle('menuInvisible', !zone.classList.contains('menuGallery'));
-    projectsContent.classList.toggle('menuInvisible', !zone.classList.contains('menuProjects'));
-    aboutMeContent.classList.toggle('menuInvisible', !zone.classList.contains('menuAboutMe'));
-
-    let section = null;
-
-    if (galleryContent.classList.contains('menuVisible')) {
-      section = galleryContent;
-    } else if (projectsContent.classList.contains('menuVisible')) {
-      section = projectsContent;
-    } else if (aboutMeContent.classList.contains('menuVisible')) {
-      section = aboutMeContent;
-    }
-
-    animateSection(section);
-
   });
-});
 
-
-const body = document.body;
-const footerItems = document.querySelectorAll('.navbar__item a');
-const menuGallery = document.querySelector('.menuGallery')
-const menuProjects = document.querySelector('.menuProjects');
-const menuAboutMe = document.querySelector('.menuAboutMe');
-
+}
 
 
 function animateSection(section) {
@@ -81,7 +80,7 @@ function animateSection(section) {
       .fromTo(".menuImagesGallery__img01", { top: "55%", autoAlpha: 0.5, scale: 0.8 }, { top: "50%", autoAlpha: 1, scale: 1, ease: 'power2', duration: 0.6 }, "<")
       .fromTo(".menuImagesGallery__assetPhotographer", { transform: 'translate(-50%, -70%) rotate(60deg)' }, { transform: 'translate(-50%, -70%) rotate(-20.37deg)', ease: 'power2', duration: 1 }, "<")
       .fromTo(".menuImagesGallery__img03", { transform: 'translateY(100%) rotate(-10deg)' }, { transform: 'translateY(20%) rotate(0deg)', ease: 'power2', duration: 0.9 }, "<")
-      .fromTo(".menuImagesGallery__stuff", { autoAlpha: 0}, { autoAlpha: 1, ease: 'power2', duration: 0.6 }, "<")
+      .fromTo(".menuImagesGallery__stuff", { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power2', duration: 0.6 }, "<")
   }
 
 
@@ -90,12 +89,12 @@ function animateSection(section) {
 
     const timelineProjects = gsap.timeline();
     timelineProjects.fromTo(".menuImagesProjects__img01", { transform: 'translate(50%, -200%) rotate(10deg)' }, { transform: 'translate(30%, -50%) rotate(0deg)', ease: 'power2', duration: 0.6 }, 0)
-    .fromTo(".menuImagesProjects__gradient", {transform:'translate(100%, -75%)', autoAlpha: 0, scale: 0 }, {transform:'translate(10%, -75%)', autoAlpha: 1, scale: 1, ease: 'power2', duration: 0.6 }, "<")
-    .fromTo(".menuImagesProjects__img02", { scale: 0.5, transform: 'translate(105%, -160%) rotate(30deg)' }, { scale: 1, transform: 'translate(105%, -70%) rotate(0deg)', ease: 'power2', duration: 0.6 }, 0.1)
-    .fromTo(".menuImagesProjects__img03", { transform: 'translate(5%, 100%) rotate(-10deg)' }, { transform: 'translate(10%, 0%) rotate(0deg)', ease: 'power2', duration: 0.7 }, 0)
-    .fromTo(".menuImagesProjects__img04", { transform: 'translate(70%, -60%) rotate(10deg)' }, { transform: 'translate(10%, -60%) rotate(0deg)', ease: 'power2', duration: 0.6 }, 0)
-    .fromTo(".menuImagesGallery__nameProject", { autoAlpha: 0}, { autoAlpha: 1, ease: 'power2', duration: 0.6 }, 0)
-    .fromTo(".menuImagesProjects__asterisk", { autoAlpha: 0.8, transform: 'translate(-75%, -35%) rotate(292.29deg)' }, { autoAlpha:1, transform: 'translate(-75%, -35%) rotate(42.29deg)', ease: 'power2', duration: 0.6 }, 0)
+      .fromTo(".menuImagesProjects__gradient", { transform: 'translate(100%, -75%)', autoAlpha: 0, scale: 0 }, { transform: 'translate(10%, -75%)', autoAlpha: 1, scale: 1, ease: 'power2', duration: 0.6 }, "<")
+      .fromTo(".menuImagesProjects__img02", { scale: 0.5, transform: 'translate(105%, -160%) rotate(30deg)' }, { scale: 1, transform: 'translate(105%, -70%) rotate(0deg)', ease: 'power2', duration: 0.6 }, 0.1)
+      .fromTo(".menuImagesProjects__img03", { transform: 'translate(5%, 100%) rotate(-10deg)' }, { transform: 'translate(10%, 0%) rotate(0deg)', ease: 'power2', duration: 0.7 }, 0)
+      .fromTo(".menuImagesProjects__img04", { transform: 'translate(70%, -60%) rotate(10deg)' }, { transform: 'translate(10%, -60%) rotate(0deg)', ease: 'power2', duration: 0.6 }, 0)
+      .fromTo(".menuImagesGallery__nameProject", { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power2', duration: 0.6 }, 0)
+      .fromTo(".menuImagesProjects__asterisk", { autoAlpha: 0.8, transform: 'translate(-75%, -35%) rotate(292.29deg)' }, { autoAlpha: 1, transform: 'translate(-75%, -35%) rotate(42.29deg)', ease: 'power2', duration: 0.6 }, 0)
 
   }
 
@@ -104,14 +103,13 @@ function animateSection(section) {
 
     const timelineAboutMe = gsap.timeline();
     timelineAboutMe.fromTo(".menuImagesAboutMe__img02", { scale: 0.8, transform: 'translate(50%, -160%) rotate(35deg)' }, { scale: 1, transform: 'translate(30%, -50%) rotate(0deg)', ease: 'power2', duration: 0.6 }, 0)
-    .fromTo(".menuImagesAboutMe__img01", { transform: 'translateY(180%) rotate(-30deg)'}, { transform: 'translateY(-0%) rotate(0deg)', ease: 'power2', duration: 0.6 }, "<")
-    .fromTo(".menuImagesAboutMe__img03", { autoAlpha: 0.3, scale: 0.6, transform: 'translate(40%, -60%) rotate(0deg)' }, { autoAlpha: 1, scale: 1, transform: ' translate(10%, -60%) rotate(0deg)', ease: 'power2', duration: 0.6 }, "<")
-    .fromTo(".menuImagesAboutMe__assetAgs", { scale: 0.5, transform: 'translate(-50%, 155%) rotate(190deg)' }, { scale: 1, transform: 'translate(-50%, 155%) rotate(-17.125deg)', ease: 'power2', duration: 1.2 }, "<")
+      .fromTo(".menuImagesAboutMe__img01", { transform: 'translateY(180%) rotate(-30deg)' }, { transform: 'translateY(-0%) rotate(0deg)', ease: 'power2', duration: 0.6 }, "<")
+      .fromTo(".menuImagesAboutMe__img03", { autoAlpha: 0.3, scale: 0.6, transform: 'translate(40%, -60%) rotate(0deg)' }, { autoAlpha: 1, scale: 1, transform: ' translate(10%, -60%) rotate(0deg)', ease: 'power2', duration: 0.6 }, "<")
+      .fromTo(".menuImagesAboutMe__assetAgs", { scale: 0.5, transform: 'translate(-50%, 155%) rotate(190deg)' }, { scale: 1, transform: 'translate(-50%, 155%) rotate(-17.125deg)', ease: 'power2', duration: 1.2 }, "<")
   }
 
 
 };
-
 
 
 // white mode y dark mode cambian el background, la navbar y los items del menu
@@ -160,7 +158,20 @@ function darkMode(section) {
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  animateSection(galleryContent);
-});
+const screenWidth = document.documentElement.clientWidth;
+
+if (screenWidth >= 768) {
+
+  document.addEventListener('DOMContentLoaded', function () {
+    animateSection(galleryContent);
+    hoverController();
+  });
+
+
+} else {
+  navbarAgs.remove();
+  galleryContent.classList.remove("menuVisible");
+  galleryContent.classList.add("menuInvisible");
+  console.log("pantalla mobile");
+}
 

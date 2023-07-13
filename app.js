@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 const agsTittle = new SplitType('.header__title');
 const chars = document.querySelectorAll('.header__title .char');
 
-// definicion de variables
+// definición de variables
 const cover = document.querySelector('.cover');
 const navbar = document.querySelector('.navbar');
 const navbarAgs = document.getElementById('ags');
@@ -79,7 +79,7 @@ function playMobileAnimation(timeline) {
     .to(".imgGallery01", {x: 100}, 0.1)
     .set(".imgGallery03",{x: 0}, 0)
     .to(".imgGallery03", {x: 100}, 0.1)
-    .fromTo(".imgGallery04", { scale: 1, top: '-12vh' }, { scale: 1.2, top: '5vh', ease: 'power2', duration: 1 }, 0.2)
+    .fromTo(".imgGallery04", { scale: 1, top: '-12vh' }, { scale: 1.2, top: '6vh', ease: 'power2', duration: 1 }, 0.2)
     .fromTo(".footer__assetPhotographer", {scale: 0}, {scale: 1, ease: 'power2', duration: 0.3 }, 1.7)
     .fromTo(".footer__text", {y: 100, autoAlpha: 0}, {y: 0, autoAlpha: 1, ease: 'power2', duration: 0.3 }, 1.5)
 

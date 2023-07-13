@@ -58,7 +58,7 @@ a {
     color: inherit;
 }
 
-.cover{
+.cover {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -66,7 +66,7 @@ a {
     background-color: var(--color-white);
 }
 
-.no-scroll{
+.no-scroll {
     overflow: hidden;
 }
 
@@ -1094,7 +1094,7 @@ los mismos márgenes */
         overflow-x: hidden;
     }
 
-    .navbar{
+    .navbar {
         position: fixed;
     }
 
@@ -1105,9 +1105,10 @@ los mismos márgenes */
     .navbar__item a {
         font-size: 7.5vw;
     }
-    
 
-    .underlineLink--black::after, .underlineLink--white::after {
+
+    .underlineLink--black::after,
+    .underlineLink--white::after {
         height: 0.5vw;
     }
 
@@ -1218,12 +1219,12 @@ los mismos márgenes */
         width: 100vw;
         height: 100vh;
         z-index: 998;
-    
+
         display: grid;
         grid-template-rows: 3fr 1fr;
     }
 
-    
+
     .footer__lgit {
         display: flex;
         align-items: center;
@@ -1231,26 +1232,26 @@ los mismos márgenes */
 
         max-height: 70vh;
     }
-    
-    
+
+
     .footer__text {
         position: static;
         font-weight: 700;
         font-size: 26vw;
         white-space: pre-wrap;
         max-height: 96vh;
-    
+
     }
-    
+
     .footer__textContent {
         position: static;
     }
-    
-    
+
+
     .footer__assetAgs {
-       display: none;
+        display: none;
     }
-    
+
     .footer__assetPhotographer {
         top: 36vh;
         left: 50vw;
@@ -1258,11 +1259,11 @@ los mismos márgenes */
         width: 35.54vw;
         height: 35.54vw;
     }
-    
+
     .footer__assetPhotographer__text {
         font-size: 3.4vw;
     }
-    
+
     .footer__contact {
         margin-left: 0vw;
         width: 100%;
@@ -1275,12 +1276,52 @@ los mismos márgenes */
         flex-direction: column;
         justify-content: space-around;
     }
-    
-    
+
+
     .footer__item__row2 {
         font-size: 4.6vw;
     }
 
 
+
+    /* -------------------------------- MENU -------------------------------- */
+
+    .menuContent {
+        display: grid;
+        grid-template-rows: 4fr 1fr;
+    }
+
+    .menuHoverZone {
+        position: static;
+        height: auto;
+        margin-top: 0;
+        justify-content: center;
+        gap: 6vh;
+    }
+
+    .menuContact {
+        position: static;
+    }
+
+    .menuHoverZone__container {
+        flex-grow: 0;
+    }
+
+    .menuHoverZone__tittle {
+        font-size: 12vw;
+    }
+
+    .menuHoverZone__number {
+        font-size: 5vw;
+    }
+
+    .menuContact__list {
+        flex-direction: column;
+        gap: 3vh;
+    }
+
+    .menuContact__item a {
+        font-size: 4.25vw;
+    }
 
 }
