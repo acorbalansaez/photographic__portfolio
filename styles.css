@@ -1286,9 +1286,11 @@ los mismos márgenes */
 
     /* -------------------------------- MENU -------------------------------- */
 
+
     .menuContent {
         display: grid;
         grid-template-rows: 4fr 1fr;
+        overflow: hidden;
     }
 
     .menuHoverZone {
@@ -1297,6 +1299,7 @@ los mismos márgenes */
         margin-top: 0;
         justify-content: center;
         gap: 6vh;
+        z-index: 997;
     }
 
     .menuContact {
@@ -1306,6 +1309,7 @@ los mismos márgenes */
     .menuHoverZone__container {
         flex-grow: 0;
     }
+
 
     .menuHoverZone__tittle {
         font-size: 12vw;

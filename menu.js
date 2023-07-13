@@ -172,6 +172,7 @@ if (screenWidth >= 768) {
   navbarAgs.remove();
   galleryContent.classList.remove("menuVisible");
   galleryContent.classList.add("menuInvisible");
-  console.log("pantalla mobile");
+  //console.log("pantalla mobile");
 }
+
 
