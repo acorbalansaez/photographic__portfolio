@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
     <!-- ESTILOS -->
     <link rel="stylesheet" href="../styles.css">
 
@@ -22,7 +25,7 @@
     <div class="cursor cursor-default"></div>
 
     <nav class="navbar">
-        <ul class="navbar__list">
+        <ul class="navbar__list d-flex">
             <li class="navbar__item"><a class="whiteVersion" id="ags" href="#">ags<span class="breadcrumb"> / menu</span></a>
             </li>
             <li class="navbar__item"><a class="whiteVersion underlineLink--white" id="close" href="../index.html">close</a></li>
@@ -32,24 +35,24 @@
 
     <main class="menuContent">
 
-        <div class="menuHoverZone">
+        <div class="menuHoverZone d-flex flex-column">
 
-            <a class="menuHoverZone__container menuGallery menuSelected" id="gallery">
-                <div class="menuHoverZone__smallContainer">
+            <a class="menuHoverZone__container menuGallery menuSelected d-flex align-items-center" id="gallery">
+                <div class="menuHoverZone__smallContainer d-flex align-items-start">
                     <p class="menuHoverZone__number">01</p>
                     <p class="menuHoverZone__tittle">gallery</p>
                 </div>
             </a>
 
-            <a class="menuHoverZone__container menuProjects menuNoSelected" id="projects">
-                <div class="menuHoverZone__smallContainer">
+            <a class="menuHoverZone__container menuProjects menuNoSelected d-flex align-items-center" id="projects">
+                <div class="menuHoverZone__smallContainer d-flex align-items-start">
                     <p class="menuHoverZone__number">02</p>
                     <p class="menuHoverZone__tittle">projects</p>
                 </div>
             </a>
 
-            <a class="menuHoverZone__container menuAboutMe menuNoSelected" id="aboutMe">
-                <div class="menuHoverZone__smallContainer">
+            <a class="menuHoverZone__container menuAboutMe menuNoSelected d-flex align-items-center" id="aboutMe">
+                <div class="menuHoverZone__smallContainer d-flex align-items-start">
                     <p class="menuHoverZone__number">03</p>
                     <p class="menuHoverZone__tittle">about me</p>
                 </div>
@@ -59,7 +62,7 @@
 
 
         <div class="menuContact">
-            <ul class="menuContact__list">
+            <ul class="menuContact__list d-flex flex-column flex-md-row">
                 <li class="menuContact__item"><a href="mailto:agustina.lara.cs@gmail.com">agustina.lara.cs@gmail.com</a>
                 </li>
                 <li class="menuContact__item"><a href="https://www.instagram.com/a.g.u.s.ti.na/"
@@ -78,7 +81,7 @@
 
             <img class="menuImagesGallery__img01" src="../imgs/gallery01.jpg" alt="">
 
-            <p class="menuImagesGallery__stuff">gallery <br> stuff</p>
+            <p class="menuImagesGallery__stuff text-end">gallery <br> stuff</p>
             
             <img class="menuImagesGallery__img03" src="../imgs/gallery03.jpg" alt="">
 
@@ -125,6 +128,10 @@
     <!-- GSAP y ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+
+     <!-- bootstrap -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
     <script src="../cursor.js"></script>
     <script src="../menu.js"></script>
 

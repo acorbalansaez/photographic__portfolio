@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
     <!-- ESTILOS -->
     <link rel="stylesheet" href="../styles.css">
 
@@ -23,14 +26,14 @@
     <div class="cursor cursor-default"></div>
 
     <nav class="navbar">
-        <ul class="navbar__list">
+        <ul class="navbar__list d-flex">
             <li class="navbar__item"><a class="blackVersion" href="#">ags<span class="breadcrumb"> / about
                         me</span></a></li>
             <li class="navbar__item"><a class="blackVersion underlineLink--black" href="./menu.html">menu</a></li>
         </ul>
     </nav>
 
-    <main class="aboutMeMainContent">
+    <main class="aboutMeMainContent d-flex flex-row flex-nowrap align-items-start">
 
         <!-- en el futuro tengo que cambiar los nombres de las clases dentro de esta section-->
         <section class="aboutMeSection1">
@@ -57,7 +60,7 @@
         </section>
 
         <!-- en el futuro tengo que cambiar los nombres de las clases dentro de esta section-->
-        <section class="aboutMeSection2">
+        <section class="aboutMeSection2 d-flex flex-column justify-content-around">
             <h2 class="aboutMeMainContent__h2">hi, i'm agus</h2>
             <p class="aboutMeMainContent__p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo
                 ligula eget ex consequat, a
@@ -66,7 +69,7 @@
             <p class="aboutMeMainContent__p">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo ligula eget ex consequat, a
                 pulvinar dolor tincidunt.</p>
-            <div class="aboutMeMainContent__chips">
+            <div class="aboutMeMainContent__chips d-flex">
                 <span class="aboutMeMainContent__chip01">textito</span>
                 <span class="aboutMeMainContent__chip02">txt</span>
                 <span class="aboutMeMainContent__chip03">:)</span>
@@ -74,7 +77,7 @@
         </section>
 
 
-        <section class="aboutMeSection3">
+        <section class="aboutMeSection3 d-flex flex-row">
 
             <div class="aboutMeSection3__img01Container">
                 <img class="aboutMeSection3__img01" src="../imgs/aboutme03.jpg" alt="">
@@ -88,24 +91,24 @@
 
         <footer class="footer footerAboutMe">
 
-            <div class="footer__lgit">
+            <div class="footer__lgit  d-flex">
                 <h2 class="footer__text"><a href="mailto:agustina.lara.cs@gmail.com">
                     <span class="footer__textContent">Let's get in touch!
                         <img class="footer__assetAgs" src="../graphicelements/asset-ags.svg" alt="">
                     </span>
-                    <div class="footer__assetPhotographer">
+                    <div class="footer__assetPhotographer d-flex">
                         <p class="footer__assetPhotographer__text">/// <br> photo- <br> grapher</p>
                     </div></a>
                 </h2>
             </div>
 
-            <div class="footer__contact">
-                <div class="footer__contact__row">
+            <div class="footer__contact d-flex flex-column">
+                <div class="footer__contact__row d-flex flex-column flex-md-row">
                     <a href="#" class="footer__item__row1 footer__item--active underlineLink--white">gallery</a>
                     <a href="./pages/projects.html" class="footer__item__row1 underlineLink--white">projects</a>
                     <a href="./pages/aboutme.html" class="footer__item__row1 underlineLink--white">about me</a>
                 </div>
-                <div class="footer__contact__row">
+                <div class="footer__contact__row d-flex flex-column flex-md-row">
                     <a href="mailto:agustina.lara.cs@gmail.com"
                         class="footer__item__row2">agustina.lara.cs@gmail.com</a>
                     <a href="tel:+5492214373872" class="footer__item__row2">+5492214373872</a>
@@ -125,6 +128,9 @@
     <!-- GSAP y ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
     <script src="../cursor.js"></script>
     <script src="../aboutme.js"></script>

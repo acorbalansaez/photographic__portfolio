@@ -70,6 +70,16 @@ a {
     overflow: hidden;
 }
 
+p, ul {
+    /* para contrarrestar el por defecto aplicado por bootstrap */
+    margin-bottom: 0;
+}
+h1{
+    /* para contrarrestar el por defecto aplicado por bootstrap */
+    color: var(--color-dark);
+    margin-bottom: 0;
+}
+
 /* --------------------------------------------------- ESTILOS GENERALES --------------------------------------------------- */
 
 .cursor {
@@ -162,6 +172,9 @@ a {
 .breadcrumb {
     color: var(--color-gray);
     font-size: 1.25vw;
+
+    /*para contrarrestar bootstrap que pone breadcrumb en display flex*/
+    display: inline-block;
 }
 
 
@@ -186,7 +199,7 @@ a {
     height: 100%;
     list-style-type: none;
 
-    display: flex;
+    /* display: flex; (aplicado desde bs) */
     justify-content: space-between;
     align-items: center;
 
@@ -311,7 +324,7 @@ a {
 
 
 .footer__lgit {
-    display: flex;
+    /* display: flex; (agregado desde bs)*/
     align-items: center;
     padding-top: 10vh;
 }
@@ -358,7 +371,7 @@ a {
     transform: rotate(7.109deg);
     background: var(--color-yellow);
 
-    display: flex;
+    /* display: flex; (agregado desde bs) */
     padding: 4.17vw 2.5vw;
     align-items: center;
     width: 13.54vw;
@@ -379,8 +392,8 @@ a {
 }
 
 .footer__contact {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; (aplicado desde bs)*/
     justify-content: center;
     width: 45vw;
     margin-left: 15vw;
@@ -389,7 +402,7 @@ a {
 }
 
 .footer__contact__row {
-    display: flex;
+    /* display: flex; (aplicado desde bs)*/
     justify-content: space-around;
 }
 
@@ -492,7 +505,7 @@ a {
     width: 12.78vw;
     top: 100vh;
     right: 7.36vw;
-    z-index: 999;
+    z-index: 998;
 }
 
 .imgGallery04 {
@@ -582,13 +595,13 @@ los mismos márgenes */
     position: absolute;
     z-index: 999;
 
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; (se aplica desde bs)*/
 }
 
 .menuHoverZone__container {
-    display: flex;
-    align-items: center;
+    /* display: flex; (se usa desde bs) */
+    /* align-items: center; */
     flex-grow: 1;
 }
 
@@ -596,10 +609,10 @@ los mismos márgenes */
     cursor: pointer;
 }
 
-.menuHoverZone__smallContainer {
-    display: flex;
-    align-items: flex-start;
-}
+/* .menuHoverZone__smallContainer {
+    display: flex; 
+    align-items: flex-start; (se aplica desde bs)
+} */
 
 
 .menuHoverZone__tittle {
@@ -645,7 +658,7 @@ los mismos márgenes */
 }
 
 .menuContact__list {
-    display: flex;
+    /* display: flex; (se aplica desde bs) */
     list-style-type: none;
 
 }
@@ -723,7 +736,7 @@ los mismos márgenes */
     top: 36vh;
     z-index: 998;
 
-    text-align: right;
+    /* text-align: right; (aplicado desde bs) */
     font-size: 1.11vw;
     font-weight: 400;
     line-height: 1.3;
@@ -895,14 +908,14 @@ los mismos márgenes */
 
 .aboutMeMainContent {
     /* padding: 0 6.25vw 0 6.25vw; */
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: flex-start; (se aplica desde bs) */
     width: fit-content;
     height: 100vh;
     overflow: visible;
     /* min-width: 120vw; */
-    align-items: flex-start;
 }
 
 /* --------------------------------------------------- SECCIÓN 1 --------------------------------------------------- */
@@ -972,11 +985,11 @@ los mismos márgenes */
 
 /* --------------------------------------------------- SECCIÓN 2 --------------------------------------------------- */
 .aboutMeSection2 {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
+    justify-content: space-around; (se aplica desde bs) */
     width: 25.56vw;
     height: 52.86vh;
-    justify-content: space-around;
     flex-shrink: 0;
     align-self: center;
     margin-right: 16vw;
@@ -1001,7 +1014,7 @@ los mismos márgenes */
 }
 
 .aboutMeMainContent__chips {
-    display: flex;
+    /* display: flex; (se aplica desde bs) */
     gap: 0.7vw;
     margin-top: 5.4vh;
 }
@@ -1018,8 +1031,8 @@ los mismos márgenes */
 
 /* --------------------------------------------------- SECCIÓN 3 --------------------------------------------------- */
 .aboutMeSection3 {
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; (se aplica desde bs) */
     /* position: relative; */
     flex-shrink: 0;
     width: auto;
@@ -1137,8 +1150,8 @@ los mismos márgenes */
     }
 
     .galleryContent {
-        display: flex;
-        flex-direction: column;
+        /* display: flex;
+        flex-direction: column; (aplicado desde bs) */
         overflow-y: visible;
         height: auto;
 
@@ -1226,10 +1239,7 @@ los mismos márgenes */
 
 
     .footer__lgit {
-        display: flex;
-        align-items: center;
         padding-top: 0vh;
-
         max-height: 70vh;
     }
 
@@ -1272,9 +1282,7 @@ los mismos márgenes */
 
     .footer__contact__row {
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        /* flex-direction: column; (aplicado desde bs)*/
     }
 
 
@@ -1320,7 +1328,7 @@ los mismos márgenes */
     }
 
     .menuContact__list {
-        flex-direction: column;
+        /* flex-direction: column; (se aplica desde bs) */
         gap: 3vh;
     }
 
