@@ -23,7 +23,7 @@ function createScrollTrigger() {
         scrollTrigger: {
             pin: "body",
             scrub: 5,
-            trigger: bigContainer,
+            // trigger: bigContainer,
         }
     })
 
@@ -48,8 +48,8 @@ function enableScrollTrigger() {
         scrollTrigger: {
             trigger: ".aboutMeMainContent__img01",
             start: "right right",
-            end: 2000,
-            scrub: 2,
+            end: 3000,
+            scrub: 5,
             markers: true,
         }
     })

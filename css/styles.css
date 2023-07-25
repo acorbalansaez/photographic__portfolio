@@ -1,0 +1,1187 @@
+@charset "UTF-8";
+/* --------------------------------------------------- BASE --------------------------------------------------- */
+@font-face {
+  font-family: "Kyiv";
+  src: url("./fonts/Kyiv/Dmitry Rastvortsev - KyivType Sans Bold2.otf") format("opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Eugusto";
+  src: url("./fonts/Eugusto Free Font.otf");
+}
+:root {
+  /* COLORS */
+  --color-yellow: #EFF339;
+  --color-white: #FFFFFF;
+  --color-light-gray: #CCCCCC;
+  --color-gray: #989898;
+  --color-dark-gray: #6D6D6D;
+  --color-darker-gray: #373737;
+  --color-dark: #0A0A0A;
+  --color-black: #000000;
+  /* FONTS */
+  --font-principal: "Syne", sans-serif;
+  --font-secondary: "Kyiv", sans-serif;
+  --font-tertiary: "Eugusto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  cursor: none;
+  font-family: var(--font-principal);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cover {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: var(--color-white);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+p, ul {
+  /* para contrarrestar el por defecto aplicado por bootstrap */
+  margin-bottom: 0;
+}
+
+h1 {
+  /* para contrarrestar el por defecto aplicado por bootstrap */
+  color: var(--color-dark);
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------- ESTILOS GENERALES --------------------------------------------------- */
+.cursor {
+  position: fixed;
+  /* en fixed se posiciona segun el viewport, en absolute se posiciona segun el eleento padre más cercano con posición relativa*/
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1000;
+  transition: all 0.1s ease;
+  transition-property: background-color, transform, width, height;
+}
+
+.cursor-default {
+  width: 1.14vw;
+  height: 1.14vw;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  mix-blend-mode: difference;
+}
+
+.cursor-images {
+  width: 4.38vw;
+  height: 4.38vw;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(0.34vw);
+  border-radius: 50%;
+  border: 0.08vw solid var(--color-white);
+  mix-blend-mode: normal;
+}
+
+.cursor-images::after {
+  content: "see";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1vw;
+  line-height: 84%;
+  color: var(--color-white);
+}
+
+.cursor-links {
+  width: 4.38vw;
+  height: 4.38vw;
+  border: 0.08vw solid var(--color-white);
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.cursor-footer {
+  width: 4.38vw;
+  height: 4.38vw;
+  border-radius: 50%;
+  border: 0 solid;
+  background-color: var(--color-yellow);
+  mix-blend-mode: normal;
+}
+
+.cursor-footer::after {
+  content: "";
+  background-image: url("./icons/arrow-up.svg");
+  background-size: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+}
+
+.backgroundDark {
+  background-color: var(--color-dark);
+}
+
+.backgroundLight {
+  background-color: var(--color-white);
+}
+
+.blackVersion {
+  color: var(--color-black);
+}
+
+.whiteVersion {
+  color: var(--color-white);
+}
+
+.breadcrumb {
+  color: var(--color-gray);
+  font-size: 1.25vw;
+  /*para contrarrestar bootstrap que pone breadcrumb en display flex*/
+  display: inline-block;
+}
+
+.blur-effect {
+  filter: blur(0.14vw);
+}
+
+/* --------------------------------------------------- NAVBAR --------------------------------------------------- */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 14vh;
+  padding: 0 6.25vw 0 6.25vw;
+  z-index: 999;
+}
+
+.navbar__list {
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  /* display: flex; (aplicado desde bs) */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__item a {
+  text-decoration: none;
+  font-size: 1.94vw;
+  letter-spacing: 0.56px;
+  font-weight: 600;
+  transition: width 0.3s ease-in-out;
+}
+
+.underlineLink--black,
+.underlineLink--white {
+  position: relative;
+  text-decoration: none;
+}
+
+.underlineLink--black::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 0.2vw;
+  background-color: var(--color-black);
+  transition: width 0.3s ease-in-out;
+}
+
+.underlineLink--white::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 0.2vw;
+  background-color: var(--color-white);
+  transition: width 0.3s ease-in-out;
+}
+
+.underlineLink--black:hover::after,
+.underlineLink--white:hover::after {
+  width: 100%;
+}
+
+/* --------------------------------------------------- CLASE IMG --------------------------------------------------- */
+.hovered .img {
+  transform: scale(1.1);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top left;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------- BUTTON INITIAL POINT --------------------------------------------------- */
+.button__initialPoint--inactive {
+  display: none;
+  /* se cambia a flex desde js */
+}
+
+.button__initialPoint--active {
+  display: flex;
+}
+
+.button__initialPoint {
+  position: absolute;
+  z-index: 999;
+  bottom: 6.43vh;
+  right: 6.25vw;
+  /*márgen que estoy usando*/
+  padding: 3.14vh 1.8vw;
+  background-color: var(--color-black);
+  border-radius: 4.8rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.button__initialPoint__arrow {
+  width: 3.02vw;
+  height: auto;
+}
+
+.button__initialPoint:hover {
+  border: 0.08vw solid var(--color-white);
+  mix-blend-mode: difference;
+  background-color: transparent;
+}
+
+/* .centered{
+    top: 50%;
+    transform: translate(-50%, -50%);
+} */
+/* --------------------------------------------------- FOOTER --------------------------------------------------- */
+.footerGallery {
+  position: absolute;
+  top: 0;
+  left: 100vw;
+}
+
+.footer {
+  padding: 0 6.25vw;
+  background-color: var(--color-dark);
+  width: 100vw;
+  height: 100vh;
+  z-index: 998;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+}
+
+.footer__lgit {
+  /* display: flex; (agregado desde bs)*/
+  align-items: center;
+  padding-top: 10vh;
+}
+
+.footer__text {
+  position: relative;
+  z-index: 999;
+  transform: translate(0, 0);
+  /* esto crea un nuevo contexto de apilamiento */
+  font-family: var(--font-secondary);
+  font-size: 14.93vw;
+  text-transform: lowercase;
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.footer__textContent {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: left 0.9s ease;
+}
+
+.footer__assetAgs {
+  position: absolute;
+  bottom: 0vw;
+  left: 28vw;
+  width: 5.16vw;
+  transform: rotate(-17.125deg);
+  transition: transform 0.9s ease;
+}
+
+.footer__assetPhotographer {
+  position: absolute;
+  z-index: -1;
+  /* esto coloca el círculo por debajo del texto */
+  top: -2vh;
+  left: 75vw;
+  transform: rotate(7.109deg);
+  background: var(--color-yellow);
+  /* display: flex; (agregado desde bs) */
+  padding: 4.17vw 2.5vw;
+  align-items: center;
+  width: 13.54vw;
+  height: 13.54vw;
+  border-radius: 50%;
+}
+
+.footer__assetPhotographer__text {
+  color: var(--color-dark);
+  font-size: 1.32vw;
+  line-height: 84%;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-family: var(--font-principal);
+  flex-grow: 2;
+  flex-shrink: 0;
+}
+
+.footer__contact {
+  /* display: flex;
+  flex-direction: column; (aplicado desde bs)*/
+  justify-content: center;
+  width: 45vw;
+  margin-left: 15vw;
+  /* height: 14.29vh; */
+  gap: 3vh;
+}
+
+.footer__contact__row {
+  /* display: flex; (aplicado desde bs)*/
+  justify-content: space-around;
+}
+
+.footer__item__row1 {
+  text-decoration: none;
+  font-size: 2.78vw;
+  letter-spacing: 0.56px;
+  font-weight: 700;
+  color: var(--color-dark-gray);
+}
+
+.footer__item__row1:hover,
+.footer__item__row2:hover {
+  color: var(--color-white);
+}
+
+.footer__item--active::before {
+  content: "*";
+}
+
+.footer__item__row2 {
+  text-decoration: none;
+  color: var(--color-darker-gray);
+  font-weight: 500;
+  font-size: 1.25vw;
+}
+
+/* --------------------------------------------------- CONTENIDO GALLERY --------------------------------------------------- */
+.header {
+  display: grid;
+  place-content: center;
+  margin-top: -12vh;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.header__title {
+  font-size: 22.78vw;
+  text-transform: lowercase;
+  letter-spacing: 0.56px;
+  font-weight: 600;
+  /* creamos una especie de máscara */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.galleryContent {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.galleryContent__container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.galleryContent__imgGallery {
+  position: absolute;
+  overflow: hidden;
+  will-change: filter, transform;
+  /* indicar el cambio de filtro supuestamente mejoraría el rendimiento */
+  transition: transform, filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.imgGallery01 {
+  width: 24.31vw;
+  top: 100vh;
+  left: -3.33vw;
+}
+
+.imgGallery02 {
+  width: 32.36vw;
+  top: 100vh;
+  left: 51.74vw;
+}
+
+.imgGallery03 {
+  width: 12.78vw;
+  top: 100vh;
+  right: 7.36vw;
+  z-index: 998;
+}
+
+.imgGallery04 {
+  width: 42vw;
+  top: 50vh;
+  left: 110vw;
+  transform: translateY(-50%);
+}
+
+.galleryContent__img3Text {
+  position: absolute;
+  top: 50vh;
+  left: 42vw;
+  transform: translate(-50%, -40%);
+  z-index: 999;
+  /* opacity: 0; */
+  display: none;
+  font-family: var(--font-tertiary);
+  color: var(--color-dark);
+  font-size: 10vw;
+  line-height: 68%;
+}
+
+.galleryContent__ellipse {
+  position: absolute;
+  top: 70.71%;
+  left: 79.51%;
+  background: var(--color-yellow);
+  /* display: none; */
+  /* se cambia a flex desde js */
+  display: flex;
+  padding: 4.17vw 1.94vw;
+  align-items: center;
+  width: 11.11vw;
+  height: 11.11vw;
+  border-radius: 50%;
+}
+
+.galleryContent__ellipse__text {
+  color: var(--color-dark);
+  font-size: 1.11vw;
+  /* Calculado: 16px / 1440px * 100% */
+  line-height: 84%;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  flex-grow: 2;
+  flex-shrink: 0;
+}
+
+.galleryContent__ellipse__arrow {
+  flex: auto;
+  position: relative;
+  top: 140%;
+  left: -14%;
+  width: 3.333vw;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------- CONTENIDO MENU --------------------------------------------------- */
+/* Padding agregado al contenedor de todo el contenido para que se mantengan siempre
+los mismos márgenes */
+.menuContent {
+  padding: 0 6.25vw 0 6.25vw;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* --------------------- MENU/HOVER ZONE --------------------- */
+.menuHoverZone {
+  margin-top: 16vh;
+  height: 64vh;
+  width: 100%;
+  padding-top: 5.43vh;
+  position: absolute;
+  z-index: 999;
+  /* display: flex;
+  flex-direction: column; (se aplica desde bs)*/
+}
+
+.menuHoverZone__container {
+  /* display: flex; (se usa desde bs) */
+  /* align-items: center; */
+  flex-grow: 1;
+}
+
+.menuHoverZone__container:hover {
+  cursor: pointer;
+}
+
+/* .menuHoverZone__smallContainer {
+    display: flex; 
+    align-items: flex-start; (se aplica desde bs)
+} */
+.menuHoverZone__tittle {
+  font-size: 5.833vw;
+  margin-left: 0.83vw;
+}
+
+.menuHoverZone__number {
+  font-size: 1.944vw;
+  align-self: top;
+}
+
+.menuSelected {
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.menuSelected .menuHoverZone__tittle {
+  order: 1;
+  margin-right: 0.83vw;
+}
+
+.menuSelected .menuHoverZone__number {
+  order: 2;
+}
+
+.menuNoSelected {
+  font-weight: 600;
+  color: var(--color-darker-gray);
+}
+
+/* --------------------- MENU/CONTACT --------------------- */
+.menuContact {
+  position: absolute;
+  bottom: 10vh;
+  z-index: 1000;
+  /* tuve que poenrle este z-index porque el containerGallery lo está tapando,
+  el ancho lo está definiendo el ancho del primer hijo imgGallery01*/
+}
+
+.menuContact__list {
+  /* display: flex; (se aplica desde bs) */
+  list-style-type: none;
+}
+
+.menuContact__item a {
+  text-decoration: none;
+  margin-left: 1vw;
+  color: var(--color-gray);
+  font-size: 1.25vw;
+}
+
+.menuContact__item a:hover {
+  color: var(--color-white);
+}
+
+/* --------------------- MENU/HOVER IN GALLERY --------------------- */
+.menuVisible {
+  display: block;
+}
+
+.menuInvisible {
+  display: none;
+}
+
+.menuImages {
+  position: absolute;
+  height: 100vh;
+  width: 60vw;
+  left: 40vw;
+  z-index: 998;
+}
+
+.menuImagesGallery__img02Container {
+  position: relative;
+  left: 6vw;
+  top: 22.57vh;
+  width: 16.18vw;
+  height: auto;
+  z-index: 999;
+}
+
+.menuImagesGallery__img02 {
+  width: 16.18vw;
+  height: auto;
+  z-index: 999;
+}
+
+.menuImagesGallery__assetPhotographer {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-50%, -70%) rotate(-20.37deg);
+  width: 8vw;
+  z-index: 1000;
+}
+
+.menuImagesGallery__img01 {
+  position: absolute;
+  left: 16vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  height: 100vh;
+  z-index: 998;
+}
+
+.menuImagesGallery__stuff {
+  position: absolute;
+  right: 11vw;
+  top: 36vh;
+  z-index: 998;
+  /* text-align: right; (aplicado desde bs) */
+  font-size: 1.11vw;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--color-white);
+}
+
+.menuImagesGallery__stuff::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -30%;
+  width: 0.4vw;
+  height: 0.4vw;
+  border-radius: 50%;
+  background-color: var(--color-white);
+}
+
+.menuImagesGallery__img03 {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(20%);
+  right: 6vw;
+  width: 19.86vw;
+  height: auto;
+  z-index: 998;
+}
+
+.menuImagesProjects__gradient {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(10%, -75%);
+  z-index: 996;
+  width: 20.83vw;
+  height: 20.83vw;
+  border-radius: 300px;
+  background: #E16C01;
+  filter: blur(90px);
+}
+
+.menuImagesProjects__img01 {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(30%, -50%);
+  width: 18.6vw;
+  height: auto;
+  z-index: 997;
+}
+
+.menuImagesProjects__img02 {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(105%, -70%);
+  width: 18.6vw;
+  height: auto;
+  z-index: 996;
+}
+
+.menuImagesProjects__img03Container {
+  left: 0;
+  top: 50%;
+  transform: translate(170%, -30%);
+  width: 18.6vw;
+  height: auto;
+  z-index: 997;
+  position: relative;
+}
+
+.menuImagesProjects__img03 {
+  width: 18.6vw;
+  height: auto;
+  z-index: 997;
+}
+
+.menuImagesProjects__asterisk {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(-75%, -35%) rotate(42.29deg);
+  transform-origin: center center;
+  color: #E16C01;
+  font-size: 12.5vw;
+  font-weight: 400;
+  z-index: 998;
+}
+
+.menuImagesGallery__nameProject {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translate(-285%, -295%);
+  color: var(--color-black);
+  font-size: 0.9vw;
+  font-weight: 400;
+  z-index: 998;
+}
+
+.menuImagesProjects__img04 {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(10%, -60%);
+  width: 18.6vw;
+  height: auto;
+  z-index: 996;
+}
+
+.menuImagesAboutMe__img02 {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(30%, -50%);
+  width: 17.6vw;
+  height: auto;
+  z-index: 997;
+}
+
+.menuImagesAboutMe__img01Container {
+  left: 0;
+  top: 50%;
+  transform: translate(100%, -15%);
+  width: 18.6vw;
+  height: auto;
+  z-index: 997;
+  position: relative;
+}
+
+.menuImagesAboutMe__img01 {
+  width: 19.5vw;
+  height: auto;
+  z-index: 997;
+}
+
+.menuImagesAboutMe__assetAgs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, 155%) rotate(-17.125deg);
+  z-index: 998;
+  width: 5.25vw;
+}
+
+.menuImagesAboutMe__img03 {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(10%, -60%);
+  width: auto;
+  height: 100vh;
+  z-index: 996;
+}
+
+/* --------------------------------------------------- CONTENIDO ABOUT ME --------------------------------------------------- */
+/* Padding agregado al contenedor de todo el contenido para que se mantengan siempre
+los mismos márgenes */
+.aboutMeMainContent {
+  /* padding: 0 6.25vw 0 6.25vw; */
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start; (se aplica desde bs) */
+  width: fit-content;
+  height: 100vh;
+  overflow: visible;
+  /* min-width: 120vw; */
+}
+
+/* --------------------------------------------------- SECCIÓN 1 --------------------------------------------------- */
+.aboutMeSection1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  flex-shrink: 0;
+  margin-right: 16vw;
+}
+
+/* --------------------------------------------------- SECCIÓN 1 --------------------------------------------------- */
+.aboutMeMainContent__title {
+  position: absolute;
+  top: 20vh;
+  left: 4vw;
+  font-size: 7.92vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 63%;
+  color: var(--color-dark);
+  z-index: 1000;
+}
+
+.aboutMeMainContent__text01 {
+  position: absolute;
+  z-index: 999;
+  left: 4vw;
+  top: 58vh;
+  width: 23vw;
+  font-size: 1.11vw;
+  color: var(--color-dark);
+}
+
+.aboutMeMainContent__img01 {
+  position: absolute;
+  left: 19vw;
+  top: -16vh;
+  width: 38vw;
+  height: auto;
+  z-index: 998;
+}
+
+.aboutMeMainContent__img02 {
+  position: absolute;
+  top: 10vh;
+  right: 5vw;
+  width: 34.72vw;
+  height: auto;
+  z-index: 997;
+}
+
+.aboutMeMainContent__assetPhotographer {
+  position: absolute;
+  bottom: 10vh;
+  right: 34vw;
+  width: 16vw;
+  z-index: 999;
+}
+
+/* --------------------------------------------------- SECCIÓN 2 --------------------------------------------------- */
+.aboutMeSection2 {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around; (se aplica desde bs) */
+  width: 25.56vw;
+  height: 52.86vh;
+  flex-shrink: 0;
+  align-self: center;
+  margin-right: 16vw;
+}
+
+/* --------------------------------------------------- SECCIÓN 2 --------------------------------------------------- */
+.aboutMeMainContent__h2 {
+  color: var(--color-dark);
+  font-size: 2.78vw;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 5.4vh;
+}
+
+.aboutMeMainContent__p {
+  color: var(--color-dark);
+  font-size: 1.11vw;
+  font-weight: 400;
+  line-height: 152.5%;
+  margin-bottom: 1rem;
+}
+
+.aboutMeMainContent__chips {
+  /* display: flex; (se aplica desde bs) */
+  gap: 0.7vw;
+  margin-top: 5.4vh;
+}
+
+.aboutMeMainContent__chip01,
+.aboutMeMainContent__chip02,
+.aboutMeMainContent__chip03 {
+  padding: 0.5vw 1.5vw;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3vw;
+  border: 1.2px solid var(--color-dark);
+}
+
+/* --------------------------------------------------- SECCIÓN 3 --------------------------------------------------- */
+.aboutMeSection3 {
+  /* display: flex;
+  flex-direction: row; (se aplica desde bs) */
+  /* position: relative; */
+  flex-shrink: 0;
+  width: auto;
+}
+
+/* --------------------------------------------------- SECCIÓN 3 --------------------------------------------------- */
+.aboutMeSection3__img01Container {
+  position: relative;
+  width: auto;
+  height: 150vh;
+  flex-shrink: 0;
+}
+
+.aboutMeSection3__img01 {
+  /* position: absolute; */
+  top: -12vh;
+  left: 0;
+  width: auto;
+  height: 150vh;
+}
+
+.aboutMeSection3__assetWow {
+  position: absolute;
+  top: 34vh;
+  left: -6vw;
+  width: 9.58vw;
+  transform: rotate(-20.365deg);
+}
+
+.aboutMeSection3__assetAgs {
+  position: absolute;
+  top: 48vh;
+  left: -3vw;
+  width: 7vw;
+  transform: rotate(8.295deg);
+}
+
+.aboutMeSection3__img02 {
+  /* position: absolute; */
+  top: 0;
+  left: 20vw;
+  width: auto;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------- SECCIÓN 4 --------------------------------------------------- */
+/* Le saqué la posición absoluta para poder hacerlo parte del contenedor flex */
+.footerAboutMe {
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------- SECCIÓN 4 --------------------------------------------------- */
+/* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    overflow-y: visible;
+    overflow-x: hidden;
+  }
+  .navbar {
+    position: fixed;
+  }
+  .navbar__list {
+    justify-content: center;
+  }
+  .navbar__item a {
+    font-size: 7.5vw;
+  }
+  .underlineLink--black::after,
+  .underlineLink--white::after {
+    height: 0.5vw;
+  }
+  /* -------------------------------- CONTENIDO GALLERY -------------------------------- */
+  .header {
+    margin-top: 0;
+    height: auto;
+    position: relative;
+    margin-bottom: -100vh;
+    top: 50vh;
+    transform: translateY(-50%);
+    z-index: 999;
+  }
+  .header__title {
+    font-size: 50vw;
+    position: relative;
+  }
+  .galleryContent__ellipse {
+    display: none;
+  }
+  .galleryContent {
+    /* display: flex;
+    flex-direction: column; (aplicado desde bs) */
+    overflow-y: visible;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .galleryContent__container {
+    height: auto;
+    width: 100vw;
+    /* overflow-y: visible; */
+    display: block;
+  }
+  .galleryContent__container,
+  .imgGallery01,
+  .imgGallery02,
+  .imgGallery03,
+  .imgGallery04 {
+    /* position: static; */
+    transform: translate(0, 0);
+  }
+  .imgGallery01 {
+    position: relative;
+    width: 46vw;
+    top: 16vh;
+    left: -10vw;
+  }
+  .imgGallery02 {
+    position: relative;
+    width: 72vw;
+    top: 20vh;
+    left: 41vw;
+  }
+  .imgGallery03 {
+    position: relative;
+    width: 40vw;
+    left: 70vw;
+    top: -74vh;
+  }
+  .imgGallery04 {
+    position: relative;
+    top: 6vh;
+    left: 0;
+    width: 100vw;
+  }
+  .button__initialPoint {
+    position: fixed;
+    bottom: 5.43vh;
+    right: 2vw;
+    padding: 2.71vh 7vw;
+    transform: rotate(90deg);
+  }
+  .button__initialPoint__arrow {
+    width: 11.8vw;
+  }
+  /* -------------------------------- FOOTER -------------------------------- */
+  .footerGallery {
+    position: static;
+  }
+  .footer {
+    padding: 0 6.25vw;
+    background-color: var(--color-dark);
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+  }
+  .footer__lgit {
+    padding-top: 0vh;
+    max-height: 70vh;
+  }
+  .footer__text {
+    position: static;
+    font-weight: 700;
+    font-size: 26vw;
+    white-space: pre-wrap;
+    max-height: 96vh;
+  }
+  .footer__textContent {
+    position: static;
+  }
+  .footer__assetAgs {
+    display: none;
+  }
+  .footer__assetPhotographer {
+    top: 36vh;
+    left: 50vw;
+    padding: 4.17vw 6.5vw;
+    width: 35.54vw;
+    height: 35.54vw;
+  }
+  .footer__assetPhotographer__text {
+    font-size: 3.4vw;
+  }
+  .footer__contact {
+    margin-left: 0vw;
+    width: 100%;
+    padding-bottom: 6vh;
+  }
+  .footer__contact__row {
+    height: 100%;
+    /* flex-direction: column; (aplicado desde bs)*/
+  }
+  .footer__item__row2 {
+    font-size: 4.6vw;
+  }
+  /* -------------------------------- MENU -------------------------------- */
+  .menuContent {
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+    overflow: hidden;
+  }
+  .menuHoverZone {
+    position: static;
+    height: auto;
+    margin-top: 0;
+    justify-content: center;
+    gap: 6vh;
+    z-index: 997;
+  }
+  .menuContact {
+    position: static;
+  }
+  .menuHoverZone__container {
+    flex-grow: 0;
+  }
+  .menuHoverZone__tittle {
+    font-size: 12vw;
+  }
+  .menuHoverZone__number {
+    font-size: 5vw;
+  }
+  .menuContact__list {
+    /* flex-direction: column; (se aplica desde bs) */
+    gap: 3vh;
+  }
+  .menuContact__item a {
+    font-size: 4.25vw;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
