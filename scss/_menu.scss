@@ -1,0 +1,393 @@
+/* COLORS */
+$color-yellow: #EFF339;
+$color-white: #FFFFFF;
+$color-light-gray: #CCCCCC;
+$color-gray: #989898;
+$color-dark-gray: #6D6D6D;
+$color-darker-gray: #373737;
+$color-dark: #0A0A0A;
+$color-black: #000000;
+
+
+/* FONTS */
+$font-principal: 'Syne', sans-serif;
+$font-secondary: 'Kyiv', sans-serif;
+$font-tertiary: 'Eugusto', sans-serif;
+
+
+/* --------------------------------------------------- CONTENIDO MENU --------------------------------------------------- */
+
+/* Padding agregado al contenedor de todo el contenido para que se mantengan siempre
+los mismos márgenes */
+
+.menuContent {
+    padding: 0 6.25vw 0 6.25vw;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* --------------------- MENU/HOVER ZONE --------------------- */
+
+.menuHoverZone {
+    margin-top: 16vh;
+    height: 64vh;
+    width: 100%;
+    padding-top: 5.43vh;
+
+    position: absolute;
+    z-index: 999;
+
+    /* display: flex;
+    flex-direction: column; (se aplica desde bs)*/
+}
+
+.menuHoverZone__container {
+    /* display: flex; (se usa desde bs) */
+    /* align-items: center; */
+    flex-grow: 1;
+}
+
+.menuHoverZone__container:hover {
+    cursor: pointer;
+}
+
+/* .menuHoverZone__smallContainer {
+    display: flex; 
+    align-items: flex-start; (se aplica desde bs)
+} */
+
+
+.menuHoverZone__tittle {
+    font-size: 5.833vw;
+    margin-left: 0.83vw;
+}
+
+.menuHoverZone__number {
+    font-size: 1.944vw;
+    align-self: top;
+}
+
+.menuSelected {
+    font-weight: 700;
+    color: $color-white;
+}
+
+
+.menuSelected .menuHoverZone__tittle {
+    order: 1;
+    margin-right: 0.83vw;
+}
+
+.menuSelected .menuHoverZone__number {
+    order: 2;
+}
+
+.menuNoSelected {
+    font-weight: 600;
+    color: $color-darker-gray;
+}
+
+
+
+/* --------------------- MENU/CONTACT --------------------- */
+
+.menuContact {
+    position: absolute;
+    bottom: 10vh;
+    z-index: 1000;
+    /* tuve que poenrle este z-index porque el containerGallery lo está tapando,
+    el ancho lo está definiendo el ancho del primer hijo imgGallery01*/
+}
+
+.menuContact__list {
+    /* display: flex; (se aplica desde bs) */
+    list-style-type: none;
+
+}
+
+.menuContact__item a {
+    text-decoration: none;
+    margin-left: 1vw;
+    color: $color-gray;
+    font-size: 1.25vw;
+}
+
+.menuContact__item a:hover {
+    color: $color-white;
+}
+
+
+
+/* --------------------- MENU/HOVER IN GALLERY --------------------- */
+
+.menuVisible {
+    display: block;
+}
+
+.menuInvisible {
+    display: none;
+}
+
+.menuImages {
+    position: absolute;
+    height: 100vh;
+    width: 60vw;
+    left: 40vw;
+    z-index: 998;
+}
+
+
+.menuImagesGallery__img02Container {
+    position: relative;
+    left: 6vw;
+    top: 22.57vh;
+    width: 16.18vw;
+    height: auto;
+    z-index: 999;
+}
+
+.menuImagesGallery__img02 {
+    width: 16.18vw;
+    height: auto;
+    z-index: 999;
+}
+
+
+.menuImagesGallery__assetPhotographer {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%, -70%) rotate(-20.37deg);
+    width: 8vw;
+    z-index: 1000;
+}
+
+.menuImagesGallery__img01 {
+    position: absolute;
+    left: 16vw;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: 100vh;
+    z-index: 998;
+}
+
+.menuImagesGallery__stuff {
+    position: absolute;
+    right: 11vw;
+    top: 36vh;
+    z-index: 998;
+
+    /* text-align: right; (aplicado desde bs) */
+    font-size: 1.11vw;
+    font-weight: 400;
+    line-height: 1.3;
+    color: $color-white;
+}
+
+.menuImagesGallery__stuff::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -30%;
+    width: 0.4vw;
+    height: 0.4vw;
+    border-radius: 50%;
+    background-color: $color-white;
+}
+
+.menuImagesGallery__img03 {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(20%);
+    right: 6vw;
+    width: 19.86vw;
+    height: auto;
+    z-index: 998;
+}
+
+.menuImagesProjects__gradient {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(10%, -75%);
+    z-index: 996;
+
+    width: 20.83vw;
+    height: 20.83vw;
+    border-radius: 300px;
+    background: #E16C01;
+    filter: blur(90px);
+}
+
+.menuImagesProjects__img01 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(30%, -50%);
+    width: 18.6vw;
+    height: auto;
+    z-index: 997;
+}
+
+
+.menuImagesProjects__img02 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(105%, -70%);
+    width: 18.6vw;
+    height: auto;
+    z-index: 996;
+}
+
+.menuImagesProjects__img03Container {
+    left: 0;
+    top: 50%;
+    transform: translate(170%, -30%);
+    width: 18.6vw;
+    height: auto;
+    z-index: 997;
+
+    position: relative;
+}
+
+.menuImagesProjects__img03 {
+    width: 18.6vw;
+    height: auto;
+    z-index: 997;
+}
+
+.menuImagesProjects__asterisk {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-75%, -35%) rotate(42.29deg);
+    transform-origin: center center;
+
+    color: #E16C01;
+    font-size: 12.5vw;
+    font-weight: 400;
+    z-index: 998;
+}
+
+.menuImagesGallery__nameProject {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-285%, -295%);
+
+    color: $color-black;
+    font-size: 0.9vw;
+    font-weight: 400;
+    z-index: 998;
+}
+
+
+.menuImagesProjects__img04 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(10%, -60%);
+    width: 18.6vw;
+    height: auto;
+    z-index: 996;
+}
+
+
+.menuImagesAboutMe__img02 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(30%, -50%);
+    width: 17.6vw;
+    height: auto;
+    z-index: 997;
+}
+
+.menuImagesAboutMe__img01Container {
+    left: 0;
+    top: 50%;
+    transform: translate(100%, -15%);
+    width: 18.6vw;
+    height: auto;
+    z-index: 997;
+
+    position: relative;
+}
+
+.menuImagesAboutMe__img01 {
+    width: 19.5vw;
+    height: auto;
+    z-index: 997;
+}
+
+.menuImagesAboutMe__assetAgs {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, 155%) rotate(-17.125deg);
+    z-index: 998;
+    width: 5.25vw;
+}
+
+.menuImagesAboutMe__img03 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(10%, -60%);
+    width: auto;
+    height: 100vh;
+    z-index: 996;
+}
+
+
+/* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    /* -------------------------------- MENU -------------------------------- */
+
+    .menuContent {
+        display: grid;
+        grid-template-rows: 4fr 1fr;
+        overflow: hidden;
+    }
+
+    .menuHoverZone {
+        position: static;
+        height: auto;
+        margin-top: 0;
+        justify-content: center;
+        gap: 6vh;
+        z-index: 997;
+    }
+
+    .menuContact {
+        position: static;
+    }
+
+    .menuHoverZone__container {
+        flex-grow: 0;
+    }
+
+
+    .menuHoverZone__tittle {
+        font-size: 12vw;
+    }
+
+    .menuHoverZone__number {
+        font-size: 5vw;
+    }
+
+    .menuContact__list {
+        /* flex-direction: column; (se aplica desde bs) */
+        gap: 3vh;
+    }
+
+    .menuContact__item a {
+        font-size: 4.25vw;
+    }
+
+}

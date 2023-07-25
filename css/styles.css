@@ -9,166 +9,8 @@
   font-family: "Eugusto";
   src: url("../fonts/Eugusto Free Font.otf");
 }
-/* Variables que tuve que definir en root para que js pueda acceder a ellas */
-:root {
-  --color-white: #FFFFFF;
-  --color-light-gray: #CCCCCC;
-  --color-darker-gray: #373737;
-  --color-dark: #0A0A0A;
-}
-
 /* COLORS */
 /* FONTS */
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  cursor: none;
-  font-family: "Syne", sans-serif;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.cover {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1000;
-  background-color: #FFFFFF;
-}
-
-.no-scroll {
-  overflow: hidden;
-}
-
-p, ul {
-  /* para contrarrestar el por defecto aplicado por bootstrap */
-  margin-bottom: 0;
-}
-
-h1 {
-  /* para contrarrestar el por defecto aplicado por bootstrap */
-  color: #0A0A0A;
-  margin-bottom: 0;
-}
-
-/* --------------------------------------------------- ESTILOS GENERALES --------------------------------------------------- */
-.cursor {
-  position: fixed;
-  /* en fixed se posiciona segun el viewport, en absolute se posiciona segun el eleento padre más cercano con posición relativa*/
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 1000;
-  transition: all 0.1s ease;
-  transition-property: background-color, transform, width, height;
-}
-
-.cursor-default {
-  width: 1.14vw;
-  height: 1.14vw;
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  mix-blend-mode: difference;
-}
-
-.cursor-images {
-  width: 4.38vw;
-  height: 4.38vw;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(0.34vw);
-  border-radius: 50%;
-  border: 0.08vw solid #FFFFFF;
-  mix-blend-mode: normal;
-}
-
-.cursor-images::after {
-  content: "see";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.1vw;
-  line-height: 84%;
-  color: #FFFFFF;
-}
-
-.cursor-links {
-  width: 4.38vw;
-  height: 4.38vw;
-  border: 0.08vw solid #FFFFFF;
-  mix-blend-mode: difference;
-  border-radius: 50%;
-  background-color: transparent;
-}
-
-.cursor-footer {
-  width: 4.38vw;
-  height: 4.38vw;
-  border-radius: 50%;
-  border: 0 solid;
-  background-color: #EFF339;
-  mix-blend-mode: normal;
-}
-
-.cursor-footer::after {
-  content: "";
-  background-image: url("./icons/arrow-up.svg");
-  background-size: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
-}
-
-.backgroundDark {
-  background-color: #0A0A0A;
-}
-
-.backgroundLight {
-  background-color: #FFFFFF;
-}
-
-.blackVersion {
-  color: #000000;
-}
-
-.whiteVersion {
-  color: #FFFFFF;
-}
-
-.breadcrumb {
-  color: #989898;
-  font-size: 1.25vw;
-  /*para contrarrestar bootstrap que pone breadcrumb en display flex*/
-  display: inline-block;
-}
-
-.blur-effect {
-  filter: blur(0.14vw);
-}
-
 /* --------------------------------------------------- NAVBAR --------------------------------------------------- */
 .navbar {
   position: absolute;
@@ -230,56 +72,24 @@ h1 {
   width: 100%;
 }
 
-/* --------------------------------------------------- CLASE IMG --------------------------------------------------- */
-.hovered .img {
-  transform: scale(1.1);
+/* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+  }
+  .navbar__list {
+    justify-content: center;
+  }
+  .navbar__item a {
+    font-size: 7.5vw;
+  }
+  .underlineLink--black::after,
+  .underlineLink--white::after {
+    height: 0.5vw;
+  }
 }
-
-.img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: top left;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* --------------------------------------------------- BUTTON INITIAL POINT --------------------------------------------------- */
-.button__initialPoint--inactive {
-  display: none;
-  /* se cambia a flex desde js */
-}
-
-.button__initialPoint--active {
-  display: flex;
-}
-
-.button__initialPoint {
-  position: absolute;
-  z-index: 999;
-  bottom: 6.43vh;
-  right: 6.25vw;
-  /*márgen que estoy usando*/
-  padding: 3.14vh 1.8vw;
-  background-color: #000000;
-  border-radius: 4.8rem;
-  transition: all 0.2s ease-in-out;
-}
-
-.button__initialPoint__arrow {
-  width: 3.02vw;
-  height: auto;
-}
-
-.button__initialPoint:hover {
-  border: 0.08vw solid #FFFFFF;
-  mix-blend-mode: difference;
-  background-color: transparent;
-}
-
-/* .centered{
-    top: 50%;
-    transform: translate(-50%, -50%);
-} */
+/* COLORS */
+/* FONTS */
 /* --------------------------------------------------- FOOTER --------------------------------------------------- */
 .footerGallery {
   position: absolute;
@@ -397,6 +207,63 @@ h1 {
   font-size: 1.25vw;
 }
 
+/* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
+@media (max-width: 768px) {
+  /* -------------------------------- FOOTER -------------------------------- */
+  .footerGallery {
+    position: static;
+  }
+  .footer {
+    padding: 0 6.25vw;
+    background-color: #0A0A0A;
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+  }
+  .footer__lgit {
+    padding-top: 0vh;
+    max-height: 70vh;
+  }
+  .footer__text {
+    position: static;
+    font-weight: 700;
+    font-size: 26vw;
+    white-space: pre-wrap;
+    max-height: 96vh;
+  }
+  .footer__textContent {
+    position: static;
+  }
+  .footer__assetAgs {
+    display: none;
+  }
+  .footer__assetPhotographer {
+    top: 36vh;
+    left: 50vw;
+    padding: 4.17vw 6.5vw;
+    width: 35.54vw;
+    height: 35.54vw;
+  }
+  .footer__assetPhotographer__text {
+    font-size: 3.4vw;
+  }
+  .footer__contact {
+    margin-left: 0vw;
+    width: 100%;
+    padding-bottom: 6vh;
+  }
+  .footer__contact__row {
+    height: 100%;
+    /* flex-direction: column; (aplicado desde bs)*/
+  }
+  .footer__item__row2 {
+    font-size: 4.6vw;
+  }
+}
+/* COLORS */
+/* FONTS */
 /* --------------------------------------------------- CONTENIDO GALLERY --------------------------------------------------- */
 .header {
   display: grid;
@@ -519,6 +386,75 @@ h1 {
   flex-shrink: 0;
 }
 
+/* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
+@media (max-width: 768px) {
+  /* -------------------------------- CONTENIDO GALLERY -------------------------------- */
+  .header {
+    margin-top: 0;
+    height: auto;
+    position: relative;
+    margin-bottom: -100vh;
+    top: 50vh;
+    transform: translateY(-50%);
+    z-index: 999;
+  }
+  .header__title {
+    font-size: 50vw;
+    position: relative;
+  }
+  .galleryContent__ellipse {
+    display: none;
+  }
+  .galleryContent {
+    /* display: flex;
+    flex-direction: column; (aplicado desde bs) */
+    overflow-y: visible;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .galleryContent__container {
+    height: auto;
+    width: 100vw;
+    /* overflow-y: visible; */
+    display: block;
+  }
+  .galleryContent__container,
+  .imgGallery01,
+  .imgGallery02,
+  .imgGallery03,
+  .imgGallery04 {
+    /* position: static; */
+    transform: translate(0, 0);
+  }
+  .imgGallery01 {
+    position: relative;
+    width: 46vw;
+    top: 16vh;
+    left: -10vw;
+  }
+  .imgGallery02 {
+    position: relative;
+    width: 72vw;
+    top: 20vh;
+    left: 41vw;
+  }
+  .imgGallery03 {
+    position: relative;
+    width: 40vw;
+    left: 70vw;
+    top: -74vh;
+  }
+  .imgGallery04 {
+    position: relative;
+    top: 6vh;
+    left: 0;
+    width: 100vw;
+  }
+}
+/* COLORS */
+/* FONTS */
 /* --------------------------------------------------- CONTENIDO MENU --------------------------------------------------- */
 /* Padding agregado al contenedor de todo el contenido para que se mantengan siempre
 los mismos márgenes */
@@ -820,6 +756,44 @@ los mismos márgenes */
   z-index: 996;
 }
 
+/* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
+@media (max-width: 768px) {
+  /* -------------------------------- MENU -------------------------------- */
+  .menuContent {
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+    overflow: hidden;
+  }
+  .menuHoverZone {
+    position: static;
+    height: auto;
+    margin-top: 0;
+    justify-content: center;
+    gap: 6vh;
+    z-index: 997;
+  }
+  .menuContact {
+    position: static;
+  }
+  .menuHoverZone__container {
+    flex-grow: 0;
+  }
+  .menuHoverZone__tittle {
+    font-size: 12vw;
+  }
+  .menuHoverZone__number {
+    font-size: 5vw;
+  }
+  .menuContact__list {
+    /* flex-direction: column; (se aplica desde bs) */
+    gap: 3vh;
+  }
+  .menuContact__item a {
+    font-size: 4.25vw;
+  }
+}
+/* COLORS */
+/* FONTS */
 /* --------------------------------------------------- CONTENIDO ABOUT ME --------------------------------------------------- */
 /* Padding agregado al contenedor de todo el contenido para que se mantengan siempre
 los mismos márgenes */
@@ -997,89 +971,222 @@ los mismos márgenes */
 }
 
 /* --------------------------------------------------- SECCIÓN 4 --------------------------------------------------- */
+/* Variables que tuve que definir en root para que js pueda acceder a ellas */
+:root {
+  --color-white: #FFFFFF;
+  --color-light-gray: #CCCCCC;
+  --color-darker-gray: #373737;
+  --color-dark: #0A0A0A;
+}
+
+/* COLORS */
+/* FONTS */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  cursor: none;
+  font-family: "Syne", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cover {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: #FFFFFF;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+p, ul {
+  /* para contrarrestar el por defecto aplicado por bootstrap */
+  margin-bottom: 0;
+}
+
+h1 {
+  /* para contrarrestar el por defecto aplicado por bootstrap */
+  color: #0A0A0A;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------- ESTILOS GENERALES --------------------------------------------------- */
+.cursor {
+  position: fixed;
+  /* en fixed se posiciona segun el viewport, en absolute se posiciona segun el eleento padre más cercano con posición relativa*/
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1000;
+  transition: all 0.1s ease;
+  transition-property: background-color, transform, width, height;
+}
+
+.cursor-default {
+  width: 1.14vw;
+  height: 1.14vw;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+}
+
+.cursor-images {
+  width: 4.38vw;
+  height: 4.38vw;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(0.34vw);
+  border-radius: 50%;
+  border: 0.08vw solid #FFFFFF;
+  mix-blend-mode: normal;
+}
+
+.cursor-images::after {
+  content: "see";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1vw;
+  line-height: 84%;
+  color: #FFFFFF;
+}
+
+.cursor-links {
+  width: 4.38vw;
+  height: 4.38vw;
+  border: 0.08vw solid #FFFFFF;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.cursor-footer {
+  width: 4.38vw;
+  height: 4.38vw;
+  border-radius: 50%;
+  border: 0 solid;
+  background-color: #EFF339;
+  mix-blend-mode: normal;
+}
+
+.cursor-footer::after {
+  content: "";
+  background-image: url("./icons/arrow-up.svg");
+  background-size: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+}
+
+.backgroundDark {
+  background-color: #0A0A0A;
+}
+
+.backgroundLight {
+  background-color: #FFFFFF;
+}
+
+.blackVersion {
+  color: #000000;
+}
+
+.whiteVersion {
+  color: #FFFFFF;
+}
+
+.breadcrumb {
+  color: #989898;
+  font-size: 1.25vw;
+  /*para contrarrestar bootstrap que pone breadcrumb en display flex*/
+  display: inline-block;
+}
+
+.blur-effect {
+  filter: blur(0.14vw);
+}
+
+/* --------------------------------------------------- CLASE IMG --------------------------------------------------- */
+.hovered .img {
+  transform: scale(1.1);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top left;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------- BUTTON INITIAL POINT --------------------------------------------------- */
+.button__initialPoint--inactive {
+  display: none;
+  /* se cambia a flex desde js */
+}
+
+.button__initialPoint--active {
+  display: flex;
+}
+
+.button__initialPoint {
+  position: absolute;
+  z-index: 999;
+  bottom: 6.43vh;
+  right: 6.25vw;
+  /*márgen que estoy usando*/
+  padding: 3.14vh 1.8vw;
+  background-color: #000000;
+  border-radius: 4.8rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.button__initialPoint__arrow {
+  width: 3.02vw;
+  height: auto;
+}
+
+.button__initialPoint:hover {
+  border: 0.08vw solid #FFFFFF;
+  mix-blend-mode: difference;
+  background-color: transparent;
+}
+
+/* .centered{
+    top: 50%;
+    transform: translate(-50%, -50%);
+} */
 /* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
 @media (max-width: 768px) {
   body {
     height: auto;
     overflow-y: visible;
     overflow-x: hidden;
-  }
-  .navbar {
-    position: fixed;
-  }
-  .navbar__list {
-    justify-content: center;
-  }
-  .navbar__item a {
-    font-size: 7.5vw;
-  }
-  .underlineLink--black::after,
-  .underlineLink--white::after {
-    height: 0.5vw;
-  }
-  /* -------------------------------- CONTENIDO GALLERY -------------------------------- */
-  .header {
-    margin-top: 0;
-    height: auto;
-    position: relative;
-    margin-bottom: -100vh;
-    top: 50vh;
-    transform: translateY(-50%);
-    z-index: 999;
-  }
-  .header__title {
-    font-size: 50vw;
-    position: relative;
-  }
-  .galleryContent__ellipse {
-    display: none;
-  }
-  .galleryContent {
-    /* display: flex;
-    flex-direction: column; (aplicado desde bs) */
-    overflow-y: visible;
-    height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .galleryContent__container {
-    height: auto;
-    width: 100vw;
-    /* overflow-y: visible; */
-    display: block;
-  }
-  .galleryContent__container,
-  .imgGallery01,
-  .imgGallery02,
-  .imgGallery03,
-  .imgGallery04 {
-    /* position: static; */
-    transform: translate(0, 0);
-  }
-  .imgGallery01 {
-    position: relative;
-    width: 46vw;
-    top: 16vh;
-    left: -10vw;
-  }
-  .imgGallery02 {
-    position: relative;
-    width: 72vw;
-    top: 20vh;
-    left: 41vw;
-  }
-  .imgGallery03 {
-    position: relative;
-    width: 40vw;
-    left: 70vw;
-    top: -74vh;
-  }
-  .imgGallery04 {
-    position: relative;
-    top: 6vh;
-    left: 0;
-    width: 100vw;
   }
   .button__initialPoint {
     position: fixed;
@@ -1090,91 +1197,6 @@ los mismos márgenes */
   }
   .button__initialPoint__arrow {
     width: 11.8vw;
-  }
-  /* -------------------------------- FOOTER -------------------------------- */
-  .footerGallery {
-    position: static;
-  }
-  .footer {
-    padding: 0 6.25vw;
-    background-color: #0A0A0A;
-    width: 100vw;
-    height: 100vh;
-    z-index: 998;
-    display: grid;
-    grid-template-rows: 3fr 1fr;
-  }
-  .footer__lgit {
-    padding-top: 0vh;
-    max-height: 70vh;
-  }
-  .footer__text {
-    position: static;
-    font-weight: 700;
-    font-size: 26vw;
-    white-space: pre-wrap;
-    max-height: 96vh;
-  }
-  .footer__textContent {
-    position: static;
-  }
-  .footer__assetAgs {
-    display: none;
-  }
-  .footer__assetPhotographer {
-    top: 36vh;
-    left: 50vw;
-    padding: 4.17vw 6.5vw;
-    width: 35.54vw;
-    height: 35.54vw;
-  }
-  .footer__assetPhotographer__text {
-    font-size: 3.4vw;
-  }
-  .footer__contact {
-    margin-left: 0vw;
-    width: 100%;
-    padding-bottom: 6vh;
-  }
-  .footer__contact__row {
-    height: 100%;
-    /* flex-direction: column; (aplicado desde bs)*/
-  }
-  .footer__item__row2 {
-    font-size: 4.6vw;
-  }
-  /* -------------------------------- MENU -------------------------------- */
-  .menuContent {
-    display: grid;
-    grid-template-rows: 4fr 1fr;
-    overflow: hidden;
-  }
-  .menuHoverZone {
-    position: static;
-    height: auto;
-    margin-top: 0;
-    justify-content: center;
-    gap: 6vh;
-    z-index: 997;
-  }
-  .menuContact {
-    position: static;
-  }
-  .menuHoverZone__container {
-    flex-grow: 0;
-  }
-  .menuHoverZone__tittle {
-    font-size: 12vw;
-  }
-  .menuHoverZone__number {
-    font-size: 5vw;
-  }
-  .menuContact__list {
-    /* flex-direction: column; (se aplica desde bs) */
-    gap: 3vh;
-  }
-  .menuContact__item a {
-    font-size: 4.25vw;
   }
 }
 

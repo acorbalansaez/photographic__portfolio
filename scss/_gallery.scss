@@ -1,0 +1,242 @@
+/* COLORS */
+$color-yellow: #EFF339;
+$color-white: #FFFFFF;
+$color-light-gray: #CCCCCC;
+$color-gray: #989898;
+$color-dark-gray: #6D6D6D;
+$color-darker-gray: #373737;
+$color-dark: #0A0A0A;
+$color-black: #000000;
+
+
+/* FONTS */
+$font-principal: 'Syne', sans-serif;
+$font-secondary: 'Kyiv', sans-serif;
+$font-tertiary: 'Eugusto', sans-serif;
+
+
+/* --------------------------------------------------- CONTENIDO GALLERY --------------------------------------------------- */
+
+.header {
+    display: grid;
+    place-content: center;
+    margin-top: -12vh;
+
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+}
+
+
+.header__title {
+    font-size: 22.78vw;
+    text-transform: lowercase;
+    letter-spacing: 0.56px;
+    font-weight: 600;
+
+    /* creamos una especie de máscara */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 1000;
+
+    pointer-events: none;
+
+}
+
+
+.galleryContent {
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.galleryContent__container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.galleryContent__imgGallery {
+    position: absolute;
+    overflow: hidden;
+
+    will-change: filter, transform;
+    /* indicar el cambio de filtro supuestamente mejoraría el rendimiento */
+    transition: transform, filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.imgGallery01 {
+    width: 24.31vw;
+    top: 100vh;
+    left: -3.33vw;
+}
+
+.imgGallery02 {
+    width: 32.36vw;
+    top: 100vh;
+    left: 51.74vw;
+}
+
+.imgGallery03 {
+    width: 12.78vw;
+    top: 100vh;
+    right: 7.36vw;
+    z-index: 998;
+}
+
+.imgGallery04 {
+    width: 42vw;
+    top: 50vh;
+    left: 110vw;
+    transform: translateY(-50%);
+}
+
+.galleryContent__img3Text {
+    position: absolute;
+    top: 50vh;
+    left: 42vw;
+    transform: translate(-50%, -40%);
+    z-index: 999;
+    /* opacity: 0; */
+    display: none;
+
+    font-family: $font-tertiary;
+    color: $color-dark;
+    font-size: 10vw;
+    line-height: 68%;
+
+}
+
+.galleryContent__ellipse {
+
+    position: absolute;
+    top: 70.71%;
+    left: 79.51%;
+    background: $color-yellow;
+
+    /* display: none; */
+    /* se cambia a flex desde js */
+    display: flex;
+    padding: 4.17vw 1.94vw;
+    align-items: center;
+    width: 11.11vw;
+    height: 11.11vw;
+    border-radius: 50%;
+}
+
+
+.galleryContent__ellipse__text {
+    color: $color-dark;
+    font-size: 1.11vw;
+    /* Calculado: 16px / 1440px * 100% */
+    line-height: 84%;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+
+    flex-grow: 2;
+    flex-shrink: 0;
+}
+
+.galleryContent__ellipse__arrow {
+    flex: auto;
+    position: relative;
+    top: 140%;
+    left: -14%;
+    width: 3.333vw;
+
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+
+/* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    /* -------------------------------- CONTENIDO GALLERY -------------------------------- */
+
+    .header {
+        margin-top: 0;
+        height: auto;
+        position: relative;
+        margin-bottom: -100vh;
+        top: 50vh;
+        transform: translateY(-50%);
+        z-index: 999;
+    }
+
+    .header__title {
+        font-size: 50vw;
+        position: relative;
+    }
+
+
+    .galleryContent__ellipse {
+        display: none;
+    }
+
+    .galleryContent {
+        /* display: flex;
+        flex-direction: column; (aplicado desde bs) */
+        overflow-y: visible;
+        height: auto;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .galleryContent__container {
+        height: auto;
+        width: 100vw;
+        /* overflow-y: visible; */
+        display: block;
+    }
+
+    .galleryContent__container,
+    .imgGallery01,
+    .imgGallery02,
+    .imgGallery03,
+    .imgGallery04 {
+        /* position: static; */
+        transform: translate(0, 0);
+    }
+
+    .imgGallery01 {
+        position: relative;
+        width: 46vw;
+        top: 16vh;
+        left: -10vw;
+    }
+
+    .imgGallery02 {
+        position: relative;
+        width: 72vw;
+        top: 20vh;
+        left: 41vw;
+    }
+
+    .imgGallery03 {
+        position: relative;
+        width: 40vw;
+        left: 70vw;
+        top: -74vh;
+    }
+
+    .imgGallery04 {
+        position: relative;
+        top: 6vh;
+        left: 0;
+        width: 100vw;
+
+    }
+
+
+}

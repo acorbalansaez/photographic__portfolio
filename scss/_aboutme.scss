@@ -1,0 +1,208 @@
+/* COLORS */
+$color-yellow: #EFF339;
+$color-white: #FFFFFF;
+$color-light-gray: #CCCCCC;
+$color-gray: #989898;
+$color-dark-gray: #6D6D6D;
+$color-darker-gray: #373737;
+$color-dark: #0A0A0A;
+$color-black: #000000;
+
+
+/* FONTS */
+$font-principal: 'Syne', sans-serif;
+$font-secondary: 'Kyiv', sans-serif;
+$font-tertiary: 'Eugusto', sans-serif;
+
+
+/* --------------------------------------------------- CONTENIDO ABOUT ME --------------------------------------------------- */
+
+/* Padding agregado al contenedor de todo el contenido para que se mantengan siempre
+los mismos márgenes */
+
+.aboutMeMainContent {
+    /* padding: 0 6.25vw 0 6.25vw; */
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start; (se aplica desde bs) */
+    width: fit-content;
+    height: 100vh;
+    overflow: visible;
+    /* min-width: 120vw; */
+}
+
+/* --------------------------------------------------- SECCIÓN 1 --------------------------------------------------- */
+.aboutMeSection1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    flex-shrink: 0;
+    margin-right: 16vw;
+}
+
+/* --------------------------------------------------- SECCIÓN 1 --------------------------------------------------- */
+
+
+.aboutMeMainContent__title {
+    position: absolute;
+    top: 20vh;
+    left: 4vw;
+    font-size: 7.92vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 63%;
+    color: $color-dark;
+    z-index: 1000;
+}
+
+.aboutMeMainContent__text01 {
+    position: absolute;
+    z-index: 999;
+    left: 4vw;
+    top: 58vh;
+
+    width: 23vw;
+    font-size: 1.11vw;
+    color: $color-dark;
+}
+
+
+.aboutMeMainContent__img01 {
+    position: absolute;
+    left: 19vw;
+    top: -16vh;
+    width: 38vw;
+    height: auto;
+    z-index: 998;
+
+}
+
+.aboutMeMainContent__img02 {
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+    width: 34.72vw;
+    height: auto;
+    z-index: 997;
+}
+
+.aboutMeMainContent__assetPhotographer {
+    position: absolute;
+    bottom: 10vh;
+    right: 34vw;
+    width: 16vw;
+    z-index: 999;
+}
+
+/* --------------------------------------------------- SECCIÓN 2 --------------------------------------------------- */
+.aboutMeSection2 {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around; (se aplica desde bs) */
+    width: 25.56vw;
+    height: 52.86vh;
+    flex-shrink: 0;
+    align-self: center;
+    margin-right: 16vw;
+}
+
+/* --------------------------------------------------- SECCIÓN 2 --------------------------------------------------- */
+
+.aboutMeMainContent__h2 {
+    color: $color-dark;
+    font-size: 2.78vw;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 5.4vh;
+}
+
+.aboutMeMainContent__p {
+    color: $color-dark;
+    font-size: 1.11vw;
+    font-weight: 400;
+    line-height: 152.5%;
+    margin-bottom: 1rem;
+}
+
+.aboutMeMainContent__chips {
+    /* display: flex; (se aplica desde bs) */
+    gap: 0.7vw;
+    margin-top: 5.4vh;
+}
+
+.aboutMeMainContent__chip01,
+.aboutMeMainContent__chip02,
+.aboutMeMainContent__chip03 {
+    padding: 0.5vw 1.5vw;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3vw;
+    border: 1.2px solid $color-dark;
+}
+
+/* --------------------------------------------------- SECCIÓN 3 --------------------------------------------------- */
+.aboutMeSection3 {
+    /* display: flex;
+    flex-direction: row; (se aplica desde bs) */
+    /* position: relative; */
+    flex-shrink: 0;
+    width: auto;
+}
+
+/* --------------------------------------------------- SECCIÓN 3 --------------------------------------------------- */
+
+.aboutMeSection3__img01Container {
+    position: relative;
+    width: auto;
+    height: 150vh;
+    flex-shrink: 0;
+}
+
+.aboutMeSection3__img01 {
+    /* position: absolute; */
+    top: -12vh;
+    left: 0;
+    width: auto;
+    height: 150vh;
+}
+
+.aboutMeSection3__assetWow {
+    position: absolute;
+    top: 34vh;
+    left: -6vw;
+    width: 9.58vw;
+    transform: rotate(-20.365deg);
+}
+
+.aboutMeSection3__assetAgs {
+    position: absolute;
+    top: 48vh;
+    left: -3vw;
+    width: 7vw;
+    transform: rotate(8.295deg);
+}
+
+.aboutMeSection3__img02 {
+    /* position: absolute; */
+    top: 0;
+    left: 20vw;
+    width: auto;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+
+/* --------------------------------------------------- SECCIÓN 4 --------------------------------------------------- */
+/* Le saqué la posición absoluta para poder hacerlo parte del contenedor flex */
+.footerAboutMe {
+    flex-shrink: 0;
+}
+
+/* --------------------------------------------------- SECCIÓN 4 --------------------------------------------------- */
+
+
+
+
