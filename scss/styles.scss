@@ -2,30 +2,41 @@
 
 @font-face {
     font-family: 'Kyiv';
-    src: url('./fonts/Kyiv/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Bold2.otf') format('opentype');
+    src: url('../fonts/Kyiv/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Bold2.otf') format('opentype');
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'Eugusto';
-    src: url('./fonts/Eugusto\ Free\ Font.otf');
+    src: url('../fonts/Eugusto\ Free\ Font.otf');
 }
 
+
+
+/* Variables que tuve que definir en root para que js pueda acceder a ellas */
 :root {
-    /* COLORS */
-    --color-yellow: #EFF339;
     --color-white: #FFFFFF;
     --color-light-gray: #CCCCCC;
-    --color-gray: #989898;
-    --color-dark-gray: #6D6D6D;
     --color-darker-gray: #373737;
     --color-dark: #0A0A0A;
-    --color-black: #000000;
-    /* FONTS */
-    --font-principal: 'Syne', sans-serif;
-    --font-secondary: 'Kyiv', sans-serif;
-    --font-tertiary: 'Eugusto', sans-serif;
 }
+
+
+/* COLORS */
+$color-yellow: #EFF339;
+$color-white: #FFFFFF;
+$color-light-gray: #CCCCCC;
+$color-gray: #989898;
+$color-dark-gray: #6D6D6D;
+$color-darker-gray: #373737;
+$color-dark: #0A0A0A;
+$color-black: #000000;
+
+
+/* FONTS */
+$font-principal: 'Syne', sans-serif;
+$font-secondary: 'Kyiv', sans-serif;
+$font-tertiary: 'Eugusto', sans-serif;
 
 
 * {
@@ -46,7 +57,7 @@ body {
     height: 100vh;
     overflow: hidden;
     cursor: none;
-    font-family: var(--font-principal);
+    font-family: $font-principal;
 }
 
 ::-webkit-scrollbar {
@@ -58,12 +69,13 @@ a {
     color: inherit;
 }
 
+
 .cover {
     position: absolute;
     width: 100vw;
     height: 100vh;
     z-index: 1000;
-    background-color: var(--color-white);
+    background-color: $color-white;
 }
 
 .no-scroll {
@@ -76,7 +88,7 @@ p, ul {
 }
 h1{
     /* para contrarrestar el por defecto aplicado por bootstrap */
-    color: var(--color-dark);
+    color: $color-dark;
     margin-bottom: 0;
 }
 
@@ -95,7 +107,7 @@ h1{
 .cursor-default {
     width: 1.14vw;
     height: 1.14vw;
-    background-color: var(--color-white);
+    background-color: $color-white;
     border-radius: 50%;
     mix-blend-mode: difference;
 }
@@ -106,7 +118,7 @@ h1{
     background-color: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(0.34vw);
     border-radius: 50%;
-    border: 0.08vw solid var(--color-white);
+    border: 0.08vw solid $color-white;
     mix-blend-mode: normal;
 }
 
@@ -118,13 +130,13 @@ h1{
     transform: translate(-50%, -50%);
     font-size: 1.1vw;
     line-height: 84%;
-    color: var(--color-white);
+    color: $color-white;
 }
 
 .cursor-links {
     width: 4.38vw;
     height: 4.38vw;
-    border: 0.08vw solid var(--color-white);
+    border: 0.08vw solid $color-white;
     mix-blend-mode: difference;
     border-radius: 50%;
     background-color: transparent;
@@ -135,7 +147,7 @@ h1{
     height: 4.38vw;
     border-radius: 50%;
     border: 0 solid;
-    background-color: var(--color-yellow);
+    background-color: $color-yellow;
     mix-blend-mode: normal;
 }
 
@@ -153,24 +165,24 @@ h1{
 
 
 .backgroundDark {
-    background-color: var(--color-dark);
+    background-color: $color-dark;
 }
 
 .backgroundLight {
-    background-color: var(--color-white);
+    background-color: $color-white;
 }
 
 
 .blackVersion {
-    color: var(--color-black);
+    color: $color-black;
 }
 
 .whiteVersion {
-    color: var(--color-white);
+    color: $color-white;
 }
 
 .breadcrumb {
-    color: var(--color-gray);
+    color: $color-gray;
     font-size: 1.25vw;
 
     /*para contrarrestar bootstrap que pone breadcrumb en display flex*/
@@ -228,7 +240,7 @@ h1{
     bottom: -2px;
     width: 0;
     height: 0.2vw;
-    background-color: var(--color-black);
+    background-color: $color-black;
     transition: width 0.3s ease-in-out;
 }
 
@@ -239,7 +251,7 @@ h1{
     bottom: -2px;
     width: 0;
     height: 0.2vw;
-    background-color: var(--color-white);
+    background-color: $color-white;
     transition: width 0.3s ease-in-out;
 }
 
@@ -280,7 +292,7 @@ h1{
     right: 6.25vw;
     /*márgen que estoy usando*/
     padding: 3.14vh 1.8vw;
-    background-color: var(--color-black);
+    background-color: $color-black;
     border-radius: 4.8rem;
     transition: all 0.2s ease-in-out;
 }
@@ -291,7 +303,7 @@ h1{
 }
 
 .button__initialPoint:hover {
-    border: 0.08vw solid var(--color-white);
+    border: 0.08vw solid $color-white;
     mix-blend-mode: difference;
     background-color: transparent;
 }
@@ -313,7 +325,7 @@ h1{
 
 .footer {
     padding: 0 6.25vw;
-    background-color: var(--color-dark);
+    background-color: $color-dark;
     width: 100vw;
     height: 100vh;
     z-index: 998;
@@ -337,10 +349,10 @@ h1{
     /* esto crea un nuevo contexto de apilamiento */
 
 
-    font-family: var(--font-secondary);
+    font-family: $font-secondary;
     font-size: 14.93vw;
     text-transform: lowercase;
-    color: var(--color-white);
+    color: $color-white;
     white-space: nowrap;
 
 }
@@ -369,7 +381,7 @@ h1{
     top: -2vh;
     left: 75vw;
     transform: rotate(7.109deg);
-    background: var(--color-yellow);
+    background: $color-yellow;
 
     /* display: flex; (agregado desde bs) */
     padding: 4.17vw 2.5vw;
@@ -380,12 +392,12 @@ h1{
 }
 
 .footer__assetPhotographer__text {
-    color: var(--color-dark);
+    color: $color-dark;
     font-size: 1.32vw;
     line-height: 84%;
     letter-spacing: 0.02em;
     font-weight: 600;
-    font-family: var(--font-principal);
+    font-family: $font-principal;
 
     flex-grow: 2;
     flex-shrink: 0;
@@ -411,12 +423,12 @@ h1{
     font-size: 2.78vw;
     letter-spacing: 0.56px;
     font-weight: 700;
-    color: var(--color-dark-gray);
+    color: $color-dark-gray;
 }
 
 .footer__item__row1:hover,
 .footer__item__row2:hover {
-    color: var(--color-white);
+    color: $color-white;
 }
 
 .footer__item--active::before {
@@ -425,7 +437,7 @@ h1{
 
 .footer__item__row2 {
     text-decoration: none;
-    color: var(--color-darker-gray);
+    color: $color-darker-gray;
     font-weight: 500;
     font-size: 1.25vw;
 }
@@ -524,8 +536,8 @@ h1{
     /* opacity: 0; */
     display: none;
 
-    font-family: var(--font-tertiary);
-    color: var(--color-dark);
+    font-family: $font-tertiary;
+    color: $color-dark;
     font-size: 10vw;
     line-height: 68%;
 
@@ -536,7 +548,7 @@ h1{
     position: absolute;
     top: 70.71%;
     left: 79.51%;
-    background: var(--color-yellow);
+    background: $color-yellow;
 
     /* display: none; */
     /* se cambia a flex desde js */
@@ -550,7 +562,7 @@ h1{
 
 
 .galleryContent__ellipse__text {
-    color: var(--color-dark);
+    color: $color-dark;
     font-size: 1.11vw;
     /* Calculado: 16px / 1440px * 100% */
     line-height: 84%;
@@ -627,7 +639,7 @@ los mismos márgenes */
 
 .menuSelected {
     font-weight: 700;
-    color: var(--color-white);
+    color: $color-white;
 }
 
 
@@ -642,7 +654,7 @@ los mismos márgenes */
 
 .menuNoSelected {
     font-weight: 600;
-    color: var(--color-darker-gray);
+    color: $color-darker-gray;
 }
 
 
@@ -666,12 +678,12 @@ los mismos márgenes */
 .menuContact__item a {
     text-decoration: none;
     margin-left: 1vw;
-    color: var(--color-gray);
+    color: $color-gray;
     font-size: 1.25vw;
 }
 
 .menuContact__item a:hover {
-    color: var(--color-white);
+    color: $color-white;
 }
 
 
@@ -740,7 +752,7 @@ los mismos márgenes */
     font-size: 1.11vw;
     font-weight: 400;
     line-height: 1.3;
-    color: var(--color-white);
+    color: $color-white;
 }
 
 .menuImagesGallery__stuff::after {
@@ -752,7 +764,7 @@ los mismos márgenes */
     width: 0.4vw;
     height: 0.4vw;
     border-radius: 50%;
-    background-color: var(--color-white);
+    background-color: $color-white;
 }
 
 .menuImagesGallery__img03 {
@@ -836,7 +848,7 @@ los mismos márgenes */
     bottom: 0;
     transform: translate(-285%, -295%);
 
-    color: var(--color-black);
+    color: $color-black;
     font-size: 0.9vw;
     font-weight: 400;
     z-index: 998;
@@ -940,7 +952,7 @@ los mismos márgenes */
     font-style: normal;
     font-weight: 400;
     line-height: 63%;
-    color: var(--color-dark);
+    color: $color-dark;
     z-index: 1000;
 }
 
@@ -952,7 +964,7 @@ los mismos márgenes */
 
     width: 23vw;
     font-size: 1.11vw;
-    color: var(--color-dark);
+    color: $color-dark;
 }
 
 
@@ -998,7 +1010,7 @@ los mismos márgenes */
 /* --------------------------------------------------- SECCIÓN 2 --------------------------------------------------- */
 
 .aboutMeMainContent__h2 {
-    color: var(--color-dark);
+    color: $color-dark;
     font-size: 2.78vw;
     font-weight: 700;
     line-height: normal;
@@ -1006,7 +1018,7 @@ los mismos márgenes */
 }
 
 .aboutMeMainContent__p {
-    color: var(--color-dark);
+    color: $color-dark;
     font-size: 1.11vw;
     font-weight: 400;
     line-height: 152.5%;
@@ -1026,7 +1038,7 @@ los mismos márgenes */
     justify-content: center;
     align-items: center;
     border-radius: 3vw;
-    border: 1.2px solid var(--color-dark);
+    border: 1.2px solid $color-dark;
 }
 
 /* --------------------------------------------------- SECCIÓN 3 --------------------------------------------------- */
@@ -1228,7 +1240,7 @@ los mismos márgenes */
 
     .footer {
         padding: 0 6.25vw;
-        background-color: var(--color-dark);
+        background-color: $color-dark;
         width: 100vw;
         height: 100vh;
         z-index: 998;
