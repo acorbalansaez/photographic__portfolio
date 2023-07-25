@@ -11,6 +11,8 @@
 }
 /* COLORS */
 /* FONTS */
+/* COLORS */
+/* FONTS */
 /* --------------------------------------------------- NAVBAR --------------------------------------------------- */
 .navbar {
   position: absolute;
@@ -979,8 +981,6 @@ los mismos márgenes */
   --color-dark: #0A0A0A;
 }
 
-/* COLORS */
-/* FONTS */
 * {
   margin: 0;
   padding: 0;
@@ -1094,7 +1094,7 @@ h1 {
 
 .cursor-footer::after {
   content: "";
-  background-image: url("./icons/arrow-up.svg");
+  background-image: url("../icons/arrow-up.svg");
   background-size: 100%;
   position: absolute;
   top: 50%;
