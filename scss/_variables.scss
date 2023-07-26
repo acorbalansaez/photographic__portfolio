@@ -25,3 +25,11 @@ $color-darker-gray: #373737;
 $color-dark: #0A0A0A;
 $color-black: #000000;
 
+/* PADDING */
+$paddingX: 6.25vw;
+
+/* EXTEND */
+.widthHeight100{
+    width: 100vw;
+    height: 100vh;
+}

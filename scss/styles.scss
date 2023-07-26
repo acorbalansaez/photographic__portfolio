@@ -165,7 +165,7 @@ h1 {
     position: absolute;
     z-index: 999;
     bottom: 6.43vh;
-    right: 6.25vw;
+    right: $paddingX;
     /*márgen que estoy usando*/
     padding: 3.14vh 1.8vw;
     background-color: $color-black;
@@ -184,13 +184,6 @@ h1 {
         background-color: transparent;
     }
 }
-
-
-
-/* .centered{
-    top: 50%;
-    transform: translate(-50%, -50%);
-} */
 
 
 

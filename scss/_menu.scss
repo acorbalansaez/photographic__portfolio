@@ -7,9 +7,8 @@
 los mismos márgenes */
 
 .menuContent {
-    padding: 0 6.25vw 0 6.25vw;
-    width: 100vw;
-    height: 100vh;
+    padding: 0 $paddingX 0 $paddingX;
+    @extend .widthHeight100;
 }
 
 /* --------------------- MENU/HOVER ZONE --------------------- */

@@ -11,6 +11,13 @@
 }
 /* FONTS */
 /* COLORS */
+/* PADDING */
+/* EXTEND */
+.widthHeight100, .menuContent, .header, .footer {
+  width: 100vw;
+  height: 100vh;
+}
+
 @font-face {
   font-family: "Kyiv";
   src: url("../fonts/Kyiv/Dmitry Rastvortsev - KyivType Sans Bold2.otf") format("opentype");
@@ -22,6 +29,13 @@
 }
 /* FONTS */
 /* COLORS */
+/* PADDING */
+/* EXTEND */
+.widthHeight100, .menuContent, .header, .footer {
+  width: 100vw;
+  height: 100vh;
+}
+
 /* --------------------------------------------------- CURSOR --------------------------------------------------- */
 .cursor {
   position: fixed;
@@ -101,6 +115,13 @@
 }
 /* FONTS */
 /* COLORS */
+/* PADDING */
+/* EXTEND */
+.widthHeight100, .menuContent, .header, .footer {
+  width: 100vw;
+  height: 100vh;
+}
+
 /* --------------------------------------------------- NAVBAR --------------------------------------------------- */
 .navbar {
   position: absolute;
@@ -150,6 +171,13 @@
 }
 /* FONTS */
 /* COLORS */
+/* PADDING */
+/* EXTEND */
+.widthHeight100, .menuContent, .header, .footer {
+  width: 100vw;
+  height: 100vh;
+}
+
 /* --------------------------------------------------- FOOTER --------------------------------------------------- */
 .footerGallery {
   position: absolute;
@@ -160,8 +188,6 @@
 .footer {
   padding: 0 6.25vw;
   background-color: #0A0A0A;
-  width: 100vw;
-  height: 100vh;
   z-index: 998;
   display: grid;
   grid-template-rows: 3fr 1fr;
@@ -172,8 +198,7 @@
   align-items: center;
   padding-top: 10vh;
 }
-
-.footer__text {
+.footer__lgit h2 {
   position: relative;
   z-index: 999;
   transform: translate(0, 0);
@@ -184,15 +209,13 @@
   color: #FFFFFF;
   white-space: nowrap;
 }
-
-.footer__textContent {
+.footer__lgit h2 span {
   position: relative;
   top: 0;
   left: 0;
   transition: left 0.9s ease;
 }
-
-.footer__assetAgs {
+.footer__lgit h2 span img {
   position: absolute;
   bottom: 0vw;
   left: 28vw;
@@ -216,8 +239,7 @@
   height: 13.54vw;
   border-radius: 50%;
 }
-
-.footer__assetPhotographer__text {
+.footer__assetPhotographer p {
   color: #0A0A0A;
   font-size: 1.32vw;
   line-height: 84%;
@@ -287,17 +309,17 @@
     padding-top: 0vh;
     max-height: 70vh;
   }
-  .footer__text {
+  .footer__lgit h2 {
     position: static;
     font-weight: 700;
     font-size: 26vw;
     white-space: pre-wrap;
     max-height: 96vh;
   }
-  .footer__textContent {
+  .footer__lgit h2 span {
     position: static;
   }
-  .footer__assetAgs {
+  .footer__lgit h2 span img {
     display: none;
   }
   .footer__assetPhotographer {
@@ -307,7 +329,7 @@
     width: 35.54vw;
     height: 35.54vw;
   }
-  .footer__assetPhotographer__text {
+  .footer__assetPhotographer p {
     font-size: 3.4vw;
   }
   .footer__contact {
@@ -334,13 +356,18 @@
 }
 /* FONTS */
 /* COLORS */
+/* PADDING */
+/* EXTEND */
+.widthHeight100, .menuContent, .header, .footer {
+  width: 100vw;
+  height: 100vh;
+}
+
 /* --------------------------------------------------- CONTENIDO GALLERY --------------------------------------------------- */
 .header {
   display: grid;
   place-content: center;
   margin-top: -12vh;
-  width: 100vw;
-  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -433,8 +460,7 @@
   height: 11.11vw;
   border-radius: 50%;
 }
-
-.galleryContent__ellipse__text {
+.galleryContent__ellipse p {
   color: #0A0A0A;
   font-size: 1.11vw;
   /* Calculado: 16px / 1440px * 100% */
@@ -444,8 +470,7 @@
   flex-grow: 2;
   flex-shrink: 0;
 }
-
-.galleryContent__ellipse__arrow {
+.galleryContent__ellipse img {
   flex: auto;
   position: relative;
   top: 140%;
@@ -533,13 +558,18 @@
 }
 /* FONTS */
 /* COLORS */
+/* PADDING */
+/* EXTEND */
+.widthHeight100, .menuContent, .footer, .header {
+  width: 100vw;
+  height: 100vh;
+}
+
 /* --------------------------------------------------- CONTENIDO MENU --------------------------------------------------- */
 /* Padding agregado al contenedor de todo el contenido para que se mantengan siempre
 los mismos márgenes */
 .menuContent {
   padding: 0 6.25vw 0 6.25vw;
-  width: 100vw;
-  height: 100vh;
 }
 
 /* --------------------- MENU/HOVER ZONE --------------------- */
@@ -878,11 +908,18 @@ los mismos márgenes */
 }
 /* FONTS */
 /* COLORS */
+/* PADDING */
+/* EXTEND */
+.widthHeight100, .footer, .header, .menuContent {
+  width: 100vw;
+  height: 100vh;
+}
+
 /* --------------------------------------------------- CONTENIDO ABOUT ME --------------------------------------------------- */
 /* Padding agregado al contenedor de todo el contenido para que se mantengan siempre
 los mismos márgenes */
 .aboutMeMainContent {
-  /* padding: 0 6.25vw 0 6.25vw; */
+  /* padding: 0 $paddingX 0 $paddingX; */
   /* display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -1224,10 +1261,6 @@ h1 {
   background-color: transparent;
 }
 
-/* .centered{
-    top: 50%;
-    transform: translate(-50%, -50%);
-} */
 /* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
 @media (max-width: 768px) {
   body {

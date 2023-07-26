@@ -10,10 +10,10 @@
 }
 
 .footer {
-    padding: 0 6.25vw;
+    padding: 0 $paddingX;
     background-color: $color-dark;
-    width: 100vw;
-    height: 100vh;
+
+    @extend .widthHeight100;
     z-index: 998;
 
     display: grid;
@@ -25,41 +25,41 @@
     /* display: flex; (agregado desde bs)*/
     align-items: center;
     padding-top: 10vh;
+
+    h2 {
+        position: relative;
+        z-index: 999;
+        transform: translate(0, 0);
+        /* esto crea un nuevo contexto de apilamiento */
+
+        font-family: $font-secondary;
+        font-size: 14.93vw;
+        text-transform: lowercase;
+        color: $color-white;
+        white-space: nowrap;
+
+        //texto + asset
+        span {
+            position: relative;
+            top: 0;
+            left: 0;
+            transition: left 0.9s ease;
+
+            // asset ags
+            img {
+                position: absolute;
+                bottom: 0vw;
+                left: 28vw;
+                width: 5.16vw;
+                transform: rotate(-17.125deg);
+                transition: transform 0.9s ease;
+            }
+
+        }
+    }
 }
 
-
-.footer__text {
-    position: relative;
-    z-index: 999;
-    transform: translate(0, 0);
-    /* esto crea un nuevo contexto de apilamiento */
-
-
-    font-family: $font-secondary;
-    font-size: 14.93vw;
-    text-transform: lowercase;
-    color: $color-white;
-    white-space: nowrap;
-
-}
-
-.footer__textContent {
-    position: relative;
-    top: 0;
-    left: 0;
-    transition: left 0.9s ease;
-}
-
-
-.footer__assetAgs {
-    position: absolute;
-    bottom: 0vw;
-    left: 28vw;
-    width: 5.16vw;
-    transform: rotate(-17.125deg);
-    transition: transform 0.9s ease;
-}
-
+// asset photographer
 .footer__assetPhotographer {
     position: absolute;
     z-index: -1;
@@ -75,19 +75,20 @@
     width: 13.54vw;
     height: 13.54vw;
     border-radius: 50%;
+
+    p {
+        color: $color-dark;
+        font-size: 1.32vw;
+        line-height: 84%;
+        letter-spacing: 0.02em;
+        font-weight: 600;
+        font-family: $font-principal;
+
+        flex-grow: 2;
+        flex-shrink: 0;
+    }
 }
 
-.footer__assetPhotographer__text {
-    color: $color-dark;
-    font-size: 1.32vw;
-    line-height: 84%;
-    letter-spacing: 0.02em;
-    font-weight: 600;
-    font-family: $font-principal;
-
-    flex-grow: 2;
-    flex-shrink: 0;
-}
 
 .footer__contact {
     /* display: flex;
@@ -111,7 +112,7 @@
     font-weight: 700;
     color: $color-dark-gray;
 
-    &:hover{
+    &:hover {
         color: $color-white;
     }
 }
@@ -122,7 +123,7 @@
     font-weight: 500;
     font-size: 1.25vw;
 
-    &:hover{
+    &:hover {
         color: $color-white;
     }
 }
@@ -159,25 +160,22 @@
     .footer__lgit {
         padding-top: 0vh;
         max-height: 70vh;
-    }
 
+        h2 {
+            position: static;
+            font-weight: 700;
+            font-size: 26vw;
+            white-space: pre-wrap;
+            max-height: 96vh;
 
-    .footer__text {
-        position: static;
-        font-weight: 700;
-        font-size: 26vw;
-        white-space: pre-wrap;
-        max-height: 96vh;
+            span {
+                position: static;
 
-    }
-
-    .footer__textContent {
-        position: static;
-    }
-
-
-    .footer__assetAgs {
-        display: none;
+                img {
+                    display: none;
+                }
+            }
+        }
     }
 
     .footer__assetPhotographer {
@@ -186,11 +184,12 @@
         padding: 4.17vw 6.5vw;
         width: 35.54vw;
         height: 35.54vw;
+
+        p {
+            font-size: 3.4vw;
+        }
     }
 
-    .footer__assetPhotographer__text {
-        font-size: 3.4vw;
-    }
 
     .footer__contact {
         margin-left: 0vw;
