@@ -1,3 +1,20 @@
+
+@font-face {
+    font-family: 'Kyiv';
+    src: url('../fonts/Kyiv/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Bold2.otf') format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Eugusto';
+    src: url('../fonts/Eugusto\ Free\ Font.otf');
+}
+
+/* FONTS */
+$font-principal: 'Syne', sans-serif;
+$font-secondary: 'Kyiv', sans-serif;
+$font-tertiary: 'Eugusto', sans-serif;
+
 /* COLORS */
 $color-yellow: #EFF339;
 $color-white: #FFFFFF;
@@ -7,10 +24,4 @@ $color-dark-gray: #6D6D6D;
 $color-darker-gray: #373737;
 $color-dark: #0A0A0A;
 $color-black: #000000;
-
-
-/* FONTS */
-$font-principal: 'Syne', sans-serif;
-$font-secondary: 'Kyiv', sans-serif;
-$font-tertiary: 'Eugusto', sans-serif;
 

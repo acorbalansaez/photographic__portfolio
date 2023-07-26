@@ -110,15 +110,10 @@
     letter-spacing: 0.56px;
     font-weight: 700;
     color: $color-dark-gray;
-}
 
-.footer__item__row1:hover,
-.footer__item__row2:hover {
-    color: $color-white;
-}
-
-.footer__item--active::before {
-    content: '*';
+    &:hover{
+        color: $color-white;
+    }
 }
 
 .footer__item__row2 {
@@ -126,6 +121,15 @@
     color: $color-darker-gray;
     font-weight: 500;
     font-size: 1.25vw;
+
+    &:hover{
+        color: $color-white;
+    }
+}
+
+
+.footer__item--active::before {
+    content: '*';
 }
 
 

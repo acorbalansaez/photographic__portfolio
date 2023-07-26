@@ -1,23 +1,12 @@
 /* --------------------------------------------------- BASE --------------------------------------------------- */
 
-@font-face {
-    font-family: 'Kyiv';
-    src: url('../fonts/Kyiv/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Bold2.otf') format('opentype');
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: 'Eugusto';
-    src: url('../fonts/Eugusto\ Free\ Font.otf');
-}
-
 @import "variables";
+@import "cursor";
 @import "navbar";
 @import "footer";
 @import "gallery";
 @import "menu";
 @import "aboutme";
-
 
 
 /* Variables que tuve que definir en root para que js pueda acceder a ellas */
@@ -59,7 +48,6 @@ a {
     color: inherit;
 }
 
-
 .cover {
     position: absolute;
     width: 100vw;
@@ -72,86 +60,20 @@ a {
     overflow: hidden;
 }
 
-p, ul {
+p,
+ul {
     /* para contrarrestar el por defecto aplicado por bootstrap */
     margin-bottom: 0;
 }
-h1{
+
+h1 {
     /* para contrarrestar el por defecto aplicado por bootstrap */
     color: $color-dark;
     margin-bottom: 0;
 }
 
+
 /* --------------------------------------------------- ESTILOS GENERALES --------------------------------------------------- */
-
-.cursor {
-    position: fixed;
-    /* en fixed se posiciona segun el viewport, en absolute se posiciona segun el eleento padre más cercano con posición relativa*/
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 1000;
-    transition: all 0.1s ease;
-    transition-property: background-color, transform, width, height;
-}
-
-.cursor-default {
-    width: 1.14vw;
-    height: 1.14vw;
-    background-color: $color-white;
-    border-radius: 50%;
-    mix-blend-mode: difference;
-}
-
-.cursor-images {
-    width: 4.38vw;
-    height: 4.38vw;
-    background-color: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(0.34vw);
-    border-radius: 50%;
-    border: 0.08vw solid $color-white;
-    mix-blend-mode: normal;
-}
-
-.cursor-images::after {
-    content: 'see';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.1vw;
-    line-height: 84%;
-    color: $color-white;
-}
-
-.cursor-links {
-    width: 4.38vw;
-    height: 4.38vw;
-    border: 0.08vw solid $color-white;
-    mix-blend-mode: difference;
-    border-radius: 50%;
-    background-color: transparent;
-}
-
-.cursor-footer {
-    width: 4.38vw;
-    height: 4.38vw;
-    border-radius: 50%;
-    border: 0 solid;
-    background-color: $color-yellow;
-    mix-blend-mode: normal;
-}
-
-.cursor-footer::after {
-    content: "";
-    background-image: url('../icons/arrow-up.svg');
-    background-size: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-}
 
 
 .backgroundDark {
@@ -161,7 +83,6 @@ h1{
 .backgroundLight {
     background-color: $color-white;
 }
-
 
 .blackVersion {
     color: $color-black;
@@ -184,6 +105,35 @@ h1{
     filter: blur(0.14vw);
 }
 
+
+// Mixin para aplicar el underlink pasando como parámetro el color
+@mixin underlineLink($color) {
+    position: relative;
+    text-decoration: none;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 0.2vw;
+        background-color: $color;
+        transition: width 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.underlineLink--black {
+    @include underlineLink($color-black);
+}
+
+.underlineLink--white {
+    @include underlineLink($color-white);
+}
 
 
 /* --------------------------------------------------- CLASE IMG --------------------------------------------------- */
@@ -221,18 +171,20 @@ h1{
     background-color: $color-black;
     border-radius: 4.8rem;
     transition: all 0.2s ease-in-out;
+
+    // arrow
+    img {
+        width: 3.02vw;
+        height: auto;
+    }
+
+    &:hover {
+        border: 0.08vw solid $color-white;
+        mix-blend-mode: difference;
+        background-color: transparent;
+    }
 }
 
-.button__initialPoint__arrow {
-    width: 3.02vw;
-    height: auto;
-}
-
-.button__initialPoint:hover {
-    border: 0.08vw solid $color-white;
-    mix-blend-mode: difference;
-    background-color: transparent;
-}
 
 
 /* .centered{
@@ -252,16 +204,22 @@ h1{
         overflow-x: hidden;
     }
 
+    .underlineLink--black::after,
+    .underlineLink--white::after {
+        height: 0.5vw;
+    }
+
     .button__initialPoint {
         position: fixed;
         bottom: 5.43vh;
         right: 2vw;
         padding: 2.71vh 7vw;
         transform: rotate(90deg);
-    }
 
-    .button__initialPoint__arrow {
-        width: 11.8vw;
+        // arrow
+        img {
+            width: 11.8vw;
+        }
     }
 
 }

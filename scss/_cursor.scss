@@ -1,0 +1,73 @@
+@import "variables";
+
+/* --------------------------------------------------- CURSOR --------------------------------------------------- */
+
+.cursor {
+    position: fixed;
+    /* en fixed se posiciona segun el viewport, en absolute se posiciona segun el eleento padre más cercano con posición relativa*/
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1000;
+    transition: all 0.1s ease;
+    transition-property: background-color, transform, width, height;
+}
+
+.cursor-default {
+    width: 1.14vw;
+    height: 1.14vw;
+    background-color: $color-white;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+}
+
+.cursor-images {
+    width: 4.38vw;
+    height: 4.38vw;
+    background-color: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(0.34vw);
+    border-radius: 50%;
+    border: 0.08vw solid $color-white;
+    mix-blend-mode: normal;
+
+    &::after {
+        content: 'see';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.1vw;
+        line-height: 84%;
+        color: $color-white;
+    }
+
+}
+
+.cursor-links {
+    width: 4.38vw;
+    height: 4.38vw;
+    border: 0.08vw solid $color-white;
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.cursor-footer {
+    width: 4.38vw;
+    height: 4.38vw;
+    border-radius: 50%;
+    border: 0 solid;
+    background-color: $color-yellow;
+    mix-blend-mode: normal;
+
+    &::after {
+        content: "";
+        background-image: url('../icons/arrow-up.svg');
+        background-size: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50%;
+    }
+}

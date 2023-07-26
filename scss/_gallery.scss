@@ -15,21 +15,19 @@
     left: 0;
 
     overflow: hidden;
-}
 
+    h1 {
+        font-size: 22.78vw;
+        text-transform: lowercase;
+        letter-spacing: 0.56px;
+        font-weight: 600;
 
-.header__title {
-    font-size: 22.78vw;
-    text-transform: lowercase;
-    letter-spacing: 0.56px;
-    font-weight: 600;
+        /* creamos una especie de máscara */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        z-index: 1000;
 
-    /* creamos una especie de máscara */
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    z-index: 1000;
-
-    pointer-events: none;
-
+        pointer-events: none;
+    }
 }
 
 
@@ -56,6 +54,7 @@
     will-change: filter, transform;
     /* indicar el cambio de filtro supuestamente mejoraría el rendimiento */
     transition: transform, filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .imgGallery01 {
@@ -156,11 +155,11 @@
         top: 50vh;
         transform: translateY(-50%);
         z-index: 999;
-    }
 
-    .header__title {
-        font-size: 50vw;
-        position: relative;
+        h1{
+            font-size: 50vw;
+            position: relative;
+        }
     }
 
 
