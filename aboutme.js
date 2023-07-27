@@ -50,7 +50,7 @@ function enableScrollTrigger() {
             start: "right right",
             end: 3000,
             scrub: 5,
-            markers: true,
+            // markers: true,
         }
     })
 
