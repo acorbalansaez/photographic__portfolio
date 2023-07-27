@@ -63,7 +63,6 @@ function playMobileAnimation(timeline) {
     });
 
 
-    //A DESARROLLAR
     timelineScrollMobile = gsap.timeline({
         scrollTrigger: {
             scrub: 2,
@@ -202,10 +201,10 @@ function enableScrollTrigger() {
 
 
 // ver posición de scroll
-// function printScrollPosition() {
-//     console.log("Posición del scroll:", window.scrollY);
-// }
-// window.addEventListener('scroll', printScrollPosition);
+function printScrollPosition() {
+    console.log("Posición del scroll:", window.scrollY);
+}
+window.addEventListener('scroll', printScrollPosition);
 
 
 

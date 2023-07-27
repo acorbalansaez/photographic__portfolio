@@ -9,7 +9,7 @@
     left: 0;
     width: 100vw;
     height: 14vh;
-    padding: 0 $paddingX 0 $paddingX;
+    padding: 0 $paddingXDesktop 0 $paddingXDesktop;
     z-index: 999;
 
     ul {
@@ -43,6 +43,7 @@
 
         ul{
             justify-content: center;
+            padding: 0;
 
             li a{
                 font-size: 7.5vw;

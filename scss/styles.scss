@@ -50,8 +50,7 @@ a {
 
 .cover {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    @extend .widthHeight100;
     z-index: 1000;
     background-color: $color-white;
 }
@@ -165,7 +164,7 @@ h1 {
     position: absolute;
     z-index: 999;
     bottom: 6.43vh;
-    right: $paddingX;
+    right: $paddingXDesktop;
     /*márgen que estoy usando*/
     padding: 3.14vh 1.8vw;
     background-color: $color-black;

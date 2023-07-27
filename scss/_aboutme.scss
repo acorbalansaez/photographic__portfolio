@@ -7,11 +7,11 @@
 los mismos márgenes */
 
 .aboutMeMainContent {
-    /* padding: 0 $paddingX 0 $paddingX; */
+    /* padding: 0 $paddingXDesktop 0 $paddingXDesktop; */
     /* display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
     align-items: flex-start; (se aplica desde bs) */
+    flex-direction: row;
     width: fit-content;
     height: 100vh;
     overflow: visible;
@@ -29,10 +29,8 @@ los mismos márgenes */
     margin-right: 16vw;
 }
 
-/* --------------------------------------------------- SECCIÓN 1 --------------------------------------------------- */
 
-
-.aboutMeMainContent__title {
+.aboutMeSection1__title {
     position: absolute;
     top: 20vh;
     left: 4vw;
@@ -44,7 +42,7 @@ los mismos márgenes */
     z-index: 1000;
 }
 
-.aboutMeMainContent__text01 {
+.aboutMeSection1__text01 {
     position: absolute;
     z-index: 999;
     left: 4vw;
@@ -56,7 +54,7 @@ los mismos márgenes */
 }
 
 
-.aboutMeMainContent__img01 {
+.aboutMeSection1__img01 {
     position: absolute;
     left: 19vw;
     top: -16vh;
@@ -66,7 +64,7 @@ los mismos márgenes */
 
 }
 
-.aboutMeMainContent__img02 {
+.aboutMeSection1__img02 {
     position: absolute;
     top: 10vh;
     right: 5vw;
@@ -75,7 +73,7 @@ los mismos márgenes */
     z-index: 997;
 }
 
-.aboutMeMainContent__assetPhotographer {
+.aboutMeSection1__assetPhotographer {
     position: absolute;
     bottom: 10vh;
     right: 34vw;
@@ -95,9 +93,7 @@ los mismos márgenes */
     margin-right: 16vw;
 }
 
-/* --------------------------------------------------- SECCIÓN 2 --------------------------------------------------- */
-
-.aboutMeMainContent__h2 {
+.aboutMeSection2__h2 {
     color: $color-dark;
     font-size: 2.78vw;
     font-weight: 700;
@@ -105,7 +101,7 @@ los mismos márgenes */
     margin-bottom: 5.4vh;
 }
 
-.aboutMeMainContent__p {
+.aboutMeSection2__p {
     color: $color-dark;
     font-size: 1.11vw;
     font-weight: 400;
@@ -113,15 +109,15 @@ los mismos márgenes */
     margin-bottom: 1rem;
 }
 
-.aboutMeMainContent__chips {
+.aboutMeSection2__chips {
     /* display: flex; (se aplica desde bs) */
     gap: 0.7vw;
     margin-top: 5.4vh;
 }
 
-.aboutMeMainContent__chip01,
-.aboutMeMainContent__chip02,
-.aboutMeMainContent__chip03 {
+.aboutMeSection2__chip01,
+.aboutMeSection2__chip02,
+.aboutMeSection2__chip03 {
     padding: 0.5vw 1.5vw;
     justify-content: center;
     align-items: center;
@@ -137,8 +133,6 @@ los mismos márgenes */
     flex-shrink: 0;
     width: auto;
 }
-
-/* --------------------------------------------------- SECCIÓN 3 --------------------------------------------------- */
 
 .aboutMeSection3__img01Container {
     position: relative;
@@ -190,4 +184,36 @@ los mismos márgenes */
 
 
 
+/* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
 
+@media (max-width: 768px) {
+
+    body {
+        height: auto;
+        overflow-y: visible;
+        overflow-x: hidden;
+    }
+
+    .aboutMeMainContent {
+        flex-direction: column;
+        overflow-x: hidden;
+        width: 100vw;
+        height: auto;
+        padding: 0 $paddingXMobile;
+    }
+
+    /* --------------------- SECCIÓN 1 --------------------- */
+
+    .aboutMeSection1{
+        height: fit-content;
+    }
+
+    .aboutMeSection1__title, .aboutMeSection1__text01, .aboutMeSection1__img01, .aboutMeSection1__img02, .aboutMeSection1__assetPhotographer {
+        position: static;
+    }
+
+    .aboutMeSection1__title {
+        font-size: 25.6vw;
+    }
+
+}

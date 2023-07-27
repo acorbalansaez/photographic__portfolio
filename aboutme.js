@@ -1,20 +1,47 @@
 gsap.registerPlugin(ScrollTrigger);
 
+const cover = document.querySelector('.cover');
 const bigContainer = document.querySelector(".aboutMeMainContent");
 const aboutMeSection1 = document.querySelector(".aboutMeSection1");
 const assetPhotographer = document.querySelector(".aboutMeMainContent__assetPhotographer");
 const aboutMeSection3 = document.querySelector(".aboutMeSection3");
 const buttonInitialPoint = document.querySelector('.button__initialPoint');
+const navbarAgs = document.getElementById('ags');
+const footerContact = document.querySelector('.footer__contact');
+const footerContactRow1 = footerContact.querySelector(':first-child');
 
-
-const timeline = gsap.timeline();
+const timelineDesktop = gsap.timeline();
+const timelineMobile = gsap.timeline();
 let timelineScroll;
 
-timeline.fromTo(assetPhotographer, { rotation: -60 }, { rotation: 30, ease: 'power2', duration: 1.5 }, 0)
-    .fromTo(".aboutMeMainContent__img01", { top: '200vh' }, { top: '-16vh', ease: 'power2', duration: 1.5 }, "<")
-    .fromTo(".aboutMeMainContent__img02", { top: '-100vh' }, { top: '10vh', ease: 'power2', duration: 1.5 }, "<")
-    .call(enableScrollTrigger)
+const screenWidth = document.documentElement.clientWidth;
 
+
+function animationController(){
+
+    if (screenWidth >= 768) {
+        animateDesktop();
+    } else {
+        navbarAgs.remove();
+        footerContactRow1.remove();
+        animateMobile();
+    }
+}
+
+function animateDesktop() {
+    
+    timelineDesktop.fromTo(assetPhotographer, { rotation: -60 }, { rotation: 30, ease: 'power2', duration: 1.5 }, 0)
+        .fromTo(".aboutMeMainContent__img01", { top: '200vh' }, { top: '-16vh', ease: 'power2', duration: 1.5 }, "<")
+        .fromTo(".aboutMeMainContent__img02", { top: '-100vh' }, { top: '10vh', ease: 'power2', duration: 1.5 }, "<")
+        .call(enableScrollTrigger)
+
+}
+
+function animateMobile(){
+
+    //timelineMobile.
+    
+}
 
 
 function createScrollTrigger() {
@@ -39,7 +66,7 @@ function enableScrollTrigger() {
     }
 
     // el bigContainer se desplaza en su ancho
-    console.log(bigContainer.offsetWidth - window.innerWidth);
+    //console.log(bigContainer.offsetWidth - window.innerWidth);
     timelineScroll.to(bigContainer, { x: () => -(bigContainer.offsetWidth - window.innerWidth), duration: 1.8 })
         .fromTo(assetPhotographer, { rotation: 30, right: '34vw' }, { rotation: -80, right: '50vw', ease: 'power2', duration: 1.5 }, 0)
 
@@ -75,13 +102,24 @@ buttonInitialPoint.addEventListener('click', function () {
         top: 0,
         behavior: 'smooth'
     });
+    console.log("click");
 });
 
 
+// ver posición de scroll
+function printScrollPosition() {
+    console.log("Posición del scroll:", window.scrollY);
+}
+window.addEventListener('scroll', printScrollPosition);
 
 
-// function printScrollPosition() {
-//     console.log("Posición del scroll:", window.scrollY);
-// }
 
-// window.addEventListener('scroll', printScrollPosition);
+
+window.addEventListener('load', function () {
+    // borrar cover (futuro loading)
+    cover.remove();
+    // permitir scroll
+    document.body.classList.remove('no-scroll')
+    // llamada a primera función
+    animationController();
+})
