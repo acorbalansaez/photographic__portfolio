@@ -84,8 +84,8 @@ los mismos márgenes */
 /* --------------------------------------------------- SECCIÓN 2 --------------------------------------------------- */
 .aboutMeSection2 {
     /* display: flex;
-    flex-direction: column;
-    justify-content: space-around; (se aplica desde bs) */
+    flex-direction: column; (se aplica desde bs) */
+    justify-content: space-around;
     width: 25.56vw;
     height: 52.86vh;
     flex-shrink: 0;
@@ -222,7 +222,7 @@ los mismos márgenes */
     }
 
     .aboutMeSection1__title {
-        padding: 0 $paddingXMobile;
+        padding: 1vh $paddingXMobile 0 $paddingXMobile;
         font-size: 25.6vw;
         order: 1;
     }
@@ -266,7 +266,7 @@ los mismos márgenes */
 
     .aboutMeSection1__assetPhotographer {
         position: absolute;
-        top: 86vh;
+        top: 88vh;
         right: 0;
         z-index: 999;
 
@@ -301,15 +301,15 @@ los mismos márgenes */
 
     .aboutMeSection3__assetWow {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: calc(84% - 26vw);
+        left: calc(95% - 26vw);
         width: 26vw;
     }
     
     .aboutMeSection3__assetAgs {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: calc(90% - 17vw);
+        left: calc(95% - 17vw);
         width: 17vw;
     }
 
@@ -325,6 +325,43 @@ los mismos márgenes */
 
     .aboutMeSection2 {
         order: 3;
+        padding: 12.12vh $paddingXMobile;
+
+        /* display: flex;
+        flex-direction: column; (se aplica desde bs) */
+        justify-content: space-between;
+        width: auto;
+        height: 80vh;
+        flex-shrink: 0;
+        align-self: center;
+        margin: 0;
+    }
+
+    
+    .aboutMeSection2__h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+    }
+    
+    .aboutMeSection2__p {
+        font-size: 1rem;
+        margin-bottom: 0rem;
+    }
+    
+    .aboutMeSection2__chips {
+        /* display: flex; (se aplica desde bs) */
+        gap: 2.7vw;
+        margin-top: 0vh;
+    }
+    
+    .aboutMeSection2__chip01,
+    .aboutMeSection2__chip02,
+    .aboutMeSection2__chip03 {
+        padding: 1vw 6vw;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6vw;
+        border: 1.2px solid $color-dark;
     }
 
     /* --------------------- SECCIÓN 4 / FOOTER --------------------- */

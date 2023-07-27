@@ -12,7 +12,7 @@ const footerContactRow1 = footerContact.querySelector(':first-child');
 
 const timelineDesktop = gsap.timeline();
 const timelineMobile = gsap.timeline();
-let timelineScroll;
+let timelineScrollDesktop;
 
 const screenWidth = document.documentElement.clientWidth;
 
@@ -30,7 +30,6 @@ function animationController(){
 
 function animateDesktop() {
     
-    console.log("hola")
     timelineDesktop.fromTo(assetPhotographer, { rotation: -60 }, { rotation: 30, ease: 'power2', duration: 1.5 }, 0)
         .fromTo(".aboutMeSection1__img01", { top: '200vh' }, { top: '-16vh', ease: 'power2', duration: 1.5 }, "<")
         .fromTo(".aboutMeSection1__img02", { top: '-100vh' }, { top: '10vh', ease: 'power2', duration: 1.5 }, "<")
@@ -47,7 +46,7 @@ function animateMobile(){
 
 function createScrollTrigger() {
 
-    timelineScroll = gsap.timeline({
+    timelineScrollDesktop = gsap.timeline({
         scrollTrigger: {
             pin: "body",
             scrub: 5,
@@ -55,21 +54,19 @@ function createScrollTrigger() {
         }
     })
 
-    return timelineScroll;
+    return timelineScrollDesktop;
 }
 
 
 function enableScrollTrigger() {
 
-    console.log("on")
-
-    if (!timelineScroll) {
-        timelineScroll = createScrollTrigger();
+    if (!timelineScrollDesktop) {
+        timelineScrollDesktop = createScrollTrigger();
     }
 
     // el bigContainer se desplaza en su ancho
     //console.log(bigContainer.offsetWidth - window.innerWidth);
-    timelineScroll.to(bigContainer, { x: () => -(bigContainer.offsetWidth - window.innerWidth), duration: 1.8 })
+    timelineScrollDesktop.to(bigContainer, { x: () => -(bigContainer.offsetWidth - window.innerWidth), duration: 1.8 })
         .fromTo(assetPhotographer, { rotation: 30, right: '34vw' }, { rotation: -80, right: '50vw', ease: 'power2', duration: 1.5 }, 0)
 
 
