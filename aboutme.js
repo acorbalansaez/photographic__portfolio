@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 const cover = document.querySelector('.cover');
 const bigContainer = document.querySelector(".aboutMeMainContent");
 const aboutMeSection1 = document.querySelector(".aboutMeSection1");
-const assetPhotographer = document.querySelector(".aboutMeMainContent__assetPhotographer");
+const assetPhotographer = document.querySelector(".aboutMeSection1__assetPhotographer");
 const aboutMeSection3 = document.querySelector(".aboutMeSection3");
 const buttonInitialPoint = document.querySelector('.button__initialPoint');
 const navbarAgs = document.getElementById('ags');
@@ -30,9 +30,10 @@ function animationController(){
 
 function animateDesktop() {
     
+    console.log("hola")
     timelineDesktop.fromTo(assetPhotographer, { rotation: -60 }, { rotation: 30, ease: 'power2', duration: 1.5 }, 0)
-        .fromTo(".aboutMeMainContent__img01", { top: '200vh' }, { top: '-16vh', ease: 'power2', duration: 1.5 }, "<")
-        .fromTo(".aboutMeMainContent__img02", { top: '-100vh' }, { top: '10vh', ease: 'power2', duration: 1.5 }, "<")
+        .fromTo(".aboutMeSection1__img01", { top: '200vh' }, { top: '-16vh', ease: 'power2', duration: 1.5 }, "<")
+        .fromTo(".aboutMeSection1__img02", { top: '-100vh' }, { top: '10vh', ease: 'power2', duration: 1.5 }, "<")
         .call(enableScrollTrigger)
 
 }
@@ -60,6 +61,7 @@ function createScrollTrigger() {
 
 function enableScrollTrigger() {
 
+    console.log("on")
 
     if (!timelineScroll) {
         timelineScroll = createScrollTrigger();
@@ -82,8 +84,8 @@ function enableScrollTrigger() {
     })
 
     // ver acá qué pasa que cuando veo en f11 img01 e img02 se mueven solas
-    tlScroll2.to(".aboutMeMainContent__img02", { top: '0vh', ease: 'power2', duration: 0.01 }, 0)
-        .to(".aboutMeMainContent__img01", { top: '10vh', x: '-3vw', ease: 'power2', duration: 0.1 }, "<")
+    tlScroll2.to(".aboutMeSection1__img02", { top: '0vh', ease: 'power2', duration: 0.01 }, 0)
+        .to(".aboutMeSection1__img01", { top: '10vh', x: '-3vw', ease: 'power2', duration: 0.1 }, "<")
         .fromTo(".aboutMeSection2", { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power1', duration: 0.0 }, 0.001)
         .fromTo(".aboutMeSection3__assetAgs", { rotation: 0 }, { rotation: 360, ease: 'power2', duration: 0.1 }, "<")
         .fromTo(".aboutMeSection3__assetWow", { rotation: 0 }, { rotation: 360, ease: 'power2', duration: 0.01 }, "<")
