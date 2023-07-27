@@ -130,6 +130,7 @@ los mismos márgenes */
     /* display: flex;
     flex-direction: row; (se aplica desde bs) */
     /* position: relative; */
+    flex-direction: row;
     flex-shrink: 0;
     width: auto;
 }
@@ -199,21 +200,137 @@ los mismos márgenes */
         overflow-x: hidden;
         width: 100vw;
         height: auto;
-        padding: 0 $paddingXMobile;
     }
 
     /* --------------------- SECCIÓN 1 --------------------- */
 
-    .aboutMeSection1{
+    .aboutMeSection1 {
         height: fit-content;
+        margin-top: $navbarHeight;
+
+        display: flex;
+        flex-direction: column;
+        order: 1;
     }
 
-    .aboutMeSection1__title, .aboutMeSection1__text01, .aboutMeSection1__img01, .aboutMeSection1__img02, .aboutMeSection1__assetPhotographer {
+    .aboutMeSection1__title,
+    .aboutMeSection1__text01,
+    .aboutMeSection1__img01Container,
+    .aboutMeSection1__img02,
+    .aboutMeSection1__assetPhotographer {
         position: static;
     }
 
     .aboutMeSection1__title {
+        padding: 0 $paddingXMobile;
         font-size: 25.6vw;
+        order: 1;
+    }
+
+    .aboutMeSection1__img01Container {
+        order: 2;
+        width: 100vw;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .aboutMeSection1__img01 {
+        position: relative;
+        width: 100vw;
+        top: -8vh;
+        left: $paddingXMobile;
+    }
+
+    .aboutMeSection1__img02 {
+        order: 3;
+        width: 71.5vw;
+        position: relative;
+        top: -16vh;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 998;
+    }
+
+    .aboutMeSection1__text01 {
+        position: relative;
+        order: 4;
+        width: auto;
+        padding: 0 $paddingXMobile;
+        top: -7vh;
+        left: 0vw;
+
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .aboutMeSection1__assetPhotographer {
+        position: absolute;
+        top: 86vh;
+        right: 0;
+        z-index: 999;
+
+        width: 36vw;
+        height: 36vw;
+    }
+
+    /* --------------------- SECCIÓN 2 --------------------- */
+
+    .aboutMeSection3 {
+        order: 2;
+        flex-direction: column;
+    }
+
+    .aboutMeSection3__img01Container {
+        position: relative;
+        top: 0;
+        left: 0vw;
+
+        width: 100vw;
+        height: fit-content;
+    }
+    
+    .aboutMeSection3__img01 {
+        position: relative;
+        top: 0;
+        left: -10vw;
+
+        width: 100vw;
+        height: auto;
+    }
+
+    .aboutMeSection3__assetWow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 26vw;
+    }
+    
+    .aboutMeSection3__assetAgs {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 17vw;
+    }
+
+    .aboutMeSection3__img02 {
+        position: relative; 
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: auto;
+    }
+
+    /* --------------------- SECCIÓN 3 --------------------- */
+
+    .aboutMeSection2 {
+        order: 3;
+    }
+
+    /* --------------------- SECCIÓN 4 / FOOTER --------------------- */
+
+    .footerAboutMe{
+        order: 4;
     }
 
 }
