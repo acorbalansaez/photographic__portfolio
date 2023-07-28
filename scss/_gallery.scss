@@ -181,7 +181,6 @@
     .galleryContent__container {
         height: auto;
         width: 100vw;
-        /* overflow-y: visible; */
         display: block;
     }
 
@@ -190,7 +189,6 @@
     .imgGallery02,
     .imgGallery03,
     .imgGallery04 {
-        /* position: static; */
         transform: translate(0, 0);
     }
 

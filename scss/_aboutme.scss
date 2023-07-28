@@ -3,11 +3,7 @@
 
 /* --------------------------------------------------- CONTENIDO ABOUT ME --------------------------------------------------- */
 
-/* Padding agregado al contenedor de todo el contenido para que se mantengan siempre
-los mismos márgenes */
-
 .aboutMeMainContent {
-    /* padding: 0 $paddingXDesktop 0 $paddingXDesktop; */
     /* display: flex;
     flex-wrap: nowrap;
     align-items: flex-start; (se aplica desde bs) */
@@ -15,7 +11,6 @@ los mismos márgenes */
     width: fit-content;
     height: 100vh;
     overflow: visible;
-    /* min-width: 120vw; */
 }
 
 /* --------------------------------------------------- SECCIÓN 1 --------------------------------------------------- */
@@ -129,7 +124,6 @@ los mismos márgenes */
 .aboutMeSection3 {
     /* display: flex;
     flex-direction: row; (se aplica desde bs) */
-    /* position: relative; */
     flex-direction: row;
     flex-shrink: 0;
     width: auto;
@@ -143,7 +137,6 @@ los mismos márgenes */
 }
 
 .aboutMeSection3__img01 {
-    /* position: absolute; */
     top: -12vh;
     left: 0;
     width: auto;
@@ -167,7 +160,6 @@ los mismos márgenes */
 }
 
 .aboutMeSection3__img02 {
-    /* position: absolute; */
     top: 0;
     left: 20vw;
     width: auto;
@@ -181,8 +173,6 @@ los mismos márgenes */
 .footerAboutMe {
     flex-shrink: 0;
 }
-
-
 
 
 /* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */

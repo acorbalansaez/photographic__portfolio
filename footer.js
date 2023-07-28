@@ -1,5 +1,3 @@
-
-
 const footer = document.querySelector('.footer');
 const footerText = document.querySelector('.footer__text');
 const footerTextContent = document.querySelector('.footer__textContent');

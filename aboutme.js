@@ -109,7 +109,7 @@ function animateMobile(){
             scrub: 2,
             trigger: "footer",
             end: "bottom bottom",
-            markers: true
+            //markers: true
         }
     })
 
@@ -126,7 +126,6 @@ function createScrollTrigger() {
         scrollTrigger: {
             pin: "body",
             scrub: 5,
-            // trigger: bigContainer,
         }
     })
 
