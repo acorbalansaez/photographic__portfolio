@@ -192,6 +192,7 @@
         overflow-x: hidden;
         width: 100vw;
         height: auto;
+        padding-left: 0;
     }
 
     /* --------------------- SECCIÓN 1 --------------------- */
@@ -258,7 +259,7 @@
 
     .aboutMeSection1__assetPhotographer {
         position: absolute;
-        top: 88vh;
+        top: 92vh;
         right: 0;
         z-index: 999;
 

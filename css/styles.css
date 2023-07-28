@@ -1101,6 +1101,7 @@ los mismos márgenes */
     overflow-x: hidden;
     width: 100vw;
     height: auto;
+    padding-left: 0;
   }
   /* --------------------- SECCIÓN 1 --------------------- */
   .aboutMeSection1 {
@@ -1156,7 +1157,7 @@ los mismos márgenes */
   }
   .aboutMeSection1__assetPhotographer {
     position: absolute;
-    top: 88vh;
+    top: 92vh;
     right: 0;
     z-index: 999;
     width: 36vw;
