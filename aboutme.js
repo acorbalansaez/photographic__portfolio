@@ -124,6 +124,8 @@ function createScrollTrigger() {
 
     timelineScrollDesktop = gsap.timeline({
         scrollTrigger: {
+            trigger: "body",
+            start: "top top",
             pin: "body",
             scrub: 5,
         }

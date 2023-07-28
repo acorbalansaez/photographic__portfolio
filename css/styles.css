@@ -929,6 +929,7 @@ los mismos márgenes */
   width: fit-content;
   height: 100vh;
   overflow: visible;
+  padding-left: 6vw;
 }
 
 /* --------------------------------------------------- SECCIÓN 1 --------------------------------------------------- */
@@ -958,7 +959,7 @@ los mismos márgenes */
   position: absolute;
   z-index: 999;
   left: 4vw;
-  top: 58vh;
+  top: 52vh;
   width: 23vw;
   font-size: 1.11vw;
   color: #0A0A0A;
@@ -1022,6 +1023,7 @@ los mismos márgenes */
   /* display: flex; (se aplica desde bs) */
   gap: 0.7vw;
   margin-top: 5.4vh;
+  white-space: nowrap;
 }
 
 .aboutMeSection2__chip01,
