@@ -39,8 +39,70 @@ function animateDesktop() {
 
 function animateMobile(){
 
-    //timelineMobile.
+    timelineMobile.fromTo(".aboutMeSection1__title", { autoAlpha: 0, x: '-40%' }, { autoAlpha: 1, x: '0', ease: 'power2', duration: 1 }, 0)
+    .fromTo(".aboutMeSection1__img01", { autoAlpha: 0, left: '27.2vw' }, { autoAlpha: 1, left: '7.2vw', ease: 'power2', duration: 1 }, 0.3)
+    .fromTo(".aboutMeSection1__img02", { autoAlpha: 0, top: '-8vh' }, { autoAlpha: 1, top: '-16vh', ease: 'power2', duration: 0.8 }, 0.4)
+    .fromTo(".navbar", { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power2', duration: 1 }, 0.5)
     
+
+    let timelineScrollMobile1 = gsap.timeline({
+        scrollTrigger: {
+            scrub: 2,
+            trigger: "aboutMeSection1__title",
+            start: "top top",
+            end: "+300vh",
+        }
+    })
+
+    timelineScrollMobile1.to(".aboutMeSection1__img01", { left:'0', ease: 'power2', duration: 0.4 }, 0)
+
+
+    let timelineScrollMobile2 = gsap.timeline({
+        scrollTrigger: {
+            scrub: 2,
+            trigger: "aboutMeSection1__img01",
+            start: "left left",
+            end: "+1200vh",
+        }
+    })
+
+    timelineScrollMobile2.to(".aboutMeSection1__assetPhotographer", { right:'calc(100% - 36vw)', rotation: 180, ease: 'power2'}, 0.1)
+
+    let timelineScrollMobile3 = gsap.timeline({
+        scrollTrigger: {
+            scrub: 2,
+            trigger: "aboutMeSection1__text01",
+            end: "+1100vh",
+        }
+    })
+
+    timelineScrollMobile3.fromTo(".aboutMeSection1__text01", { autoAlpha: 0, top: '0vh' }, { autoAlpha: 1, top: '-7vh', ease: 'power2' }, 0)
+
+    let timelineScrollMobile4 = gsap.timeline({
+        scrollTrigger: {
+            scrub: 2,
+            trigger: "aboutMeSection3__img01",
+            end: "+2900vh",
+        }
+    })
+
+    timelineScrollMobile4.fromTo(".aboutMeSection3__img01", { left: "-10vw" }, { left: "7.2vw", ease: 'power2', duration: 0.5 }, 0.1)
+    .to(".aboutMeSection3__assetWow", { rotation: 180, ease: 'power2', translateY: "150%", duration: 1.4}, 0.4)
+    .to(".aboutMeSection3__assetAgs", { rotation: 360, ease: 'power2', translateY: "190%", duration: 1}, 0.4)
+
+    let timelineScrollMobile5 = gsap.timeline({
+        scrollTrigger: {
+            scrub: 2,
+            trigger: "aboutMeSection3__img02",
+            end: "+2000vh",
+            // markers: trueg
+        }
+    })
+
+    timelineScrollMobile5.fromTo(".aboutMeSection2__h2", { autoAlpha: 0}, { autoAlpha: 1, ease: 'power2', duration: 0.3 }, 0.8)
+
+
+
 }
 
 

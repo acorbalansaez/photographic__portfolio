@@ -39,7 +39,7 @@ los mismos márgenes */
     font-weight: 400;
     line-height: 63%;
     color: $color-dark;
-    z-index: 1000;
+    z-index: 999;
 }
 
 .aboutMeSection1__text01 {
@@ -304,6 +304,7 @@ los mismos márgenes */
         top: calc(84% - 26vw);
         left: calc(95% - 26vw);
         width: 26vw;
+        z-index: 998;
     }
     
     .aboutMeSection3__assetAgs {
@@ -311,6 +312,7 @@ los mismos márgenes */
         top: calc(90% - 17vw);
         left: calc(95% - 17vw);
         width: 17vw;
+        z-index: 998;
     }
 
     .aboutMeSection3__img02 {
@@ -319,6 +321,7 @@ los mismos márgenes */
         left: 0;
         width: 100vw;
         height: auto;
+        z-index: 997;
     }
 
     /* --------------------- SECCIÓN 3 --------------------- */
