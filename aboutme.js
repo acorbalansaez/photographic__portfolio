@@ -94,13 +94,27 @@ function animateMobile(){
         scrollTrigger: {
             scrub: 2,
             trigger: "aboutMeSection3__img02",
-            end: "+2000vh",
-            // markers: trueg
+            end: "+3300vh",
+            // markers: true
         }
     })
 
-    timelineScrollMobile5.fromTo(".aboutMeSection2__h2", { autoAlpha: 0}, { autoAlpha: 1, ease: 'power2', duration: 0.3 }, 0.8)
+    timelineScrollMobile5.fromTo(".aboutMeSection2__h2", { autoAlpha: 0}, { autoAlpha: 1, ease: 'power2', duration: 0.3 }, 0.3)
+    timelineScrollMobile5.fromTo(".aboutMeSection2__p", { autoAlpha: 0}, { autoAlpha: 1, ease: 'power2', duration: 0.3 }, 0.4)
+    timelineScrollMobile5.fromTo(".aboutMeSection2__chips", { autoAlpha: 0}, { autoAlpha: 1, ease: 'power2', duration: 0.3 }, 0.5)
 
+
+    let timelineScrollMobile6 = gsap.timeline({
+        scrollTrigger: {
+            scrub: 2,
+            trigger: "footer",
+            end: "bottom bottom",
+            markers: true
+        }
+    })
+
+    timelineScrollMobile6.fromTo(".footer__assetPhotographer", {scale: 0}, {scale: 1, ease: 'power2', duration: 0.3 }, 0.2)
+    .fromTo(".footer__text", {y: 100, autoAlpha: 0}, {y: 0, autoAlpha: 1, ease: 'power2', duration: 0.3 }, 0)
 
 
 }
