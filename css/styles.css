@@ -57,6 +57,14 @@
   mix-blend-mode: difference;
 }
 
+.cursor-projects {
+  width: 1.14vw;
+  height: 1.14vw;
+  background-color: #EFF339;
+  border-radius: 50%;
+  mix-blend-mode: normal;
+}
+
 .cursor-images {
   width: 4.38vw;
   height: 4.38vw;
@@ -65,9 +73,31 @@
   border-radius: 50%;
   border: 0.08vw solid #FFFFFF;
   mix-blend-mode: normal;
+  text-align: center;
 }
 .cursor-images::after {
   content: "see";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1vw;
+  line-height: 84%;
+  color: #FFFFFF;
+}
+
+.cursor-images-projects {
+  width: 5.83vw;
+  height: 5.83vw;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(0.34vw);
+  border-radius: 50%;
+  border: 0.08vw solid #FFFFFF;
+  mix-blend-mode: normal;
+  text-align: center;
+}
+.cursor-images-projects::after {
+  content: "see project";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1273,7 +1303,6 @@ los mismos márgenes */
 .projectsCanvas {
   width: 400vw;
   height: 400vh;
-  background: linear-gradient(blue, pink);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1290,9 +1319,30 @@ los mismos márgenes */
 
 .imgProjects01 {
   width: 28vw;
-  top: 50%; /* Centra verticalmente */
-  left: 50%; /* Centra horizontalmente */
-  transform: translate(-50%, -50%); /* Ajusta el centrado */
+  top: 50%;
+  left: 50%;
+  transform: translate(-130%, -75%);
+}
+
+.imgProjects02 {
+  width: 26vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(5%, -125%);
+}
+
+.imgProjects03 {
+  width: 31vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(62%, -10%);
+}
+
+.imgProjects04 {
+  width: 28vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-65%, 40%);
 }
 
 /* Variables que tuve que definir en root para que js pueda acceder a ellas */

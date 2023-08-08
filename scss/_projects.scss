@@ -15,12 +15,10 @@
 .projectsCanvas {
     width: 400vw;
     height: 400vh;
-    background: linear-gradient(blue, pink);
+    // background: linear-gradient(blue, pink);
+    // cursor: none !important;
 
     position: absolute;
-    // top: 0;
-    // left: 0;
-    // transform: translate(-200vw, -200vh);
 
     top: 50%;
     left: 50%;
@@ -39,7 +37,28 @@
 
 .imgProjects01 {
     width: 28vw;
-    top: 50%; /* Centra verticalmente */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta el centrado */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-130%, -75%); 
+}
+
+.imgProjects02 {
+    width: 26vw;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(5%, -125%); 
+}
+
+.imgProjects03 {
+    width: 31vw;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(62%, -10%); 
+}
+
+.imgProjects04 {
+    width: 28vw;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-65%, 40%); 
 }

@@ -58,6 +58,6 @@ const contenedor = document.querySelector(".projectsContent");
 Draggable.create(".projectsCanvas", {
 
     zIndexBoost:false, // para que no agregue z-index 1000 por defecto
-    bounds: contenedor, //setea el límite hasta donde se puede mover
+    bounds: contenedor, // setea el límite hasta donde se puede mover
 
 });
