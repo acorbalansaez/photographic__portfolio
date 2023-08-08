@@ -1416,15 +1416,18 @@ los mismos márgenes */
 /* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
 @media (max-width: 768px) {
   .projectsContent {
+    position: static;
     width: 100vw;
     height: fit-content;
   }
   .projectsCanvas {
-    position: static;
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: auto;
+    height: fit-content;
+    transform: translate(0, 0);
+    top: 0;
+    left: 0;
   }
   .projectsCanvas__img, .imgProjects01, .imgProjects02, .imgProjects03, .imgProjects04, .imgProjects05, .imgProjects06, .imgProjects07 {
     position: static;
