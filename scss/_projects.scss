@@ -4,7 +4,7 @@
 /* --------------------------------------------------- CONTENIDO PROJECTS --------------------------------------------------- */
 
 .projectsContent{
-    //@extend .widthHeight100;
+    // @extend .widthHeight100;
     width: 100vw;
     height: 100vh;
 
@@ -84,3 +84,39 @@
     transform: translate(685%, 30%); 
 }
 
+
+
+
+/* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+   
+    .projectsContent{
+        width: 100vw;
+        height: fit-content;
+    }
+    
+    
+    .projectsCanvas {
+        position: static;
+        display: flex;
+        flex-direction: column;
+
+        width: 100vw;
+        height: auto;
+    }
+
+    .projectsCanvas__img, .imgProjects01, .imgProjects02, .imgProjects03, .imgProjects04, .imgProjects05, .imgProjects06, .imgProjects07{
+        position: static;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
+
+    .imgProjects01, .imgProjects02, .imgProjects03, .imgProjects04, .imgProjects05, .imgProjects06, .imgProjects07 {
+        width: 100vw;
+    }
+
+
+}

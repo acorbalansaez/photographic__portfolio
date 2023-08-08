@@ -58,11 +58,56 @@
 }
 
 .cursor-projects {
+  width: 5.83vw;
+  height: 5.83vw;
+  background-color: #EFF339;
+  border-radius: 50%;
+  mix-blend-mode: normal;
+}
+.cursor-projects::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: #EFF339;
+  border-radius: 50%;
+  filter: blur(78px);
+  z-index: -1;
+}
+.cursor-projects::after {
+  content: "drag";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1vw;
+  font-weight: 700;
+  line-height: 84%;
+  color: #000000;
+}
+
+.cursor-projects-little {
   width: 1.14vw;
   height: 1.14vw;
   background-color: #EFF339;
   border-radius: 50%;
   mix-blend-mode: normal;
+}
+.cursor-projects-little::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: #EFF339;
+  border-radius: 50%;
+  filter: blur(78px);
+  z-index: -1;
 }
 
 .cursor-images {
@@ -103,6 +148,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.1vw;
+  font-weight: 600;
   line-height: 84%;
   color: #FFFFFF;
 }
@@ -1367,6 +1413,29 @@ los mismos márgenes */
   transform: translate(685%, 30%);
 }
 
+/* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
+@media (max-width: 768px) {
+  .projectsContent {
+    width: 100vw;
+    height: fit-content;
+  }
+  .projectsCanvas {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+  }
+  .projectsCanvas__img, .imgProjects01, .imgProjects02, .imgProjects03, .imgProjects04, .imgProjects05, .imgProjects06, .imgProjects07 {
+    position: static;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+  .imgProjects01, .imgProjects02, .imgProjects03, .imgProjects04, .imgProjects05, .imgProjects06, .imgProjects07 {
+    width: 100vw;
+  }
+}
 /* Variables que tuve que definir en root para que js pueda acceder a ellas */
 :root {
   --color-white: #FFFFFF;
