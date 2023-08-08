@@ -9,14 +9,14 @@ const footerHover = document.querySelector('.footer__text');
 
 document.addEventListener('mousemove', cursor);
 
-  //obtenemos posicion del mouse
-  function cursor(e) {
-    let x = e.clientX;
-    let y = e.clientY;
+//obtenemos posicion del mouse
+function cursor(e) {
+  let x = e.clientX;
+  let y = e.clientY;
 
-    mouseCursor.style.left = `${x}px`;
-    mouseCursor.style.top = `${y}px`;
-  }
+  mouseCursor.style.left = `${x}px`;
+  mouseCursor.style.top = `${y}px`;
+}
 
 
 // SOLO EN PANTALLAS MENORES A 768)
@@ -40,7 +40,7 @@ if (window.innerWidth >= 768) {
 
 
   // cuando el mouse esta arriba del footer cambiar el cursor
-  if (footerHover != null){
+  if (footerHover != null) {
     footerHover.addEventListener('mouseleave', () => {
       mouseCursor.classList.remove('cursor-footer');
       mouseCursor.classList.add('cursor-default');
@@ -138,3 +138,7 @@ if (window.innerWidth >= 768) {
 }
 
 
+
+// exporto la variable mouseCursor para poder controlar el
+// comportamiento de drag desde el archivo de projects
+export { mouseCursor, imagesProjects };

@@ -16,7 +16,7 @@
     width: 400vw;
     height: 400vh;
     // background: linear-gradient(blue, pink);
-    // cursor: none !important;
+    cursor: none !important;
 
     position: absolute;
 
@@ -50,15 +50,37 @@
 }
 
 .imgProjects03 {
-    width: 31vw;
+    width: 30vw;
     top: 50%; 
     left: 50%; 
     transform: translate(62%, -10%); 
 }
 
 .imgProjects04 {
-    width: 28vw;
+    width: 26vw;
     top: 50%; 
     left: 50%; 
     transform: translate(-65%, 40%); 
 }
+
+.imgProjects05 {
+    width: 27vw;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(230%, 30%); 
+}
+
+.imgProjects06 {
+    width: 30vw;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(330%, 50%); 
+}
+
+.imgProjects07 {
+    width: 20vw;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(685%, 30%); 
+}
+

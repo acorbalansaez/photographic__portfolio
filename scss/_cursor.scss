@@ -4,7 +4,7 @@
 
 .cursor {
     position: fixed;
-    /* en fixed se posiciona segun el viewport, en absolute se posiciona segun el eleento padre más cercano con posición relativa*/
+    /* en fixed se posiciona segun el viewport, en absolute se posiciona segun el elemento padre más cercano con posición relativa*/
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 1000;
@@ -84,8 +84,8 @@
 }
 
 .cursor-footer {
-    width: 4.38vw;
-    height: 4.38vw;
+    width: 5.83vw;
+    height: 5.83vw;
     border-radius: 50%;
     border: 0 solid;
     background-color: $color-yellow;

@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 const cover = document.querySelector('.cover');
-const bigContainer = document.querySelector(".aboutMeMainContent");
+const bigContainer = document.querySelector(".aboutMeContent");
 const aboutMeSection1 = document.querySelector(".aboutMeSection1");
 const assetPhotographer = document.querySelector(".aboutMeSection1__assetPhotographer");
 const aboutMeSection3 = document.querySelector(".aboutMeSection3");
@@ -29,6 +29,8 @@ function animationController(){
 }
 
 function animateDesktop() {
+
+    console.log("working");
     
     timelineDesktop.fromTo(assetPhotographer, { rotation: -60 }, { rotation: 30, ease: 'power2', duration: 1.5 }, 0)
         .fromTo(".aboutMeSection1__img01", { top: '200vh' }, { top: '-16vh', ease: 'power2', duration: 1.5 }, "<")
@@ -137,6 +139,8 @@ function createScrollTrigger() {
 
 function enableScrollTrigger() {
 
+    console.log("activado");
+
     if (!timelineScrollDesktop) {
         timelineScrollDesktop = createScrollTrigger();
     }
@@ -149,7 +153,7 @@ function enableScrollTrigger() {
 
     let tlScroll2 = gsap.timeline({
         scrollTrigger: {
-            trigger: ".aboutMeMainContent__img01",
+            trigger: ".aboutMeSection1__img01",
             start: "right right",
             end: 3000,
             scrub: 5,
