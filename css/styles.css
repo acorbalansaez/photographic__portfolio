@@ -921,7 +921,7 @@ los mismos márgenes */
 }
 
 /* --------------------------------------------------- CONTENIDO ABOUT ME --------------------------------------------------- */
-.aboutMeMainContent {
+.aboutMeContent {
   /* display: flex;
   flex-wrap: nowrap;
   align-items: flex-start; (se aplica desde bs) */
@@ -1096,7 +1096,7 @@ los mismos márgenes */
     overflow-y: visible;
     overflow-x: hidden;
   }
-  .aboutMeMainContent {
+  .aboutMeContent {
     flex-direction: column;
     overflow-x: hidden;
     width: 100vw;
@@ -1244,6 +1244,57 @@ los mismos márgenes */
     order: 4;
   }
 }
+@font-face {
+  font-family: "Kyiv";
+  src: url("../fonts/Kyiv/Dmitry Rastvortsev - KyivType Sans Bold2.otf") format("opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Eugusto";
+  src: url("../fonts/Eugusto Free Font.otf");
+}
+/* FONTS */
+/* COLORS */
+/* PADDING */
+/* HEIGHT */
+/* EXTEND */
+.widthHeight100, .cover, .footer, .header, .menuContent {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* --------------------------------------------------- CONTENIDO PROJECTS --------------------------------------------------- */
+.projectsContent {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.projectsCanvas {
+  width: 400vw;
+  height: 400vh;
+  background: linear-gradient(blue, pink);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.projectsCanvas__img {
+  position: absolute;
+  overflow: hidden;
+  will-change: filter, transform;
+  /* indicar el cambio de filtro supuestamente mejoraría el rendimiento */
+  transition: transform, filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.imgProjects01 {
+  width: 28vw;
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta el centrado */
+}
+
 /* Variables que tuve que definir en root para que js pueda acceder a ellas */
 :root {
   --color-white: #FFFFFF;
