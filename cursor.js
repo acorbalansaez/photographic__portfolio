@@ -135,6 +135,8 @@ if (window.innerWidth >= 768) {
   });
 
 
+} else {
+  mouseCursor.remove();
 }
 
 

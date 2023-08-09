@@ -25,12 +25,11 @@ let timelineScroll;
 let timelineScrollMobile;
 
 const screenWidth = document.documentElement.clientWidth;
-let isMobile = screenWidth <= 768;
 
 
 function animationController() {
 
-    if (isMobile) {
+    if (screenWidth >= 768) {
         animateDesktop();
     } else {
         animateMobile();
