@@ -165,7 +165,7 @@ function enableScrollTrigger() {
     // ver acá qué pasa que cuando veo en f11 img01 e img02 se mueven solas
     tlScroll2.to(".aboutMeSection1__img02", { top: '0vh', ease: 'power2', duration: 0.01 }, 0)
         .to(".aboutMeSection1__img01", { top: '10vh', x: '-3vw', ease: 'power2', duration: 0.1 }, "<")
-        .fromTo(".aboutMeSection2", { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power1', duration: 0.0 }, 0.001)
+        .fromTo(".aboutMeSection2", { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power1', duration: 0.01 }, 0.001)
         .fromTo(".aboutMeSection3__assetAgs", { rotation: 0 }, { rotation: 360, ease: 'power2', duration: 0.1 }, "<")
         .fromTo(".aboutMeSection3__assetWow", { rotation: 0 }, { rotation: 360, ease: 'power2', duration: 0.01 }, "<")
         .fromTo(".aboutMeSection3__img01", { y: '-40vh' }, { y: '-12vh', ease: 'power2', duration: 0.03 }, "<")
@@ -185,15 +185,6 @@ buttonInitialPoint.addEventListener('click', function () {
     });
     console.log("click");
 });
-
-
-// ver posición de scroll
-function printScrollPosition() {
-    console.log("Posición del scroll:", window.scrollY);
-}
-window.addEventListener('scroll', printScrollPosition);
-
-
 
 
 window.addEventListener('load', function () {

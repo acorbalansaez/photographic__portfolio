@@ -1101,6 +1101,7 @@ los mismos márgenes */
   gap: 0.7vw;
   margin-top: 5.4vh;
   white-space: nowrap;
+  color: #000000;
 }
 
 .aboutMeSection2__chip01,
@@ -1634,6 +1635,11 @@ h1 {
   }
   .button__initialPoint img {
     width: 11.8vw;
+  }
+  .button__initialPoint:hover {
+    border: 0;
+    mix-blend-mode: normal;
+    background-color: #000000;
   }
 }
 

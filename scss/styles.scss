@@ -222,6 +222,13 @@ h1 {
         img {
             width: 11.8vw;
         }
+
+        // restableciendo los valores para que no cambien con hover
+        &:hover {
+            border: 0;
+            mix-blend-mode: normal;
+            background-color: $color-black;
+        }
     }
 
 }

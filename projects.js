@@ -171,6 +171,7 @@ function checkScreen() {
         navbarAgs.remove();
         animateMobile();
     } else {
+        buttonInitialPoint.remove();
         activateDrag();
     }
 }
