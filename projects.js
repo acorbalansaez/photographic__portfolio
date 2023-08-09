@@ -155,6 +155,246 @@ function animateScrollMobile() {
             },
         })
 
+    gsap.fromTo(".imgProjects08", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects08",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects09", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects09",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects10", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects10",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects11", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects11",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects12", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects12",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects13", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects13",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects14", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects14",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects15", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects15",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects16", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects16",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects17", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects17",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects18", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects18",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects19", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects19",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects20", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects20",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects21", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects21",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects22", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects22",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
+    gsap.fromTo(".imgProjects23", {
+        autoAlpha: 0,
+        y: '10%'
+    },
+        {
+            autoAlpha: 1,
+            y: '0',
+            scrollTrigger: {
+                trigger: ".imgProjects23",
+                start: "top bottom",
+                end: "top - 60",
+                scrub: 2,
+            },
+        })
+
 }
 
 // Initial point button
