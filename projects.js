@@ -11,56 +11,59 @@ let hasDragged = false;
 
 import { mouseCursor, imagesProjects } from './cursor.js';
 
-Draggable.create(".projectsCanvas", {
+function activateDrag() {
 
-    zIndexBoost: false, // para que no agregue z-index 1000 por defecto
-    bounds: contenedor, // setea el límite hasta donde se puede mover
-    edgeResistance: 0.65,
+    Draggable.create(".projectsCanvas", {
 
-    onDragStart: function () {
-        // Cambia el tipo de arrastre en mobile para permitir solo en el eje Y
-        this.update(true);
-        hasDragged = true;
-    },
+        zIndexBoost: false, // para que no agregue z-index 1000 por defecto
+        bounds: contenedor, // setea el límite hasta donde se puede mover
+        edgeResistance: 0.65,
+    
+        onDragStart: function () {
+            // Cambia el tipo de arrastre en mobile para permitir solo en el eje Y
+            this.update(true);
+            hasDragged = true;
+        },
+    
+    
+        onDrag: function () {
+    
+            // actualiza la posición del cursor personalizado mientras se arrastra
+            const pointerX = this.pointerX;
+            const pointerY = this.pointerY;
+            mouseCursor.style.left = `${pointerX}px`;
+            mouseCursor.style.top = `${pointerY}px`;
+    
+            // achica las imgs mientras se produce el arrastre
+            imagesProjects.forEach(imgOnHover => {
+                const img = imgOnHover.querySelector('.img');
+                img.style.transform = 'scale(0.92)';
+            });
+    
+            // cambia cursor
+            mouseCursor.classList.remove('cursor-projects');
+            mouseCursor.classList.add('cursor-projects-little');
+    
+        },
+    
+        onDragEnd: function () {
+    
+            imagesProjects.forEach(imgOnHover => {
+                const img = imgOnHover.querySelector('.img');
+                img.style.transform = 'scale(1)';
+    
+            });
+    
+            // cambia cursor
+            mouseCursor.classList.remove('cursor-projects-little');
+            mouseCursor.classList.add('cursor-projects');
+        },
+    
+        type: isMobile ? "y" : "x,y"
+    
+    });
 
-
-    onDrag: function () {
-
-        // actualiza la posición del cursor personalizado mientras se arrastra
-        const pointerX = this.pointerX;
-        const pointerY = this.pointerY;
-        mouseCursor.style.left = `${pointerX}px`;
-        mouseCursor.style.top = `${pointerY}px`;
-
-        // achica las imgs mientras se produce el arrastre
-        imagesProjects.forEach(imgOnHover => {
-            const img = imgOnHover.querySelector('.img');
-            img.style.transform = 'scale(0.92)';
-        });
-
-        // cambia cursor
-        mouseCursor.classList.remove('cursor-projects');
-        mouseCursor.classList.add('cursor-projects-little');
-
-    },
-
-    onDragEnd: function () {
-
-        imagesProjects.forEach(imgOnHover => {
-            const img = imgOnHover.querySelector('.img');
-            img.style.transform = 'scale(1)';
-
-        });
-
-        // cambia cursor
-        mouseCursor.classList.remove('cursor-projects-little');
-        mouseCursor.classList.add('cursor-projects');
-    },
-
-    type: isMobile ? "y" : "x,y"
-
-});
-
+}
 
 
 function animateMobile(){
@@ -69,8 +72,8 @@ function animateMobile(){
     timelineMobile.fromTo(".imgProjects01", { autoAlpha: 0, x: '40%' }, { autoAlpha: 1, x: '0', ease: 'power2', duration: 1 }, 0)
     .fromTo(".imgProjects02", { autoAlpha: 0, y: '40%' }, { autoAlpha: 1, y: '0', ease: 'power2', duration: 1 }, 0.2)
     .fromTo(".navbar", { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power2', duration: 1 }, 0.5)
-    .fromTo(".button__initialPoint", { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power2', duration: 0.1 }, 0.8)
-    // .call(animateScrollMobile)
+    .fromTo(".button__initialPoint", { autoAlpha: 0 }, { autoAlpha: 1, ease: 'power2', duration: 0.1 }, 0.5)
+    .call(animateScrollMobile)
 
 }
 
@@ -159,22 +162,6 @@ buttonInitialPoint.addEventListener('click', function () {
         top: 0,
         behavior: 'smooth'
     });
-
-    // if (hasDragged) {
-    //     console.log("ahre");
-    //     gsap.to(canvas, {
-    //         scrollTo: { y: 0 },
-    //         duration: 0.5,
-    //         ease: "power2.out",
-    //     });
-    // } else {
-    //     console.log("no drag");
-    //     window.scrollTo({
-    //         top: 0,
-    //         behavior: 'smooth'
-    //     });
-    // }
-    
 });
 
 
@@ -182,5 +169,7 @@ buttonInitialPoint.addEventListener('click', function () {
 if (isMobile) {
     navbarAgs.remove();
     animateMobile();
+} else {
+    activateDrag();
 }
 
