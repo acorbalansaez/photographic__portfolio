@@ -49,13 +49,6 @@ a {
     color: inherit;
 }
 
-.cover {
-    position: absolute;
-    @extend .widthHeight100;
-    z-index: 1000;
-    background-color: $color-white;
-}
-
 .no-scroll {
     overflow: hidden;
 }
@@ -133,6 +126,22 @@ h1 {
 
 .underlineLink--white {
     @include underlineLink($color-white);
+}
+
+// Mixin para aplicar cover pasando como parámetro el color
+@mixin cover($color){
+    position: absolute;
+    @extend .widthHeight100;
+    z-index: 1000;
+    background-color: $color;
+}
+
+.cover--white {
+    @include cover($color-white);
+}
+
+.cover--dark {
+    @include cover($color-dark);
 }
 
 

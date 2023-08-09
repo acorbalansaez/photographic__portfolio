@@ -14,7 +14,7 @@
 /* PADDING */
 /* HEIGHT */
 /* EXTEND */
-.widthHeight100, .cover, .menuContent, .header, .footer {
+.widthHeight100, .cover--dark, .cover--white, .menuContent, .header, .footer {
   width: 100vw;
   height: 100vh;
 }
@@ -33,7 +33,7 @@
 /* PADDING */
 /* HEIGHT */
 /* EXTEND */
-.widthHeight100, .cover, .menuContent, .header, .footer {
+.widthHeight100, .cover--dark, .cover--white, .menuContent, .header, .footer {
   width: 100vw;
   height: 100vh;
 }
@@ -196,7 +196,7 @@
 /* PADDING */
 /* HEIGHT */
 /* EXTEND */
-.widthHeight100, .cover, .menuContent, .header, .footer {
+.widthHeight100, .cover--dark, .cover--white, .menuContent, .header, .footer {
   width: 100vw;
   height: 100vh;
 }
@@ -254,7 +254,7 @@
 /* PADDING */
 /* HEIGHT */
 /* EXTEND */
-.widthHeight100, .cover, .menuContent, .header, .footer {
+.widthHeight100, .cover--dark, .cover--white, .menuContent, .header, .footer {
   width: 100vw;
   height: 100vh;
 }
@@ -439,7 +439,7 @@
 /* PADDING */
 /* HEIGHT */
 /* EXTEND */
-.widthHeight100, .cover, .menuContent, .header, .footer {
+.widthHeight100, .cover--dark, .cover--white, .menuContent, .header, .footer {
   width: 100vw;
   height: 100vh;
 }
@@ -640,7 +640,7 @@
 /* PADDING */
 /* HEIGHT */
 /* EXTEND */
-.widthHeight100, .cover, .menuContent, .footer, .header {
+.widthHeight100, .cover--dark, .cover--white, .menuContent, .footer, .header {
   width: 100vw;
   height: 100vh;
 }
@@ -959,6 +959,7 @@ los mismos márgenes */
   }
   .menuContact {
     position: static;
+    z-index: 999;
   }
   .menuHoverZone__container {
     flex-grow: 0;
@@ -991,7 +992,7 @@ los mismos márgenes */
 /* PADDING */
 /* HEIGHT */
 /* EXTEND */
-.widthHeight100, .cover, .footer, .header, .menuContent {
+.widthHeight100, .cover--dark, .cover--white, .footer, .header, .menuContent {
   width: 100vw;
   height: 100vh;
 }
@@ -1334,7 +1335,7 @@ los mismos márgenes */
 /* PADDING */
 /* HEIGHT */
 /* EXTEND */
-.widthHeight100, .cover, .footer, .header, .menuContent {
+.widthHeight100, .cover--dark, .cover--white, .footer, .header, .menuContent {
   width: 100vw;
   height: 100vh;
 }
@@ -1477,12 +1478,6 @@ a {
   color: inherit;
 }
 
-.cover {
-  position: absolute;
-  z-index: 1000;
-  background-color: #FFFFFF;
-}
-
 .no-scroll {
   overflow: hidden;
 }
@@ -1561,6 +1556,18 @@ h1 {
 }
 .underlineLink--white:hover::after {
   width: 100%;
+}
+
+.cover--white {
+  position: absolute;
+  z-index: 1000;
+  background-color: #FFFFFF;
+}
+
+.cover--dark {
+  position: absolute;
+  z-index: 1000;
+  background-color: #0A0A0A;
 }
 
 /* --------------------------------------------------- CLASE IMG --------------------------------------------------- */

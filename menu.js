@@ -1,3 +1,5 @@
+// definición de variables
+const cover = document.querySelector('.cover--dark');
 const zonesHover = document.querySelectorAll(".menuHoverZone__container");
 const galleryContent = document.querySelector(".menuImagesGallery");
 const projectsContent = document.querySelector(".menuImagesProjects");
@@ -158,20 +160,31 @@ function darkMode(section) {
 }
 
 
-const screenWidth = document.documentElement.clientWidth;
 
-if (screenWidth >= 768) {
 
-  document.addEventListener('DOMContentLoaded', function () {
+function checkScreen(){
+
+  const screenWidth = document.documentElement.clientWidth;
+
+  if (screenWidth >= 768) {
     animateSection(galleryContent);
     hoverController();
-  });
+  
+  } else {
+    navbarAgs.remove();
+    galleryContent.classList.remove("menuVisible");
+    galleryContent.classList.add("menuInvisible");
+  }
 
-
-} else {
-  navbarAgs.remove();
-  galleryContent.classList.remove("menuVisible");
-  galleryContent.classList.add("menuInvisible");
 }
+
+window.addEventListener('load', function () {
+  // borrar cover (futuro loading)
+  cover.remove();
+  // permitir scroll
+  document.body.classList.remove('no-scroll')
+  // llamada a primera función
+  checkScreen();
+})
 
 

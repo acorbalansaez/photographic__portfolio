@@ -1,6 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
-const cover = document.querySelector('.cover');
+// definición de variables
+const cover = document.querySelector('.cover--white');
 const bigContainer = document.querySelector(".aboutMeContent");
 const aboutMeSection1 = document.querySelector(".aboutMeSection1");
 const assetPhotographer = document.querySelector(".aboutMeSection1__assetPhotographer");

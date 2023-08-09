@@ -8,7 +8,7 @@ const agsTittle = new SplitType('.header__title');
 const chars = document.querySelectorAll('.header__title .char');
 
 // definición de variables
-const cover = document.querySelector('.cover');
+const cover = document.querySelector('.cover--white');
 const navbar = document.querySelector('.navbar');
 const navbarAgs = document.getElementById('ags');
 const ellipse = document.querySelector('.galleryContent__ellipse');
