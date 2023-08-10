@@ -80,9 +80,7 @@ los mismos márgenes */
 .menuContact {
     position: absolute;
     bottom: 10vh;
-    z-index: 1000;
-    /* tuve que poenrle este z-index porque el containerGallery lo está tapando,
-    el ancho lo está definiendo el ancho del primer hijo imgGallery01*/
+    z-index: 998;
 }
 
 .menuContact__list {
@@ -353,7 +351,6 @@ los mismos márgenes */
 
     .menuContact {
         position: static;
-        z-index: 998;
     }
 
     .menuHoverZone__container {
